@@ -1,0 +1,11 @@
+# ImageGen promptları
+
+Üretim yöntemi: yerleşik ImageGen aracı. Yeni görseller, referans görsel verilmedi. Portreler temsili kampanya fotoğrafı; final başlıklar ve metinler ayrı vektör katmanlarında dizildi.
+
+## woman-campaign.png
+
+Use case: ads-marketing. Create one ultra polished photographic key visual, portrait 4:5, for a premium Turkish gym brand Terra Fitness Club. NO TEXT, NO LETTERS, NO LOGOS. Deep near-black studio environment, authentic adult athletic woman with natural proportions wearing simple black modest athletic leggings and fitted black training shirt, doing a calm focused standing dumbbell preparation, waist-up to mid-thigh composition, woman on the right half, head around upper middle, respectful empowered look rather than sexualized. Dramatic crimson rim light on right shoulder and dumbbell, soft clean neutral key light revealing natural skin, subtle floor haze and no clutter. Strong high-end sports editorial photography, real skin texture, fine film grain, restrained saturation. Left half and upper quarter mostly empty black negative space for separately typeset huge Turkish headlines. Cropping should leave face and hands intact. Minimal sports studio, not a photo pretending to be the actual Terra facility. No fake muscles, no extra fingers, no floating dumbbells. Save high resolution portrait campaign photo.
+
+## man-campaign.png
+
+Use case: ads-marketing. One high-end sports campaign photograph, portrait 4:5 for Terra Fitness Club Turkish gym concept. NO TEXT NO LOGO NO LETTERS. Young adult male athlete with natural muscular build, wearing plain black training t-shirt and black shorts, seated briefly on a simple low dark bench after workout, leaning forward lightly with hands resting on knees, focused thoughtful expression, body predominantly on RIGHT HALF and lower two-thirds, face around x=70%, y=38%. Left half and upper quarter empty near-black studio negative space for typography. Editorial athletic portrait with restrained crimson red rim lighting and clean neutral soft light on skin, black environment, subtle concrete floor, natural texture, professional campaign photograph. Convey consistency and welcome, not aggression. No actual Terra gym facility claims, minimal unbranded set. Correct anatomy, realistic hands, no distorted equipment. Photorealistic, premium, cinematic but crisp.
