@@ -172,7 +172,7 @@ def start(section,title=None,light=False):
     rect(0,0,W,H,bg); t('TERRA FITNESS CLUB',48,38,11,'Semi',fg,1.3);t(section.upper(),504,38,10,'Semi',RED,1.0)
     line(48,54,912,54,GRAY if light else LINE)
     if title:t(title,48,120,43,'Display',fg)
-    t('MARKA VE SOSYAL MEDYA KİTABI / ÖNERİ V1.0',48,572,9,'Body',GRAY if not light else '#585858',.4)
+    t('MARKA VE SOSYAL MEDYA KİTABI / ÖNERİ V1.1',48,572,9,'Body',GRAY if not light else '#585858',.4)
     t(f'{page_no:02d} / 24',865,572,10,'Semi',GRAY if not light else '#585858')
     return fg
 
@@ -374,7 +374,7 @@ print('Generated 24-page brandbook and five 1080x1350 posts; source SVGs and lay
 preview=canvas.Canvas(str(TMP/'series-preview.pdf'),pagesize=(1240,440))
 preview.setFillColor(HexColor(INK));preview.rect(0,0,1240,440,fill=1,stroke=0)
 preview.setFont('Display',32);preview.setFillColor(HexColor(PAPER));preview.drawString(30,387,'TERRA / HAREKETE ALAN AÇ.')
-preview.setFont('Body',12);preview.setFillColor(HexColor(GRAY));preview.drawString(30,361,'5 Instagram örneği / Açılış serisi / Marka önerisi v1.0')
+preview.setFont('Body',12);preview.setFillColor(HexColor(GRAY));preview.drawString(30,361,'5 Instagram örneği / Açılış serisi / Marka önerisi v1.1')
 for i,n in enumerate(NAMES):
     preview.drawImage(str(SOC/'posts'/(n+'.png')),30+i*240,51,220,275)
     preview.setFont('Semi',12);preview.setFillColor(HexColor(PAPER));preview.drawString(30+i*240,26,['01 / Açılış','02 / Alan','03 / Branşlar','04 / Kadınlara özel','05 / İlk adım'][i])

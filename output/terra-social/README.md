@@ -1,6 +1,6 @@
 # Terra Fitness Club — sunum seti
 
-27 Eylül 2026 / Öneri v1.0
+28 Eylül 2026 / Tipografi düzeltmesi v1.1
 
 ## Görüşmede kullan
 
@@ -16,6 +16,8 @@ Bu çalışma işletmenin onaylanmış marka kılavuzu değil, Kerem'in sosyal m
 `source/` içinde her post için bağımsız SVG, font dosyaları, kaynak görseller, üretim scripti ve kullanılan ImageGen promptları bulunur. SVG'ler metin ve grafik katmanlarıyla düzenlenebilir; raster portre ve özgün düşük çözünürlüklü logo içinde gömülüdür. Fontlar SVG içine gömülüdür, ancak bazı masaüstü editörleri gömülü web fontlarını desteklemez; `source/fonts/` dosyaları bu durum için verilmiştir. Nihai PNG'ler ölçü ve tipografi için referans çıktıdır. Logo yeniden çizilmedi; master vektör dosya işletmeden istenir.
 
 Script: `python3 source/build.py` (galeri kökünden) veya herhangi bir dizinden tam yoluyla. Python paketleri: reportlab, Pillow. Sistem aracı: pdftoppm. Script web sitesi kaynaklarını değiştirmez; PDF, SVG, PNG ve metin dosyalarını yeniden üretir. Open Sans font ailesi SIL Open Font License 1.1 ile sunulur; lisans `source/fonts/OFL.txt` içindedir. Kaynak dosyaların yalnızca bu artefaktı üretmek için kullandığı bağımlılıklar sitenin çalışma zamanına eklenmedi.
+
+Türkçe büyük `İ` harfinin noktası, çok satırlı başlıklarda üst satıra taşmaması için paketteki üç fontta aşağı alındı. Diğer harfler ve karakter genişlikleri değişmedi. Düzeltme `source/fonts/fix_dotted_i.py` ile tekrar uygulanabilir; mevcut fontlarda tekrar çalıştırıldığında dosyalar değişmez.
 
 ## İnceleme kaynakları
 
