@@ -24,6 +24,10 @@ for name,file in [('Display','Display.ttf'),('Body','Body.ttf'),('Semi','Body-Se
 INK='#090909'; RED='#D81920'; PAPER='#F2F0EB'; GRAY='#A4A4A4'; LINE='#353535'; SOFT='#171717'
 NAMES=['01-yeni-enerji','02-harekete-alan','03-ritmini-sec','04-kendi-alanin','05-ilk-adim']
 
+def tr_upper(value):
+    """Use Turkish casing for labels generated from sentence case."""
+    return value.replace('i', 'İ').replace('ı', 'I').upper()
+
 class Art:
     def __init__(self,name):
         self.name=name; self.c=canvas.Canvas(str(TMP/(name+'.pdf')),pagesize=(1080,1350)); self.svg=[]
@@ -90,7 +94,7 @@ class Art:
 a=Art(NAMES[0]);a.header('AÇILIŞ SERİSİ / 01')
 a.txt('GÜNEŞTEPE’DE',72,250,28,'Semi',GRAY,1.5)
 a.txt('YENİ BİR',65,432,177,'Display')
-a.txt('ENERJİ.',65,624,224,'Display')
+a.txt('ENERJİ.',65,653,224,'Display')
 a.rect(0,693,1080,481,RED)
 for i in range(5):
     x=590+i*95
@@ -125,13 +129,13 @@ a.footer('Sen hangisiyle başlardın?');a.finish()
 a=Art(NAMES[3]);a.pic('woman-campaign.png',0,0,1080,1350)
 a.rect(0,0,400,1178,INK,.60);a.header('KADINLARA ÖZEL / 04')
 a.txt('KENDİ',65,352,135,'Display');a.txt('ALANIN.',65,489,135,'Display')
-a.txt('KENDİ',65,643,135,'Display',RED);a.txt('RİTMİN.',65,780,135,'Display',RED)
+a.txt('KENDİ',65,643,135,'Display',RED);a.txt('RİTMİN.',65,812,135,'Display',RED)
 a.rect(72,898,6,162,RED);a.txt('Kadınlara özel',100,946,30,'Semi');a.txt('izole antrenman alanı.',100,988,27,'Body');a.txt('Pilates / Yoga / Zumba',100,1048,23,'Body',PAPER)
 a.footer('Alan ve grup dersleri için bilgi al.',bar=True);a.txt('TEMSİLİ KAMPANYA GÖRSELİ',664,1162,16,'Body',GRAY);a.finish()
 # 05: first step invitation. Text avoids guaranteed results or shame.
 a=Art(NAMES[4]);a.pic('man-campaign.png',0,0,1080,1350)
 a.rect(0,0,430,1178,INK,.65);a.header('BAŞLANGIÇ / 05')
-a.txt('İLK',65,344,160,'Display');a.txt('ADIM',65,504,160,'Display');a.txt('SENİN.',65,664,160,'Display',RED)
+a.txt('İLK',65,344,160,'Display');a.txt('ADIM',65,504,160,'Display');a.txt('SENİN.',65,694,160,'Display',RED)
 a.line(72,737,330,737,RED,7)
 a.txt('Hareket et.',72,809,31,'Semi');a.txt('Enerjini yükselt.',72,855,31,'Semi')
 a.txt('Yeni rutinin',72,989,29,'Body');a.txt('burada başlayabilir.',72,1031,29,'Body')
@@ -169,10 +173,10 @@ def pic(path,x,y,w,h,cover=False):
 def start(section,title=None,light=False):
     global page_no
     page_no+=1; bg=PAPER if light else INK;fg=INK if light else PAPER
-    rect(0,0,W,H,bg); t('TERRA FITNESS CLUB',48,38,11,'Semi',fg,1.3);t(section.upper(),504,38,10,'Semi',RED,1.0)
+    rect(0,0,W,H,bg); t('TERRA FITNESS CLUB',48,38,11,'Semi',fg,1.3);t(tr_upper(section),504,38,10,'Semi',RED,1.0)
     line(48,54,912,54,GRAY if light else LINE)
     if title:t(title,48,120,43,'Display',fg)
-    t('MARKA VE SOSYAL MEDYA KİTABI / ÖNERİ V1.1',48,572,9,'Body',GRAY if not light else '#585858',.4)
+    t('MARKA VE SOSYAL MEDYA KİTABI / ÖNERİ V1.2',48,572,9,'Body',GRAY if not light else '#585858',.4)
     t(f'{page_no:02d} / 24',865,572,10,'Semi',GRAY if not light else '#585858')
     return fg
 
@@ -249,7 +253,7 @@ t('HAREKETE',48,250,91,'Display');t('ALAN AÇ.',48,344,91,'Display',RED)
 t('Open Sans Condensed ExtraBold',535,200,24,'Display');para('Başlık / güçlü sayılar / kısa mesajlar.<br/>Türkçe karakterler korunur; en çok 2-4 satır.',535,225,352,15,GRAY)
 t('Open Sans',535,329,23,'Semi');para('Gövde / açıklama / yönlendirme.<br/>Regular ve Semibold. Okuma kolaylığı için dar başlık fontu uzun metinde kullanılmaz.',535,350,352,15,GRAY)
 line(48,436,912,436)
-para('1080 × 1350 post: ana başlık 118-224 px, gövde 27-35 px, etiket 20-25 px. Kitapta başlık 43 px, gövde 14-20 px. Başlık satır arası yaklaşık %100; gövde %145-150.',48,462,854,15)
+para('1080 × 1350 post: ana başlık 118-224 px, gövde 27-35 px, etiket 20-25 px. Kitapta başlık 43 px, gövde 14-20 px. Büyük İ içeren başlıklarda nokta için ek satır aralığı bırakılır; gövdede %145-150 kullanılır.',48,462,854,15)
 end()
 # 09 graphic system
 start('03 / Grafik dil','Bir iz bırak: yükselen kesit.')
@@ -294,7 +298,7 @@ postmeta=[
 for i,(title,category,body,cta,measure) in enumerate(postmeta):
     start(f'05 / Post 0{i+1}',title)
     pic(SOC/'posts'/(NAMES[i]+'.png'),48,154,297,371)
-    t(category.upper(),397,182,11,'Semi',RED,1)
+    t(tr_upper(category),397,182,11,'Semi',RED,1)
     para(body,397,214,490,20)
     line(397,332,912,332)
     t('ÇAĞRI',397,366,11,'Semi',GRAY,1);para(cta,397,382,490,17,font='Semi')
@@ -374,7 +378,7 @@ print('Generated 24-page brandbook and five 1080x1350 posts; source SVGs and lay
 preview=canvas.Canvas(str(TMP/'series-preview.pdf'),pagesize=(1240,440))
 preview.setFillColor(HexColor(INK));preview.rect(0,0,1240,440,fill=1,stroke=0)
 preview.setFont('Display',32);preview.setFillColor(HexColor(PAPER));preview.drawString(30,387,'TERRA / HAREKETE ALAN AÇ.')
-preview.setFont('Body',12);preview.setFillColor(HexColor(GRAY));preview.drawString(30,361,'5 Instagram örneği / Açılış serisi / Marka önerisi v1.1')
+preview.setFont('Body',12);preview.setFillColor(HexColor(GRAY));preview.drawString(30,361,'5 Instagram örneği / Açılış serisi / Marka önerisi v1.2')
 for i,n in enumerate(NAMES):
     preview.drawImage(str(SOC/'posts'/(n+'.png')),30+i*240,51,220,275)
     preview.setFont('Semi',12);preview.setFillColor(HexColor(PAPER));preview.drawString(30+i*240,26,['01 / Açılış','02 / Alan','03 / Branşlar','04 / Kadınlara özel','05 / İlk adım'][i])

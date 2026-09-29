@@ -1,6 +1,6 @@
 # Terra Fitness Club — sunum seti
 
-28 Eylül 2026 / Tipografi düzeltmesi v1.1
+29 Eylül 2026 / Türkçe tipografi düzeltmesi v1.2
 
 ## Görüşmede kullan
 
@@ -17,7 +17,7 @@ Bu çalışma işletmenin onaylanmış marka kılavuzu değil, Kerem'in sosyal m
 
 Script: `python3 source/build.py` (galeri kökünden) veya herhangi bir dizinden tam yoluyla. Python paketleri: reportlab, Pillow. Sistem aracı: pdftoppm. Script web sitesi kaynaklarını değiştirmez; PDF, SVG, PNG ve metin dosyalarını yeniden üretir. Open Sans font ailesi SIL Open Font License 1.1 ile sunulur; lisans `source/fonts/OFL.txt` içindedir. Kaynak dosyaların yalnızca bu artefaktı üretmek için kullandığı bağımlılıklar sitenin çalışma zamanına eklenmedi.
 
-Türkçe büyük `İ` harfinin noktası, çok satırlı başlıklarda üst satıra taşmaması için paketteki üç fontta aşağı alındı. Diğer harfler ve karakter genişlikleri değişmedi. Düzeltme `source/fonts/fix_dotted_i.py` ile tekrar uygulanabilir; mevcut fontlarda tekrar çalıştırıldığında dosyalar değişmez.
+Fontlar özgün Open Sans çizimleriyle kullanılır; `İ` noktası değiştirilmez. Büyük `İ` içeren çok satırlı başlıklarda satır konumu ayarlanarak noktanın üst satırla çakışması önlenir. Otomatik büyük harf etiketleri Türkçe `i → İ`, `ı → I` kuralıyla üretilir. Yeni başlık eklendiğinde PDF ve beş post önizlemesindeki nokta boşlukları yeniden kontrol edilir.
 
 ## İnceleme kaynakları
 
