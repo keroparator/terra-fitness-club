@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" fill="none">
+  <title>Terra Fitness Club</title>
+  <desc>Özgün çember, iki parçalı T simgesi ve geometrik Terra Fitness yazısının yeniden çizimi.</desc>
+  <g fill="#d81920">
+    <path fill-rule="evenodd" d="M75 1.5a73.5 73.5 0 1 1 0 147 73.5 73.5 0 0 1 0-147Zm0 4a69.5 69.5 0 1 0 0 139 69.5 69.5 0 0 0 0-139Z"/>
+    <path d="M36 24.5h36.5v59L65 75V31.5H43Z M77 24.5h36.5l-7 7H84.5V75L77 83.5Z M48 37h12v15Z M89.5 37h12l-12 15Z"/>
+    <path d="M20 90h20v4H32v13h-4V94H18Z M43 90h19l-2 4H47v3h13l-2 3.5H47v3h15l-2 3.5H43Z"/>
+    <path d="M65.5 90h12.2c4.1 0 6.2 2.1 6.2 5.7 0 3.3-1.8 5.2-5.1 5.7l5.7 5.6h-6l-6.3-6H70v6h-4.5V97.5h11.8c1.4 0 2.2-.6 2.2-1.8s-.8-1.7-2.2-1.7H67Z M87.5 90h12.2c4.1 0 6.2 2.1 6.2 5.7 0 3.3-1.8 5.2-5.1 5.7l5.7 5.6h-6l-6.3-6H92v6h-4.5V97.5h11.8c1.4 0 2.2-.6 2.2-1.8s-.8-1.7-2.2-1.7H89Z"/>
+    <path d="m109 107 8.8-17h3.6l9 17h-4.7l-6.1-11.8-6 11.8Z"/>
+    <path d="M44 112h4v1h-3v1.3h2.6v1H45v2.7h-1Z M53 112h1v6h-1Z M59 112h4.5v1h-1.75v5h-1v-5H59Z M68.5 112h1l2.8 4.1V112h1v6h-1l-2.8-4.1v4.1h-1Z M78.5 112h4v1h-3v1.5h2.6v1h-2.6v1.5h3v1h-4Z M91.5 112v1h-3v1.5h3v3.5h-4v-1h3v-1.5h-3V112Z M101 112v1h-3v1.5h3v3.5h-4v-1h3v-1.5h-3V112Z"/>
+    <path d="M24 113.8h16v1.2H24Z M110 113.8h16v1.2h-16Z"/>
+  </g>
+</svg>
