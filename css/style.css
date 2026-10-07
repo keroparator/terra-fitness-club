@@ -284,6 +284,7 @@ img {
 .hero h1 {
   max-width: 900px;
   font-size: clamp(4.5rem, 10vw, 9rem);
+  line-height: 1.12;
 }
 
 .hero h1 span,
