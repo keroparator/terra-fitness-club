@@ -271,8 +271,7 @@ img {
 .section-heading h2,
 .experience-statement h2,
 .manifesto p,
-.location-card h2,
-.closing-inner h2 {
+.location-card h2 {
   margin: 0;
   font-family: var(--display);
   font-weight: 900;
@@ -288,8 +287,7 @@ img {
 
 .hero h1 span,
 .section-heading em,
-.location-card em,
-.closing-inner em {
+.location-card em {
   color: var(--red);
   font-style: normal;
 }
@@ -473,14 +471,12 @@ img {
 }
 
 .section-heading .kicker,
-.location-card .kicker,
-.closing-inner .kicker {
+.location-card .kicker {
   margin-bottom: 30px;
 }
 
 .section-heading h2,
-.location-card h2,
-.closing-inner h2 {
+.location-card h2 {
   font-size: clamp(3.2rem, 6.5vw, 6.6rem);
 }
 
@@ -1096,51 +1092,6 @@ img {
   text-transform: uppercase;
 }
 
-.closing-cta {
-  padding: 100px 0;
-  border-top: 1px solid var(--line);
-  background: var(--ink-soft);
-}
-
-.closing-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.closing-inner h2 {
-  font-size: clamp(3.5rem, 7.5vw, 7rem);
-}
-
-.round-cta {
-  display: flex;
-  width: 210px;
-  height: 210px;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  border-radius: 50%;
-  background: var(--red);
-  font-size: 0.9rem;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  line-height: 1.35;
-  text-transform: uppercase;
-  transition: transform 250ms ease, background 250ms ease;
-}
-
-.round-cta i {
-  font-size: 1.5rem;
-  font-style: normal;
-}
-
-.round-cta:hover {
-  background: #f1262d;
-  transform: rotate(-4deg) scale(1.04);
-}
-
 .site-footer {
   padding: 42px 0;
   border-top: 1px solid var(--line);
@@ -1411,8 +1362,7 @@ img {
   }
 
   .section-heading h2,
-  .location-card h2,
-  .closing-inner h2 {
+  .location-card h2 {
     font-size: clamp(3rem, 15vw, 4.7rem);
   }
 
@@ -1515,17 +1465,6 @@ img {
 
   .location-actions .button {
     width: 100%;
-  }
-
-  .closing-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .round-cta {
-    width: 170px;
-    height: 170px;
-    align-self: flex-end;
   }
 
   .footer-inner {
