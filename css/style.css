@@ -941,14 +941,24 @@ img {
 
 .location-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 5vw, 80px);
+}
+
+.location-grid > * {
+  min-width: 0;
+}
+
+.location-card h2 {
+  max-width: 100%;
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  overflow-wrap: anywhere;
 }
 
 .contact-row {
   display: grid;
   max-width: 640px;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 100px minmax(0, 1fr);
   gap: 28px;
   padding: 24px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
@@ -972,6 +982,7 @@ img {
   margin: 0;
   font-size: 0.98rem;
   font-weight: 650;
+  overflow-wrap: anywhere;
 }
 
 .contact-row a:hover {
@@ -980,10 +991,17 @@ img {
 
 .map-card {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 590px;
   overflow: hidden;
   background: #d6d2c8;
+}
+
+.map-visual {
+  position: relative;
+  flex: 1 0 260px;
+  overflow: hidden;
 }
 
 .map-grid {
@@ -1019,8 +1037,8 @@ img {
 
 .map-pin {
   position: absolute;
-  top: 42%;
-  left: 55%;
+  top: 50%;
+  left: 50%;
   display: grid;
   width: 82px;
   height: 82px;
@@ -1034,18 +1052,18 @@ img {
   font-size: 2.3rem;
   box-shadow: 0 14px 40px rgba(89, 0, 4, 0.32);
   transition: transform 250ms ease;
+  transform: translate(-50%, -50%);
 }
 
 .map-card:hover .map-pin {
-  transform: scale(1.12);
+  transform: translate(-50%, -50%) scale(1.12);
 }
 
 .map-label {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
+  position: relative;
+  flex: 0 0 auto;
   display: grid;
+  margin: 0 20px 20px;
   padding: 23px;
   background: var(--ink);
   color: var(--white);
@@ -1063,6 +1081,8 @@ img {
   margin-top: 5px;
   font-family: var(--display);
   font-size: 2rem;
+  line-height: var(--heading-line-height);
+  overflow-wrap: anywhere;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
