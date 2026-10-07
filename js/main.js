@@ -80,6 +80,33 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+const ticker = document.querySelector('.ticker');
+const tickerTrack = ticker.querySelector('.ticker-track');
+const tickerGroup = ticker.querySelector('.ticker-group');
+const tickerItems = [...tickerGroup.children].map((item) => item.cloneNode(true));
+
+const updateTicker = () => {
+  const group = tickerGroup.cloneNode(false);
+  group.append(...tickerItems.map((item) => item.cloneNode(true)));
+  tickerTrack.replaceChildren(group);
+
+  // Fill a whole viewport before duplicating the identical animation half.
+  while (group.offsetWidth < ticker.clientWidth) {
+    group.append(...tickerItems.map((item) => {
+      const copy = item.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      return copy;
+    }));
+  }
+
+  const duplicate = group.cloneNode(true);
+  duplicate.setAttribute('aria-hidden', 'true');
+  tickerTrack.append(duplicate);
+};
+
+new ResizeObserver(updateTicker).observe(ticker);
+document.fonts.ready.then(updateTicker);
+
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });

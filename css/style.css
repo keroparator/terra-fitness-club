@@ -429,14 +429,19 @@ img {
 .ticker-track {
   display: flex;
   width: max-content;
-  align-items: center;
-  gap: 34px;
-  padding: 14px 0 12px;
   font-family: var(--display);
   font-size: 1.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   animation: ticker 22s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 34px;
+  padding: 14px 34px 12px 0;
 }
 
 .ticker-track i {
@@ -1534,5 +1539,24 @@ img {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .ticker-track {
+    width: 100%;
+    animation: none;
+    transform: none;
+  }
+
+  .ticker-group {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    padding-inline: 16px;
+  }
+
+  .ticker-track > [aria-hidden="true"],
+  .ticker-group > [aria-hidden="true"] {
+    display: none;
   }
 }
