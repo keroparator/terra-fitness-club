@@ -13,6 +13,7 @@
   --line: rgba(255, 255, 255, 0.14);
   --shell: min(1180px, calc(100% - 40px));
   --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --heading-line-height: 1.04;
   --body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -277,14 +278,13 @@ img {
   font-family: var(--display);
   font-weight: 900;
   letter-spacing: 0.01em;
-  line-height: 0.88;
+  line-height: var(--heading-line-height);
   text-transform: uppercase;
 }
 
 .hero h1 {
   max-width: 900px;
   font-size: clamp(4.5rem, 10vw, 9rem);
-  line-height: 1.04;
 }
 
 .hero h1 span,
@@ -630,7 +630,7 @@ img {
   font-family: var(--display);
   font-size: clamp(2.7rem, 5vw, 4.7rem);
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: var(--heading-line-height);
   text-transform: uppercase;
 }
 
@@ -717,7 +717,7 @@ img {
   font-family: var(--display);
   font-size: clamp(3.5rem, 7vw, 7rem);
   letter-spacing: 0.01em;
-  line-height: 0.88;
+  line-height: var(--heading-line-height);
   text-transform: uppercase;
 }
 
@@ -791,7 +791,7 @@ img {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 900;
   letter-spacing: 0.02em;
-  line-height: 0.9;
+  line-height: var(--heading-line-height);
   text-transform: uppercase;
 }
 
@@ -816,6 +816,7 @@ img {
 .women-feature h3 {
   margin: 0;
   font-size: 1.22rem;
+  line-height: var(--heading-line-height);
   text-transform: uppercase;
 }
 
@@ -900,6 +901,7 @@ img {
 .feature-item h3 {
   margin: 0;
   font-size: 1.28rem;
+  line-height: var(--heading-line-height);
   text-transform: uppercase;
 }
 
