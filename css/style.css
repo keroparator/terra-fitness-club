@@ -6,7 +6,6 @@
   --paper: #f2f0eb;
   --cream: #efe3d3;
   --cream-soft: #f8f1e8;
-  --warm-ink: #281d1a;
   --rose: #c96f74;
   --white: #ffffff;
   --muted: #a4a4a4;
@@ -665,10 +664,11 @@ img {
 .women {
   position: relative;
   overflow: hidden;
+  padding-bottom: 64px;
   background:
     linear-gradient(120deg, rgba(255, 255, 255, 0.42), transparent 48%),
     var(--cream);
-  color: var(--warm-ink);
+  color: var(--ink);
 }
 
 .women::before {
@@ -676,7 +676,7 @@ img {
   position: absolute;
   inset: 0;
   opacity: 0.18;
-  background-image: radial-gradient(rgba(40, 29, 26, 0.55) 0.65px, transparent 0.65px);
+  background-image: radial-gradient(rgba(9, 9, 9, 0.55) 0.65px, transparent 0.65px);
   background-size: 9px 9px;
   pointer-events: none;
 }
@@ -734,12 +734,13 @@ img {
 .women-heading > p {
   max-width: 430px;
   margin: 0 0 8px;
-  color: #66534d;
+  color: #555;
   font-size: 1.05rem;
 }
 
 .women-grid {
   display: grid;
+  align-items: center;
   margin-top: 70px;
   grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
   gap: 70px;
@@ -748,12 +749,13 @@ img {
 .women-signature {
   position: relative;
   display: flex;
-  min-height: 430px;
-  padding: 36px;
+  min-height: 300px;
+  padding: 32px;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
-  background: var(--warm-ink);
+  background: var(--ink);
   color: var(--cream-soft);
 }
 
@@ -765,14 +767,6 @@ img {
   width: 330px;
   height: 330px;
   border: 1px solid rgba(239, 227, 211, 0.08);
-  border-radius: 50%;
-}
-
-.women-signature img {
-  position: relative;
-  z-index: 1;
-  width: 82px;
-  height: 82px;
   border-radius: 50%;
 }
 
@@ -792,8 +786,9 @@ img {
 }
 
 .women-signature strong {
+  display: block;
   font-family: var(--display);
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(2.5rem, 3.6vw, 3.5rem);
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: var(--heading-line-height);
@@ -801,7 +796,7 @@ img {
 }
 
 .women-features {
-  border-top: 1px solid rgba(40, 29, 26, 0.24);
+  border-top: 1px solid rgba(9, 9, 9, 0.24);
 }
 
 .women-feature {
@@ -809,7 +804,7 @@ img {
   grid-template-columns: 56px 1fr;
   gap: 22px;
   padding: 34px 0;
-  border-bottom: 1px solid rgba(40, 29, 26, 0.24);
+  border-bottom: 1px solid rgba(9, 9, 9, 0.24);
 }
 
 .women-feature > span {
@@ -828,28 +823,7 @@ img {
 .women-feature p {
   max-width: 490px;
   margin: 10px 0 0;
-  color: #6b5953;
-}
-
-.women-cta {
-  display: inline-flex;
-  min-height: 54px;
-  align-items: center;
-  gap: 18px;
-  margin-top: 38px;
-  padding: 0 24px;
-  background: var(--warm-ink);
-  color: var(--cream-soft);
-  font-size: 0.74rem;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: background 180ms ease, transform 180ms ease;
-}
-
-.women-cta:hover {
-  background: var(--red);
-  transform: translateY(-3px);
+  color: #555;
 }
 
 .experience {
@@ -1308,7 +1282,7 @@ img {
   }
 
   .women-signature {
-    min-height: 360px;
+    min-height: 250px;
   }
 
   .experience-statement h2 {
@@ -1400,6 +1374,10 @@ img {
     padding: 82px 0;
   }
 
+  .women {
+    padding-bottom: 44px;
+  }
+
   .section-heading h2,
   .location-card h2,
   .closing-inner h2 {
@@ -1446,22 +1424,17 @@ img {
   }
 
   .women-signature {
-    min-height: 320px;
-    padding: 28px;
+    min-height: 220px;
+    padding: 24px;
   }
 
   .women-signature strong {
-    font-size: clamp(2.7rem, 14vw, 4rem);
+    font-size: clamp(2rem, 9.6vw, 2.7rem);
   }
 
   .women-feature {
     grid-template-columns: 40px 1fr;
     gap: 12px;
-  }
-
-  .women-cta {
-    width: 100%;
-    justify-content: center;
   }
 
   .experience-grid {
