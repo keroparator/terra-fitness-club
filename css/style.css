@@ -892,25 +892,37 @@ img {
 
 .manifesto {
   position: relative;
+  isolation: isolate;
   padding: 110px 0;
   overflow: hidden;
-  background: var(--red);
+  background: linear-gradient(115deg, var(--red) 45%, var(--red-dark));
 }
 
 .manifesto::before {
-  content: "T";
+  content: "";
   position: absolute;
-  top: 50%;
-  right: -0.08em;
-  color: rgba(0, 0, 0, 0.13);
-  font-family: var(--display);
-  font-size: 38rem;
-  line-height: 0.7;
-  transform: translateY(-50%);
+  inset: 14% -4% 14% auto;
+  width: 42%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 28px rgba(9, 9, 9, 0.08), 0 0 0 56px rgba(9, 9, 9, 0.05);
+  transform: skewX(-14deg);
+  pointer-events: none;
+}
+
+.manifesto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, transparent 0 46px, rgba(9, 9, 9, 0.12) 46px 48px);
+  mask-image: linear-gradient(90deg, transparent, #000);
+  pointer-events: none;
 }
 
 .manifesto-inner {
   position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.12em;
 }
 
 .manifesto p {
@@ -1450,11 +1462,22 @@ img {
   }
 
   .manifesto {
-    padding: 80px 0;
+    padding: 64px 0;
+  }
+
+  .manifesto::before {
+    inset: 18% -12% 18% auto;
+    width: 48%;
+    box-shadow: 0 0 0 18px rgba(9, 9, 9, 0.08), 0 0 0 36px rgba(9, 9, 9, 0.05);
   }
 
   .manifesto p {
-    font-size: clamp(3.4rem, 16.5vw, 5.4rem);
+    font-size: clamp(1.75rem, 8.5vw, 3.2rem);
+  }
+
+  .manifesto .outline-text {
+    color: var(--white);
+    -webkit-text-stroke: 0;
   }
 
   .map-card {
