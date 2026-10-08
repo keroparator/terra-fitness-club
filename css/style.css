@@ -791,6 +791,17 @@ img {
   margin-top: 36px;
 }
 
+.women-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.women-gallery .salon-photo {
+  aspect-ratio: 2.6;
+}
+
 .salon-gallery-reversed {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
   margin-top: 14px;
@@ -1664,6 +1675,8 @@ summary::-webkit-details-marker { display: none; }
   .experience { padding: 40px 0; }
   .salon-gallery { height: 300px; gap: 8px; margin-top: 28px; }
   .salon-gallery-reversed { margin-top: 8px; }
+  .women-gallery { gap: 12px; margin-top: 28px; }
+  .women-gallery .salon-photo { aspect-ratio: 1.6; }
   .salon-photo { border-radius: 12px; }
   .salon-photo figcaption { padding: 28px 12px 12px; }
   .salon-photo figcaption span { font-size: 0.65rem; letter-spacing: 0; }

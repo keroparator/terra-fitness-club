@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **22**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **24**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -227,3 +227,12 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 
 - Kerem ikinci kolajdaki Kuvvet antrenmanı fotoğrafının değiştirilmesini istedi. 7614 ve7590 kareleri büyük önizlemeyle karşılaştırıldı; daha geniş ekipman/ayna alanını gösteren mthevision-7614.jpg seçildi. Mevcut assets/terra-salon-makineler.webp 1000×900, kalite82 WebP olarak yenilendi (78776 bayt); orijinal korunuyor. index.html görsel adresine ?v=2 eklendi ve alt metin güncellendi. Kolaj yerleşimi ve başlık aynı.
 - 375/1440px tarayıcı görünümü görsel incelendi; yeni dosya doğal genişlik1000 ile yükleniyor, yatay taşma yok. node --check js/main.js ve git diff --check geçti. Gerçek telefon testi yapılmadı. Kullanıcı değerlendirmesi bekleniyor; sunucu açık.
+
+
+## Kadınlar bölümünde iki yatay fotoğraf — 8 Ekim 2026
+
+- Kerem kadınlar bölümüne iki fotoğraf eklenmesini, biri Pilates stüdyosu olmasını istedi. İlk uygulamada yan yana dikey düzen denendi; çalışma devam ederken Kerem açıkça alt alta daha geniş yatay iki fotoğraf istedi. Son uygulama tek sütunda tam genişlikte iki yatay kare; önceki yan yana düzen geçerli değil.
+- Büyük önizlemede7558/7559/7531 incelendi. Son kaynaklar Genel Salon Fotoğrafları/mthevision-7559.jpg (Pilates) ve7531.jpg (aynalar/dambıl/sehpa/bisiklet alanı). Pilates kaynağının sağ %22 alanı, kenardaki çekim yansımasını kadraj dışında bırakmak için kesildi. İkisi1400×875, kalite82 WebP: assets/terra-kadinlar-pilates.webp84544 bayt; terra-kadinlar-antrenman.webp114458 bayt. Toplam199002 bayt. Orijinaller korunuyor; alt metin, width/height, lazy/async mevcut. img adresleri?v=2; CSS v24.
+- Fotoğraflar kadınlar bölümünün mevcut üç maddesinin ardından geliyor. Mobil16:10, masaüstü/tablet2.6:1 oran; aralık mobil12px, diğerlerinde14px. Kullanıcı isteği doğrultusunda fotoğraflar alt alta; carousel yok. Yeni animasyon/bağımlılık eklenmedi.
+- 375px son düzen görsel incelendi: iki fotoğraf aynı x ve genişlikte, y değerleri artıyor; her biri yaklaşık330×205.5px içerik ölçüsünde, doğal genişlik1400 ile yükleniyor.320/375/768/1440px yatay taşma yok.1440px her kart1180×453.8px ve alt alta; ikinci fotoğraf görünümü incelendi. Konsol hata kaydı boş. JS sözdizimi, HTML id/anchor/görsel dosya ve diff kontrolü geçti. Gerçek telefon testi yapılmadı.
+- index.html, css/style.css, iki yeni WebP ve bu not değişti. Sunucu açık bırakıldı, push/yayın yok. Sonraki adım kullanıcı yatay düzeni değerlendirebilir.
