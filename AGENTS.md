@@ -1,5 +1,12 @@
 # AGENTS.md
 
+## Güncel çalışma düzeni — 8 Ekim 2026
+
+- Kerem’in son talimatı: revizyon ayrıntıları, fikirler ve geçici çalışma notları proje kökündeki `notes.md` içinde tutulur; her maddeyi Jarvis’e yazma. Aşağıdaki genel Jarvis kayıt düzeni bu talimatı geçersiz kılamaz. Bu revizyon çalışmasında güncel kapsam için `notes.md` esas alınır; eski Jarvis taslaklarıyla çelişirse son kullanıcı kararları önceliklidir.
+- Site yaklaşık %80 mobil kullanım hedefiyle tasarlanır. Mobil yerleşim ve etkileşim testleri önceliklidir; tablet ve masaüstü uyumu korunur. Gerçek cihaz testi ile tarayıcı mobil görünümü kontrolünü ayrı raporla.
+- Tek sayfalı yapı korunur. Üyeliklerde fiyat gösterilmez. Hakkımızda, deneyim ve vizyon tek bölümde toplanır; deneyim süresi Kerem’in düzeltmesiyle 12 yıldır.
+- Şu an yalnız not alma/fikir geliştirme aşamasındayız. Kerem uygulamaya geçilmesini söylemeden siteyi değiştirme. Görseller diğer revizyonlar sonrasına ertelendi; o aşamada hatırlat.
+
 ## Jarvis ana hafızası ve kayıt düzeni
 
 - Ana hafıza `/home/kerem/Jarvis` klasörüdür (büyük `J`). Anlamlı işe başlarken buradaki `AGENTS.md` ile belirttiği güncel başlangıç kayıtlarını oku: `zihin/Core.md`, `Soul.md`, `Kurallar.md`, `Last-Session.md`, `Threads.md` aktif kısmı ve varsa `Journal.md` son girişi. Konuyla ilgili önceki kaynakları ara ve gerçekten aç.
