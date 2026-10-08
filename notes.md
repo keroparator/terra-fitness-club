@@ -2,7 +2,39 @@
 
 Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içindir.
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
-Kerem 8 Ekim 2026’da “Başla” diyerek uygulamayı yetkilendirdi. Aşağıdaki revizyonlar yerelde uygulandı; görseller ertelenmiş durumda ve kullanıcı değerlendirmesi bekleniyor.
+Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
+
+## Güncel devir — 8 Ekim 2026, başka chatte devam
+
+**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi; birkaç küçük iş kaldığını söyledi. Aşağıdaki dört işi **şu an uygulamama, yalnız not alma ve geri döndüğünde hatırlatma** talimatı verdi. Yeni chatte bu listeyi hatırlat; kullanıcı devam etmeden geliştirmeye başlama.
+
+### Sıradaki işler — henüz uygulanmadı
+
+1. **Salon yaşamı en üste alınacak.** Salon fotoğrafları eklenecek ve bölüm görsel açıdan zenginleştirilecek. “En üst”ün hero’nun yerine mi yoksa hemen altına mı geldiği henüz netleşmedi; yerleşimi devam ederken belirle. Kullanılacak salon fotoğrafları henüz seçilmedi/teslim edilmedi. Önceki ertelenen görseller maddesi bu işle yeniden gündemde.
+2. **Terra logosu daha fazla kullanılacak.** Kullanılacak konumlar ve yoğunluk henüz belirlenmedi; mevcut özgün logoyu esas al.
+3. **Navbar yeniden elden geçirilecek.** Yeni tasarımın ayrıntıları henüz verilmedi. Mevcut mobil alt menüler tek sütun ve animasyonlu; branş/paket hedefleri çalışıyor.
+4. **Hyperion’un sayfası incelenecek.** Hangi Hyperion olduğu ve URL belirtilmedi. Başka bir siteyi varsayma; devam ederken doğru bağlantıyı netleştir. Henüz araştırılmadı.
+
+### Şu an uygulanan tasarım ve yöntem
+
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **19**, JS **5**.
+- Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
+- Salon yaşamı (#deneyim) şu anda üyeliklerden sonra, Hakkımızda’dan önce. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
+- Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
+- Kart renkleri: 3 ay hafif parlak siyah, 6 ay kırmızı ışık alan daha parlak siyah, 12 ay beyaz yansımalı kırmızı. Hakkımızda deneyim/vizyon birlikte; vizyon kartı Terra kırmızısı, kahverengi kaldırıldı. Deneyim **12 yıl**, salonun açık olduğu süre diye yorumlama.
+- Mobil menü paneli ve details açılışları animasyonlu; Branşlar ve Üyelik Paketleri seçenekleri **tek sütun**. Paket seçimi ilgili kartı merkezler, branş seçimi ilgili ana sayfa kartına gider; menü kapanır. Klavye/inert/ARIA senkronu korunur.
+- İletişim adı, Google işletme saatleri ve gerçek Maps iframe’i uygulandı. Saatlerin 8 Ekim tarihli doğrulaması ayrıntılarda. SSS ve açıkça temsili olarak işaretli yorumlar var; gerçek yorumlarla değiştirme takibi sürüyor.
+- Kapsam dışı kalan öneriler: yorum carousel’i ve Hakkımızda metnini kısaltma yapılmadı; bunları onaylanmış iş sayma.
+
+### Doğrulama, Git ve çalışma durumu
+
+- Son uygulama commit’i **f9abb27** (giriş/Salon yaşamı/slogan sadeleştirmesi). Önceki: 2833c40 kırmızı Hakkımızda, 0048691 tek sütun alt menüler, 5c90568 mobil menü, e91bf5e yan kart görünürlüğü, 97d330d paket renkleri/3D, 1762df2 ilk revizyon kapsamı.
+- Son kısaltmada 375×850 tarayıcı viewportunda toplam yükseklik 12.297→10.708 px (yaklaşık %13); Salon yaşamı 1.070→450 px. 320/375/430/768/1024/1440 px’de taşma yok; mobil giriş ve mobil/masaüstü şerit görsel kontrol edildi. JS sözdizimi, HTML kimlik/iç bağlantı ve diff kontrolleri geçti; gözlenen konsol hatası yok. Gerçek telefon ve canlı reduced-motion testi yapılmadı.
+- Test görselleri geçici `/tmp/terra-giris-kisa-mobil.jpg`, `/tmp/terra-salon-kisa-mobil.jpg`, `/tmp/terra-salon-kisa-desktop.jpg` yollarında; kalıcılıkları garanti değil, kaynak kod esas alınmalı.
+- Test için açılan geçici localhost sunucusu kapatıldı; LAN sunucusu da kapalı. Browser’da eski localhost sekmesinin açık olması sunucu çalışıyor demek değil. Gerekirse proje kökünde localhost HTTP sunucusu aç; test sonunda kapat. Push/yayın yapılmadı.
+- %80 mobil hedefi korunur. Yeni değişikliklerde özellikle telefon genişlikleri ve menü/carousel etkileşimleri doğrulanır; desktop/tablet de kontrol edilir.
+- Revizyon ayrıntıları ve bu devir **bu dosyada**; kullanıcı tercihi gereği Jarvis’e kopyalama. Proje AGENTS.md bu dosyayı güncel kapsam kaynağı olarak işaretler. Kendi değişikliklerini kontrol sonrası yerel commit et; push yetkisi yok.
+
 
 ## Mobil öncelik
 
