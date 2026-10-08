@@ -4,6 +4,9 @@ const nav = document.querySelector('[data-nav]');
 const navLinks = [...document.querySelectorAll('[data-nav] a[href^="#"]')];
 const sections = [...document.querySelectorAll('main section[id]')];
 const mobileMenu = window.matchMedia('(max-width: 900px)');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const navGroups = [...nav.querySelectorAll('.nav-group')];
+const menuLabel = menuToggle.querySelector('.sr-only');
 
 const updateMenuAvailability = (isOpen) => {
   const isUnavailable = mobileMenu.matches && !isOpen;
@@ -18,6 +21,8 @@ const updateMenuAvailability = (isOpen) => {
 
 const closeMenu = () => {
   menuToggle.setAttribute('aria-expanded', 'false');
+  menuLabel.textContent = 'Menüyü aç';
+  navGroups.forEach((group) => { group.open = false; });
   nav.classList.remove('is-open');
   header.classList.remove('menu-active');
   document.body.classList.remove('menu-open');
@@ -29,6 +34,7 @@ const closeMenu = () => {
 menuToggle.addEventListener('click', () => {
   const willOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
   menuToggle.setAttribute('aria-expanded', String(willOpen));
+  menuLabel.textContent = willOpen ? 'Menüyü kapat' : 'Menüyü aç';
   nav.classList.toggle('is-open', willOpen);
   header.classList.toggle('menu-active', willOpen);
   document.body.classList.toggle('menu-open', willOpen);
@@ -36,9 +42,34 @@ menuToggle.addEventListener('click', () => {
 });
 
 navLinks.forEach((link) => link.addEventListener('click', closeMenu));
+navGroups.forEach((group) => {
+  group.addEventListener('toggle', () => {
+    if (group.open) navGroups.filter((other) => other !== group).forEach((other) => { other.open = false; });
+  });
+});
+document.addEventListener('click', (event) => {
+  if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+    navGroups.forEach((group) => { group.open = false; });
+  }
+});
 
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeMenu();
+  if (event.key === 'Escape') {
+    const openGroup = navGroups.find((group) => group.open);
+    if (!mobileMenu.matches && openGroup) openGroup.querySelector('summary').focus();
+    closeMenu();
+  }
+  if (event.key !== 'Tab' || !mobileMenu.matches || !nav.classList.contains('is-open')) return;
+  const focusable = [menuToggle, ...nav.querySelectorAll('a, summary')].filter((element) => element.getClientRects().length);
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
 });
 
 mobileMenu.addEventListener('change', closeMenu);
@@ -65,7 +96,7 @@ document.querySelectorAll('.hero .reveal').forEach((element) => {
 
 document.querySelectorAll('.reveal').forEach((element, index) => {
   if (element.classList.contains('is-visible')) return;
-  element.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+  element.style.transitionDelay = `${Math.min(index % 3, 2) * 90}ms`;
   revealObserver.observe(element);
 });
 
@@ -73,8 +104,14 @@ const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     navLinks.forEach((link) => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+      if (link.dataset.package) return;
+      const active = link.getAttribute('href') === `#${entry.target.id}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
+    navGroups[0].querySelector('summary').classList.toggle('active', entry.target.id === 'branslar');
+    navGroups[1].querySelector('summary').classList.toggle('active', entry.target.id === 'uyelikler');
   });
 }, { rootMargin: '-35% 0px -60%', threshold: 0 });
 
@@ -110,3 +147,74 @@ document.fonts.ready.then(updateTicker);
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
+
+
+const membershipTrack = document.querySelector('[data-membership-track]');
+const membershipCards = [...membershipTrack.querySelectorAll('[data-membership]')];
+const packageButtons = [...document.querySelectorAll('[data-select-package]')];
+const previousPackage = document.querySelector('[data-carousel-prev]');
+const nextPackage = document.querySelector('[data-carousel-next]');
+const carouselStatus = document.querySelector('[data-carousel-status]');
+let selectedPackage = 0;
+let carouselFrame = 0;
+
+const updatePackageSelection = (index) => {
+  selectedPackage = index;
+  membershipCards.forEach((card, cardIndex) => card.classList.toggle('is-selected', cardIndex === index));
+  packageButtons.forEach((button, buttonIndex) => button.setAttribute('aria-pressed', String(buttonIndex === index)));
+  document.querySelectorAll('[data-package]').forEach((link) => {
+    link.classList.toggle('active', link.dataset.package === membershipCards[index].dataset.membership);
+  });
+  previousPackage.disabled = index === 0;
+  nextPackage.disabled = index === membershipCards.length - 1;
+  carouselStatus.textContent = `${membershipCards[index].dataset.membership} aylık üyelik, ${index + 1} / ${membershipCards.length}`;
+};
+
+const showPackage = (months) => {
+  const index = membershipCards.findIndex((card) => card.dataset.membership === String(months));
+  if (index < 0) return;
+  updatePackageSelection(index);
+  if (!mobileMenu.matches) return;
+  const trackBounds = membershipTrack.getBoundingClientRect();
+  const cardBounds = membershipCards[index].getBoundingClientRect();
+  membershipTrack.scrollTo({
+    left: membershipTrack.scrollLeft + cardBounds.left - trackBounds.left - (membershipTrack.clientWidth - cardBounds.width) / 2,
+    behavior: reducedMotion.matches ? 'instant' : 'smooth'
+  });
+};
+
+packageButtons.forEach((button) => button.addEventListener('click', () => showPackage(button.dataset.selectPackage)));
+previousPackage.addEventListener('click', () => showPackage(membershipCards[Math.max(0, selectedPackage - 1)].dataset.membership));
+nextPackage.addEventListener('click', () => showPackage(membershipCards[Math.min(membershipCards.length - 1, selectedPackage + 1)].dataset.membership));
+
+document.querySelectorAll('[data-package]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    showPackage(link.dataset.package);
+    document.querySelector('#uyelikler').scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth', block: 'start' });
+    document.querySelector('#memberships-title').focus({ preventScroll: true });
+    history.replaceState(null, '', '#uyelikler');
+  });
+});
+document.querySelector('#memberships-title').setAttribute('tabindex', '-1');
+
+membershipTrack.addEventListener('scroll', () => {
+  if (!mobileMenu.matches || carouselFrame) return;
+  carouselFrame = requestAnimationFrame(() => {
+    carouselFrame = 0;
+    const bounds = membershipTrack.getBoundingClientRect();
+    const center = bounds.left + membershipTrack.clientWidth / 2;
+    const distances = membershipCards.map((card) => {
+      const rect = card.getBoundingClientRect();
+      return Math.abs(rect.left + rect.width / 2 - center);
+    });
+    updatePackageSelection(distances.indexOf(Math.min(...distances)));
+  });
+}, { passive: true });
+
+let carouselResizeFrame = 0;
+new ResizeObserver(() => {
+  cancelAnimationFrame(carouselResizeFrame);
+  carouselResizeFrame = requestAnimationFrame(() => showPackage(membershipCards[selectedPackage].dataset.membership));
+}).observe(membershipTrack);
+updatePackageSelection(0);

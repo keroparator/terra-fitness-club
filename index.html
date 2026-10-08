@@ -8,7 +8,8 @@
   <title>Terra Fitness Club | Güneştepe, Bursa</title>
   <link rel="icon" href="assets/terra-logo.svg" type="image/svg+xml">
   <link rel="preload" href="assets/terra-gym-hero.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="css/style.css?v=12">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
   <a class="skip-link" href="#main">İçeriğe geç</a>
@@ -26,10 +27,27 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Ana menü" data-nav>
         <a href="#salon">Salon</a>
-        <a href="#branslar">Branşlar</a>
+        <details class="nav-group">
+          <summary>Branşlar <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-submenu">
+            <a href="#fitness">Fitness</a>
+            <a href="#pilates">Pilates</a>
+            <a href="#zumba">Zumba</a>
+            <a href="#boks">Boks</a>
+            <a href="#yoga">Yoga</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Üyelik Paketleri <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-submenu">
+            <a href="#uyelikler" data-package="3">3 aylık üyelik</a>
+            <a href="#uyelikler" data-package="6">6 aylık üyelik</a>
+            <a href="#uyelikler" data-package="12">12 aylık üyelik</a>
+          </div>
+        </details>
         <a href="#kadinlara-ozel">Kadınlara özel</a>
-        <a href="#deneyim">Deneyim</a>
-        <a href="#konum">Konum</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#konum">İletişim</a>
         <a class="nav-cta" href="https://wa.me/905075510589?text=Merhaba%20Terra%20Fitness%20Club%2C%20a%C3%A7%C4%B1l%C4%B1%C5%9F%20ve%20%C3%BCyelik%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener">Bilgi al</a>
       </nav>
     </div>
@@ -103,7 +121,7 @@
         </div>
 
         <div class="discipline-grid">
-          <article class="discipline-card discipline-card-wide reveal">
+          <article class="discipline-card discipline-card-wide reveal" id="fitness">
             <div class="card-number">01</div>
             <div>
               <p class="card-tag">Güç & kondisyon</p>
@@ -113,7 +131,7 @@
             <span class="card-arrow" aria-hidden="true">↗</span>
           </article>
 
-          <article class="discipline-card reveal">
+          <article class="discipline-card reveal" id="pilates">
             <div class="card-number">02</div>
             <div>
               <p class="card-tag">Kontrol & denge</p>
@@ -122,7 +140,7 @@
             </div>
           </article>
 
-          <article class="discipline-card reveal">
+          <article class="discipline-card reveal" id="zumba">
             <div class="card-number">03</div>
             <div>
               <p class="card-tag">Ritim & enerji</p>
@@ -131,7 +149,7 @@
             </div>
           </article>
 
-          <article class="discipline-card reveal">
+          <article class="discipline-card reveal" id="boks">
             <div class="card-number">04</div>
             <div>
               <p class="card-tag">Hız & odak</p>
@@ -140,7 +158,7 @@
             </div>
           </article>
 
-          <article class="discipline-card discipline-card-red reveal">
+          <article class="discipline-card discipline-card-red reveal" id="yoga">
             <div class="card-number">05</div>
             <div>
               <p class="card-tag">Nefes & esneklik</p>
@@ -201,10 +219,52 @@
       </div>
     </section>
 
+    <section class="section memberships" id="uyelikler" aria-labelledby="memberships-title">
+      <div class="shell">
+        <div class="section-heading section-heading-row reveal">
+          <div><p class="kicker">04 / Üyelik Paketleri</p><h2 id="memberships-title">Kendine<br><em>zaman ayır.</em></h2></div>
+          <p>Hedefin sana ait. Sana uygun süreyi seç, üyelik detaylarını birlikte konuşalım.</p>
+        </div>
+        <div class="membership-carousel reveal" role="region" aria-roledescription="slayt gösterisi" aria-label="Üyelik paketleri">
+          <div class="membership-track" data-membership-track>
+          <article class="membership-card is-selected" data-membership="3" aria-labelledby="package-3-title">
+            <div class="membership-top"><span>TERRA / ÜYELİK</span><span aria-hidden="true">↗</span></div>
+            <h3 id="package-3-title"><strong>3</strong> <span>AY</span></h3>
+            <div class="membership-copy"><h4>İlk adımı at.</h4><p>Kendine zaman ayır. Üç aylık bir dönemle hareketi günlük hayatının bir parçasına dönüştür.</p></div>
+            <a class="button" href="https://wa.me/905075510589?text=Merhaba%2C%203%20ayl%C4%B1k%20%C3%BCyelik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="3 aylık üyelik için WhatsApp’tan bilgi al">Bize ulaşın <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="membership-card" data-membership="6" aria-labelledby="package-6-title">
+            <div class="membership-top"><span>TERRA / ÜYELİK</span><span aria-hidden="true">↗</span></div>
+            <h3 id="package-6-title"><strong>6</strong> <span>AY</span></h3>
+            <div class="membership-copy"><h4>Ritmini bul.</h4><p>Hedeflerine alan aç. Altı aylık bir dönemle antrenman rutinine istikrar kat.</p></div>
+            <a class="button" href="https://wa.me/905075510589?text=Merhaba%2C%206%20ayl%C4%B1k%20%C3%BCyelik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="6 aylık üyelik için WhatsApp’tan bilgi al">Bize ulaşın <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="membership-card" data-membership="12" aria-labelledby="package-12-title">
+            <div class="membership-top"><span>TERRA / ÜYELİK</span><span aria-hidden="true">↗</span></div>
+            <h3 id="package-12-title"><strong>12</strong> <span>AY</span></h3>
+            <div class="membership-copy"><h4>Uzun vadeli düşün.</h4><p>Kendine yaptığın yatırımı sürdür. Bir yıl boyunca hareketi hayatının merkezinde tut.</p></div>
+            <a class="button" href="https://wa.me/905075510589?text=Merhaba%2C%2012%20ayl%C4%B1k%20%C3%BCyelik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="12 aylık üyelik için WhatsApp’tan bilgi al">Bize ulaşın <span aria-hidden="true">↗</span></a>
+          </article>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Önceki üyelik paketi">←</button>
+            <div class="carousel-dots" aria-label="Paket seçimi">
+              <button type="button" data-select-package="3" aria-pressed="true" aria-label="3 aylık paketi göster"><span></span></button>
+              <button type="button" data-select-package="6" aria-pressed="false" aria-label="6 aylık paketi göster"><span></span></button>
+              <button type="button" data-select-package="12" aria-pressed="false" aria-label="12 aylık paketi göster"><span></span></button>
+            </div>
+            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Sonraki üyelik paketi">→</button>
+          </div>
+          <p class="carousel-status sr-only" data-carousel-status aria-live="polite" aria-atomic="true">3 aylık üyelik, 1 / 3</p>
+          <p class="carousel-hint">Sana uygun süreyi keşfet <span aria-hidden="true">↔</span></p>
+        </div>
+      </div>
+    </section>
+
     <section class="section experience" id="deneyim" aria-labelledby="experience-title">
       <div class="shell experience-grid">
         <div class="experience-statement reveal">
-          <p class="kicker">04 / Deneyim</p>
+          <p class="kicker">05 / Salon yaşamı</p>
           <h2 id="experience-title">Antrenmandan<br>fazlası.</h2>
           <p>Günün temposunu dışarıda bırak. İhtiyacın olan her şeyi tek bir çatı altında bul.</p>
         </div>
@@ -230,6 +290,26 @@
       </div>
     </section>
 
+    <section class="section about" id="hakkimizda" aria-labelledby="about-title">
+      <div class="shell about-grid">
+        <div class="about-story reveal">
+          <p class="kicker">06 / Hakkımızda</p>
+          <div class="experience-years"><strong>12</strong><span>YILLIK<br>SEKTÖREL DENEYİM</span></div>
+          <h2 id="about-title">Deneyimimiz,<br><em>senin yolculuğun.</em></h2>
+          <p>Terra Fitness Club’da 12 yıllık sektörel deneyimi, hareket etmek için ilham veren yeni bir yaşam alanıyla buluşturuyoruz.</p>
+          <p>Güneştepe’deki 800 m² antrenman alanımız, yüksek tavanımız ve farklı disiplinlerimizle kendi ritmini bulabileceğin bir ortam sunuyoruz. Güçlenmek, dengeni bulmak ya da kendine zaman ayırmak: bu yolculukta başlangıç noktan sensin.</p>
+        </div>
+        <aside class="vision-card reveal" aria-labelledby="vision-title">
+          <span class="vision-symbol" aria-hidden="true">↗</span>
+          <p class="kicker">Birlikte daha ileri</p>
+          <h3 id="vision-title">Vizyonumuz</h3>
+          <p>Sporu hayatın sürdürülebilir bir parçasına dönüştüren, herkesin kendine ait bir alan bulabildiği bir topluluk olmak.</p>
+          <p>Üyelerimizi dinleyerek gelişmek; ferah, özenli ve motive eden bir ortamda her yeni hedefe birlikte alan açmak.</p>
+          <div class="vision-footer">HAREKET ET. ENERJİNİ YÜKSELT.</div>
+        </aside>
+      </div>
+    </section>
+
     <section class="manifesto" aria-label="Terra Fitness Club yaklaşımı">
       <div class="shell manifesto-inner reveal">
         <p>DAHA FERAH.</p>
@@ -238,10 +318,36 @@
       </div>
     </section>
 
+    <section class="section faq" id="sorular" aria-labelledby="faq-title">
+      <div class="shell faq-grid">
+        <div class="section-heading reveal"><p class="kicker">07 / Sıkça sorulan sorular</p><h2 id="faq-title">Aklında<br><em>kalmasın.</em></h2><p class="section-description">Başlamadan önce merak ettiklerin. Daha fazlası için bir mesaj uzağındayız.</p></div>
+        <div class="faq-list">
+          <details class="faq-item reveal"><summary>Hangi branşlarda antrenman yapabilirim?<span aria-hidden="true">+</span></summary><p>Fitness, Pilates, Zumba, Boks ve Yoga seçeneklerini keşfedebilirsin. Güncel ders programı ve katılım detayları için bizimle iletişime geç.</p></details>
+          <details class="faq-item reveal"><summary>Üyelik hakkında nasıl bilgi alabilirim?<span aria-hidden="true">+</span></summary><p>3, 6 veya 12 aylık üyelik kartından Bize ulaşın butonuna dokun. Seçtiğin süreyle ilgili hazır mesaj WhatsApp’ta açılır; mesajı göndererek ekibimizle görüşebilirsin.</p></details>
+          <details class="faq-item reveal"><summary>Kadınlara özel bir alan var mı?<span aria-hidden="true">+</span></summary><p>Evet, kadınlara özel izole bir antrenman alanımız bulunuyor. Alanın kullanımı ve grup dersleri hakkında bilgi almak için bize ulaşabilirsin.</p></details>
+          <details class="faq-item reveal"><summary>Spora yeni başlıyorum. Nereden başlamalıyım?<span aria-hidden="true">+</span></summary><p>Önce hedeflerini ve beklentilerini konuşalım. Sana uygun başlangıcı değerlendirmek için salonumuzu ziyaret edebilir veya WhatsApp üzerinden ekibimize ulaşabilirsin.</p></details>
+          <details class="faq-item reveal"><summary>Salona nasıl ulaşabilirim?<span aria-hidden="true">+</span></summary><p>Güneştepe Mahallesi, Osmangazi / Bursa’dayız. İletişim bölümündeki haritayı inceleyebilir, Yol tarifi al bağlantısıyla rotanı oluşturabilirsin.</p></details>
+          <details class="faq-item reveal"><summary>Dersler üyeliğe dahil mi?<span aria-hidden="true">+</span></summary><p>Paket kapsamı ve grup derslerine katılım detaylarını seçtiğin üyelik süresiyle birlikte ekibimizden öğrenebilirsin.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="yorumlar" aria-labelledby="testimonials-title">
+      <div class="shell">
+        <div class="section-heading reveal"><p class="kicker">08 / Yorumlar</p><h2 id="testimonials-title">Hareketin<br><em>iyi hissettiren yanı.</em></h2></div>
+        <p class="sample-notice">Tasarım önizlemesi · Aşağıdaki metinler temsili yorumlardır. Gerçek üye yorumlarıyla güncellenecektir.</p>
+        <div class="testimonial-grid">
+          <figure class="testimonial-card reveal"><span aria-hidden="true">“</span><blockquote>Geniş bir alanda, kendi tempomda antrenman yapabilmek benim için çok değerli. Burada rutinime zaman ayırmak kolaylaşıyor.</blockquote><figcaption><span class="testimonial-avatar" aria-hidden="true">01</span><div>Örnek üye yorumu<small>Fitness deneyimi · Temsili metin</small></div></figcaption></figure>
+          <figure class="testimonial-card reveal"><span aria-hidden="true">“</span><blockquote>Kendime ayırdığım bu saatler günümün en güzel kısmı. Hareket etmek ve yeni bir ritim yakalamak bana iyi geliyor.</blockquote><figcaption><span class="testimonial-avatar" aria-hidden="true">02</span><div>Örnek üye yorumu<small>Grup dersi deneyimi · Temsili metin</small></div></figcaption></figure>
+          <figure class="testimonial-card reveal"><span aria-hidden="true">“</span><blockquote>Yeni bir başlangıç için motive eden bir ortam arıyordum. Ferah bir salonda hedeflerime odaklanmak güzel hissettiriyor.</blockquote><figcaption><span class="testimonial-avatar" aria-hidden="true">03</span><div>Örnek üye yorumu<small>Salon deneyimi · Temsili metin</small></div></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
     <section class="section location" id="konum" aria-labelledby="location-title">
       <div class="shell location-grid">
         <div class="location-card reveal">
-          <p class="kicker">05 / Bizi bul</p>
+          <p class="kicker">09 / İletişim</p>
           <h2 id="location-title">Güneştepe’nin<br><em>yeni enerjisi.</em></h2>
 
           <div class="contact-row">
@@ -257,25 +363,24 @@
             <a href="https://www.instagram.com/terrafitnessclub/" target="_blank" rel="noopener">@terrafitnessclub ↗</a>
           </div>
 
+          <div class="opening-hours" aria-labelledby="hours-title">
+            <h3 id="hours-title">Çalışma saatleri</h3>
+            <dl><div><dt>Pazartesi – Cuma</dt><dd>09.00 – 00.00</dd></div><div><dt>Cumartesi</dt><dd>10.00 – 20.00</dd></div><div><dt>Pazar</dt><dd>10.00 – 16.00</dd></div></dl>
+            <p>Resmî tatillerde saatler değişebilir. <a href="https://www.google.com/maps/search/?api=1&amp;query=Terra%20Fitness%20Club%20G%C3%BCne%C5%9Ftepe%20Osmangazi%20Bursa" target="_blank" rel="noopener">Güncel saatleri kontrol et ↗</a></p>
+          </div>
+
           <div class="location-actions">
             <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Terra%20Fitness%20Club%20G%C3%BCne%C5%9Ftepe%20Osmangazi%20Bursa" target="_blank" rel="noopener">Yol tarifi al <span aria-hidden="true">↗</span></a>
             <a class="button button-dark" href="tel:+905075510589">Hemen ara</a>
           </div>
         </div>
 
-        <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Terra%20Fitness%20Club%20G%C3%BCne%C5%9Ftepe%20Osmangazi%20Bursa" target="_blank" rel="noopener" aria-label="Terra Fitness Club konumunu Google Haritalar'da aç">
-          <div class="map-visual" aria-hidden="true">
-            <div class="map-grid"></div>
-            <div class="map-road road-one"></div>
-            <div class="map-road road-two"></div>
-            <div class="map-pin"><span>T</span></div>
-          </div>
-          <div class="map-label">
-            <small>Osmangazi / Bursa</small>
-            <strong>Terra Fitness Club</strong>
-            <span>Haritada aç ↗</span>
-          </div>
-        </a>
+        <div class="map-card reveal">
+          <iframe class="map-frame" title="Terra Fitness Club Google Haritalar konumu" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.9690877845337!2d28.999016599999997!3d40.254218300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca158bb6ca5423%3A0x76b35d32b5ffd699!2sTerra%20Fitness%20Club!5e0!3m2!1str!2str!4v1791450385935!5m2!1str!2str" width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <a class="map-label" href="https://www.google.com/maps/search/?api=1&amp;query=Terra%20Fitness%20Club%20G%C3%BCne%C5%9Ftepe%20Osmangazi%20Bursa" target="_blank" rel="noopener">
+            <small>Osmangazi / Bursa</small><strong>Terra Fitness Club</strong><span>Google Haritalar’da aç ↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -288,6 +393,8 @@
       </a>
       <p>Hareket et. Enerjini yükselt.</p>
       <div class="footer-links">
+        <a href="#sorular">Sıkça sorulan sorular</a>
+        <a href="#yorumlar">Yorumlar</a>
         <a href="https://www.instagram.com/terrafitnessclub/" target="_blank" rel="noopener">Instagram</a>
         <a href="tel:+905075510589">Telefon</a>
       </div>
@@ -299,6 +406,6 @@
     <span>Bilgi al</span><i aria-hidden="true">↗</i>
   </a>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
