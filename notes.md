@@ -4,6 +4,15 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Şu an yalnızca not alıyoruz; uygulama talimatı henüz verilmedi.
 
+## Mobil öncelik
+
+Kerem’in açık yönlendirmesi: Site yaklaşık %80 mobil kullanım hedeflenerek tasarlanıyor. Bu bir tasarım hedefi; ölçülmüş ziyaretçi istatistiği değil.
+
+- Yerleşim ve etkileşim kararlarında mobil kullanım öncelikli olacak.
+- Uygulama testleri özellikle mobilde yapılacak: menü/alt menüler, üyelik carousel’i, dokunma hedefleri, WhatsApp bağlantıları, harita ve kaydırmayla giriş animasyonları.
+- 375 px başta olmak üzere dar ve geniş telefon görünümlerinde okunaklılık, yatay taşma ve kartların kullanılabilirliği kontrol edilecek; tablet/masaüstü uyumu da korunacak.
+- Tarayıcı mobil görünümüyle yapılan kontrol ile gerçek cihaz testi ayrı belirtilecek; yapılmayan cihaz testi yapılmış gibi sunulmayacak.
+
 ## Revizyon listesi
 
 1. **Animasyonlar:** Kaydırırken ekrana giren öğelerin mevcut giriş animasyonları daha belirgin olacak. Efekt ve süre henüz seçilmedi.
