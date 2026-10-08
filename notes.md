@@ -132,3 +132,9 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 
 - Kerem iki sütunlu yerleşimi düzeltti: Branşlar ve Üyelik Paketleri seçenekleri mobilde alt alta, tek sütun olacak. Mobil `.nav-submenu` tek sütuna alındı; önceki son tek öğeyi genişleten kural kaldırıldı. Animasyon/JS değişmedi, CSS cache sürümü 17.
 - 375 px tarayıcıda beş branş ve üç paketin aynı x konumunda, artan y konumlarında dizildiği doğrulandı; branş listesi görsel kontrol edildi. 320/375/430/768 px menü yatay taşması yok. JS sözdizimi/diff kontrolleri geçti. Geçici test sunucusu kapatıldı.
+
+
+## Hakkımızda renk düzeltmesi — 8 Ekim 2026
+
+- Kerem 06 / Hakkımızda bölümündeki kahverengiyi beğenmedi; Terra kırmızısı istedi. Vizyon kartı marka kırmızısı/koyu kırmızı geçişine, deneyim başlığının vurgusu marka kırmızısına alındı. Kartın kahverengi alt tonlu metinleri beyaz/nötr beyaza çevrildi. CSS/HTML cache sürümü 18.
+- 1440 px bölüm görsel incelendi, tarayıcı hesaplanan renkleri mevcut `--red`/`--red-dark` ile eşleşiyor. 375/768 px yatay taşma yok. JS sözdizimi/diff kontrolleri geçti; geçici test sunucusu kapatıldı.

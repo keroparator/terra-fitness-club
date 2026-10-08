@@ -1593,13 +1593,13 @@ summary::-webkit-details-marker { display: none; }
 .experience-years strong { font-size: clamp(5rem, 15vw, 9rem); line-height: 1; letter-spacing: -0.08em; font-weight: 500; color: var(--red); }
 .experience-years span { font-size: 0.7rem; letter-spacing: 0.1em; line-height: 1.8; color: #c6c6c6; }
 .about-story h2 { margin: 0 0 24px; font-size: clamp(2.1rem, 4vw, 4rem); line-height: var(--heading-line-height); }
-.about-story h2 em { color: #e5b7a5; font-style: normal; }
+.about-story h2 em { color: var(--red); font-style: normal; }
 .about-story > p:not(.kicker) { max-width: 580px; color: #b5b5b5; font-size: 1rem; }
-.vision-card { position: relative; align-self: center; padding: 30px; overflow: hidden; border: 1px solid #ffffff20; border-radius: 24px; background: linear-gradient(145deg, #302623, #211b19); }
-.vision-symbol { display: block; margin-bottom: 36px; color: #e5b7a5; font-size: 3rem; line-height: 1; }
-.vision-card .kicker { color: #e5b7a5; font-size: 0.64rem; letter-spacing: 0.1em; }
+.vision-card { position: relative; align-self: center; padding: 30px; overflow: hidden; border: 1px solid #ffffff20; border-radius: 24px; background: linear-gradient(145deg, var(--red), var(--red-dark)); }
+.vision-symbol { display: block; margin-bottom: 36px; color: var(--white); font-size: 3rem; line-height: 1; }
+.vision-card .kicker { color: var(--white); font-size: 0.64rem; letter-spacing: 0.1em; }
 .vision-card h3 { margin: 0 0 24px; font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -0.04em; line-height: var(--heading-line-height); }
-.vision-card > p:not(.kicker) { color: #d5c9c3; }
+.vision-card > p:not(.kicker) { color: #ffffffe0; }
 .vision-footer { margin-top: 36px; padding-top: 22px; border-top: 1px solid #ffffff20; font-size: 0.6rem; letter-spacing: 0.1em; }
 .faq { background: var(--paper); color: var(--ink); }
 .faq-grid { display: grid; gap: 40px; }
