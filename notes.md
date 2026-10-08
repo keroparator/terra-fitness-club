@@ -98,3 +98,13 @@ Ajan önerisi, henüz ek bölüm kararı değil: Hakkımızda metninde ferahlık
 ### Sonraki adım
 
 Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygulaması hazır olduğundan **görseller maddesini şimdi hatırlat**. Yeni fotoğraflar için kullanıcı yönlendirmesi bekle; temsili yorumları gerçek metinlerle değiştirmeyi takip et.
+
+
+## Paket kartı düzeltmesi — 8 Ekim 2026
+
+- Kerem’in isteği uygulandı: 3 ay az parlak düz siyah; 6 ay daha parlak, kırmızı ışık alan siyah; 12 ay hafif beyaz yansımalı kırmızı.
+- Kartların iç yüzeyi mobil yatay kaydırma konumuna göre ±24° yatay ve 5° dikey açı, en fazla %9 ölçek değişimi alır; ışığın konumu da kaydırmayla değişir. Otomatik/döngü animasyonu yok. Ortadaki kart düzleşir; masaüstünde seçili karta hafif açı/yükselme uygulanır.
+- Dönüşüm iç yüzeye ayrıldı; snap ve merkezleme dönüşmemiş kart ölçülerinden hesaplanıyor. Azaltılmış hareket CSS’te dönüşümü kapatır, JS’te açı/ölçek nötrlenir; canlı tercih testi yapılmadı.
+- `index.html`, `css/style.css`, `js/main.js` değişti; fiyat ve WhatsApp hedefleri korunuyor. CSS/JS cache sürümleri artırıldı.
+- Tarayıcıda 320/375/430/768/1440 px taşma yok; 375 px okla 6 ay seçimi merkezlendi (0°), 768 px 12 ay nokta seçimi merkezlendi (yuvarlama farkıyla ~0°). Mobil ve masaüstü görünümleri incelendi; konsol hatası yok. JS sözdizimi/diff kontrolleri geçti. Gerçek telefon testi yapılmadı.
+- Önceki 8000/8001 sunucuları kullanıcı isteğiyle kapatılmıştı. Bu kontrol için yalnız localhost:8000 geçici açıldı ve test sonunda kapatıldı.

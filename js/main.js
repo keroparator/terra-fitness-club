@@ -158,6 +158,20 @@ const carouselStatus = document.querySelector('[data-carousel-status]');
 let selectedPackage = 0;
 let carouselFrame = 0;
 
+const updateCardDepth = () => {
+  const center = membershipTrack.scrollLeft + membershipTrack.clientWidth / 2;
+  membershipCards.forEach((card) => {
+    const surface = card.querySelector('.membership-surface');
+    const distance = mobileMenu.matches && !reducedMotion.matches
+      ? Math.max(-1, Math.min(1, (card.offsetLeft + card.offsetWidth / 2 - center) / card.offsetWidth))
+      : 0;
+    surface.style.setProperty('--card-angle', `${-distance * 24}deg`);
+    surface.style.setProperty('--card-pitch', `${Math.abs(distance) * 5}deg`);
+    surface.style.setProperty('--card-scale', String(1 - Math.abs(distance) * 0.09));
+    surface.style.setProperty('--light-position', `${25 + distance * 35}%`);
+  });
+};
+
 const updatePackageSelection = (index) => {
   selectedPackage = index;
   membershipCards.forEach((card, cardIndex) => card.classList.toggle('is-selected', cardIndex === index));
@@ -174,11 +188,11 @@ const showPackage = (months) => {
   const index = membershipCards.findIndex((card) => card.dataset.membership === String(months));
   if (index < 0) return;
   updatePackageSelection(index);
+  updateCardDepth();
   if (!mobileMenu.matches) return;
-  const trackBounds = membershipTrack.getBoundingClientRect();
-  const cardBounds = membershipCards[index].getBoundingClientRect();
+  const card = membershipCards[index];
   membershipTrack.scrollTo({
-    left: membershipTrack.scrollLeft + cardBounds.left - trackBounds.left - (membershipTrack.clientWidth - cardBounds.width) / 2,
+    left: card.offsetLeft - (membershipTrack.clientWidth - card.offsetWidth) / 2,
     behavior: reducedMotion.matches ? 'instant' : 'smooth'
   });
 };
@@ -202,13 +216,11 @@ membershipTrack.addEventListener('scroll', () => {
   if (!mobileMenu.matches || carouselFrame) return;
   carouselFrame = requestAnimationFrame(() => {
     carouselFrame = 0;
-    const bounds = membershipTrack.getBoundingClientRect();
-    const center = bounds.left + membershipTrack.clientWidth / 2;
-    const distances = membershipCards.map((card) => {
-      const rect = card.getBoundingClientRect();
-      return Math.abs(rect.left + rect.width / 2 - center);
-    });
-    updatePackageSelection(distances.indexOf(Math.min(...distances)));
+    const center = membershipTrack.scrollLeft + membershipTrack.clientWidth / 2;
+    const distances = membershipCards.map((card) => Math.abs(card.offsetLeft + card.offsetWidth / 2 - center));
+    const nearest = distances.indexOf(Math.min(...distances));
+    if (nearest !== selectedPackage) updatePackageSelection(nearest);
+    updateCardDepth();
   });
 }, { passive: true });
 
@@ -218,3 +230,6 @@ new ResizeObserver(() => {
   carouselResizeFrame = requestAnimationFrame(() => showPackage(membershipCards[selectedPackage].dataset.membership));
 }).observe(membershipTrack);
 updatePackageSelection(0);
+
+reducedMotion.addEventListener('change', updateCardDepth);
+updateCardDepth();
