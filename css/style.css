@@ -791,6 +791,16 @@ img {
   margin-top: 36px;
 }
 
+.salon-gallery-reversed {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  margin-top: 14px;
+}
+
+.salon-gallery-reversed .salon-photo-main {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
 .salon-photo {
   position: relative;
   min-width: 0;
@@ -1653,6 +1663,7 @@ summary::-webkit-details-marker { display: none; }
 @media (max-width: 620px) {
   .experience { padding: 40px 0; }
   .salon-gallery { height: 300px; gap: 8px; margin-top: 28px; }
+  .salon-gallery-reversed { margin-top: 8px; }
   .salon-photo { border-radius: 12px; }
   .salon-photo figcaption { padding: 28px 12px 12px; }
   .salon-photo figcaption span { font-size: 0.65rem; letter-spacing: 0; }
