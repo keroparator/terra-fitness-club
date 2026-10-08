@@ -19,10 +19,41 @@ const updateMenuAvailability = (isOpen) => {
   }
 };
 
+const groupAnimations = new Map();
+const setNavGroup = (group, open, animate = false) => {
+  if (!open && !group.open && !groupAnimations.has(group)) return;
+  const startHeight = group.getBoundingClientRect().height;
+  groupAnimations.get(group)?.cancel();
+  groupAnimations.delete(group);
+  group.classList.remove('is-closing');
+  group.style.removeProperty('overflow');
+  const submenu = group.querySelector('.nav-submenu');
+  submenu.toggleAttribute('inert', !open);
+  if (!animate || !mobileMenu.matches || reducedMotion.matches) {
+    group.open = open;
+    return;
+  }
+  group.open = true;
+  group.classList.toggle('is-closing', !open);
+  const endHeight = open ? group.scrollHeight : group.querySelector('summary').getBoundingClientRect().height;
+  group.style.overflow = 'hidden';
+  const animation = group.animate([
+    { height: `${startHeight}px` },
+    { height: `${endHeight}px` }
+  ], { duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+  groupAnimations.set(group, animation);
+  animation.onfinish = () => {
+    group.open = open;
+    group.classList.remove('is-closing');
+    group.style.removeProperty('overflow');
+    groupAnimations.delete(group);
+  };
+};
+
 const closeMenu = () => {
   menuToggle.setAttribute('aria-expanded', 'false');
   menuLabel.textContent = 'Menüyü aç';
-  navGroups.forEach((group) => { group.open = false; });
+  navGroups.forEach((group) => setNavGroup(group, false));
   nav.classList.remove('is-open');
   header.classList.remove('menu-active');
   document.body.classList.remove('menu-open');
@@ -43,13 +74,23 @@ menuToggle.addEventListener('click', () => {
 
 navLinks.forEach((link) => link.addEventListener('click', closeMenu));
 navGroups.forEach((group) => {
+  group.querySelector('summary').addEventListener('click', (event) => {
+    if (!mobileMenu.matches) return;
+    event.preventDefault();
+    const willOpen = !group.open || group.classList.contains('is-closing');
+    if (willOpen) navGroups.filter((other) => other !== group).forEach((other) => setNavGroup(other, false, true));
+    setNavGroup(group, willOpen, true);
+  });
   group.addEventListener('toggle', () => {
-    if (group.open) navGroups.filter((other) => other !== group).forEach((other) => { other.open = false; });
+    if (!mobileMenu.matches) {
+      group.querySelector('.nav-submenu').removeAttribute('inert');
+      if (group.open) navGroups.filter((other) => other !== group).forEach((other) => setNavGroup(other, false));
+    }
   });
 });
 document.addEventListener('click', (event) => {
   if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
-    navGroups.forEach((group) => { group.open = false; });
+    navGroups.forEach((group) => setNavGroup(group, false));
   }
 });
 
@@ -60,7 +101,7 @@ window.addEventListener('keydown', (event) => {
     closeMenu();
   }
   if (event.key !== 'Tab' || !mobileMenu.matches || !nav.classList.contains('is-open')) return;
-  const focusable = [menuToggle, ...nav.querySelectorAll('a, summary')].filter((element) => element.getClientRects().length);
+  const focusable = [menuToggle, ...nav.querySelectorAll('a, summary')].filter((element) => element.getClientRects().length && !element.closest('[inert]'));
   const first = focusable[0];
   const last = focusable[focusable.length - 1];
   if (event.shiftKey && document.activeElement === first) {
@@ -73,6 +114,7 @@ window.addEventListener('keydown', (event) => {
 });
 
 mobileMenu.addEventListener('change', closeMenu);
+reducedMotion.addEventListener('change', () => navGroups.forEach((group) => setNavGroup(group, group.open && !group.classList.contains('is-closing'))));
 updateMenuAvailability(false);
 
 const updateHeader = () => {

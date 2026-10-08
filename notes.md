@@ -116,3 +116,13 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Mobil/tablet kart genişliği 80vw yerine 72vw, aralık 18 yerine 10 px yapıldı. Masaüstünün üçlü düzeni korundu. CSS cache sürümü 15.
 - 375 px tarayıcıda 6 ay seçiliyken iki komşu yüzeyin de yaklaşık 14.6 px’i görünür ölçüldü ve görsel kontrol edildi. İlk/son kartın yalnız var olan komşusu görünür; döngü veya kopya kart eklenmedi.
 - 320/375/430/768/1440 px yatay taşma yok; dar kartta metin/CTA içerik taşması yok. JS sözdizimi ve diff kontrolleri geçti. Gerçek telefon testi yapılmadı. Geçici localhost test sunucusu test bitiminde kapatıldı.
+
+
+## Mobil navigasyon tasarımı — 8 Ekim 2026
+
+- Kerem mobil navbarın ve alt menü açılışlarının daha güzel/animasyonlu olmasını istedi.
+- Mobil panel hafif kırmızı ışıklı koyu zemine, yuvarlatılmış menü satırlarına ve küçük marka girişine dönüştü. Öğeler kısa gecikmelerle belirir; panel yukarıdan yumuşak geçişle açılır.
+- Branşlar/paketler alt seçenekleri iki sütunlu dokunma kartlarıdır; tek kalan son seçenek tam satırdır. Details yapısı korunarak mobil açma/kapama yüksekliği Web Animations API ile 320 ms hareket eder. Aynı anda tek grup açılır; yeni tıklama önceki animasyonu iptal eder. Menü kapanışı animasyonları temizler. Kapanan alt seçenekler inert olur; klavye sınırı bunları dışlar.
+- Azaltılmış hareket JS animasyonunu ve menü CSS geçişlerini kapatır; tercih değişimi sürmekte olan alt menü animasyonlarını temizler. Kaynakta kontrol edildi; canlı tercih testi yapılmadı.
+- 375 px görsel kontrol; Branşlar→Paketler geçişi, 12 ay seçimi/menünün kapanışı, Yoga hedefi/menünün kapanışı, Enter ile alt menü, Escape ve Shift+Tab→Bilgi al sınırı doğrulandı. 320/375/430/768 px menü yatay taşması yok; 1440 px masaüstü branş dropdownu çalışıyor. Konsol hatası yok. JS sözdizimi/diff kontrolü geçti. Gerçek telefon testi yapılmadı.
+- HTML/CSS/JS ve bu not güncellendi; CSS sürümü 16, JS sürümü 5. Test sunucusu sonrasında kapatıldı.
