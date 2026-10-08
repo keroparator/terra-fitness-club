@@ -17,13 +17,13 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **26**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **27**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
 - Kart renkleri: 3 ay hafif parlak siyah, 6 ay kırmızı ışık alan daha parlak siyah, 12 ay beyaz yansımalı kırmızı. Hakkımızda deneyim/vizyon birlikte; vizyon kartı Terra kırmızısı, kahverengi kaldırıldı. Deneyim **12 yıl**, salonun açık olduğu süre diye yorumlama.
 - Mobil menü paneli ve details açılışları animasyonlu; Branşlar ve Üyelik Paketleri seçenekleri **tek sütun**. Paket seçimi ilgili kartı merkezler, branş seçimi ilgili ana sayfa kartına gider; menü kapanır. Klavye/inert/ARIA senkronu korunur.
-- İletişim adı, Google işletme saatleri ve gerçek Maps iframe’i uygulandı. Saatlerin 8 Ekim tarihli doğrulaması ayrıntılarda. SSS ve açıkça temsili olarak işaretli yorumlar var; gerçek yorumlarla değiştirme takibi sürüyor.
+- İletişim adı, Google işletme saatleri ve gerçek Maps iframe’i uygulandı. Saatlerin 8 Ekim tarihli doğrulaması ayrıntılarda. SSS ve yerel önizleme için kurgu isimli yorumlar var. Kullanıcı isteğiyle görünür taslak etiketleri kaldırıldı; HTML comment ve data-content-status=mockup kaydı korunuyor. Yayından önce gerçek yorumlarla değiştirilecek.
 - Kapsam dışı kalan öneriler: yorum carousel’i ve Hakkımızda metnini kısaltma yapılmadı; bunları onaylanmış iş sayma.
 
 ### Doğrulama, Git ve çalışma durumu
@@ -250,3 +250,11 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Kerem Kendi alanın/Kendi ritmin kartını boş yer kapladığı için kaldırmayı ve başlık→görseller→maddeler sırasını önerdi. Bu talimat uygulandı: women-signature kartı ve women-grid sarmalayıcısı çıkarıldı; women-gallery doğrudan women-heading ardından, üç maddelik women-features en sonda. Kullanılmayan kart/grid CSS kuralları ve responsive referanslar temizlendi. Maddeler üstüne36px boşluk eklendi; CSS v26. Görsel dosyaları ve diğer bölüm içerikleri değişmedi.
 - 375px mobil başlık→fotoğraflar geçişi görsel incelendi, iki fotoğraf yüklü.320/375/768/1440px yatay taşma yok.375 ve1440px DOM sırası heading/gallery/features doğrulandı, kart DOM’da yok. Mobil menüden Kadınlara özel hedefi ve otomatik menü kapanışı çalıştı. Konsol hata kaydı boş. JS sözdizimi, HTML benzersiz id/anchor/görsel yolları ve diff kontrolü geçti. Gerçek telefon testi yapılmadı.
 - index.html, css/style.css ve bu not değişti. Kullanıcı değerlendirmesi bekleniyor; sunucu açık bırakıldı, push/yayın yok.
+
+
+## Yerel yorum maketi — 8 Ekim 2026
+
+- Kerem yorum kartlarına rastgele kurgu isimler ve doğal metinler koymayı, Tasarım önizlemesi yazısını kaldırmayı istedi. Açık kapsamı: yalnız göstermelik yerel önizleme; yayına almadan önce bunlar düzeltilecek. İsimler, deneyimler ve yorumlar gerçek üyelere ait değildir.
+- Üç kart Emre Kaya/Fitness, Selin Demir/Pilates ve Mert Aydın/Fitness & kardiyo kurgu kimlikleriyle düzenlendi; avatarlar baş harflere çevrildi. Görünür temsili/tasarım önizlemesi etiketleri kaldırıldı. HTML comment ve data-content-status=mockup işareti içeriğin taslak olduğunu koruyor; yıldız puanı, Google kaynağı veya gerçek yorum doğrulaması eklenmedi. Yayın öncesi gerçek kaynaklı yorumlarla değişim açık bitiş şartıdır.
+- Kullanılmayan sample-notice stili kaldırıldı; başlık/kart boşluğu testimonial-grid margin-top36px ile korundu. CSS v27.375 ve1440px tarayıcı görünümleri incelendi, taşma yok; üç kurgu isim DOM’da, görünür notice yok. Konsol hata kaydı boş. JS sözdizimi ve diff kontrolü geçti. Gerçek telefon testi yapılmadı.
+- index.html/css/style.css/bu not değişti. Yerel sunucu açık, push/yayın yok.

@@ -1479,8 +1479,7 @@ summary::-webkit-details-marker { display: none; }
 .faq-item[open] > summary span { transform: rotate(45deg); }
 .faq-item > p { margin: 0; padding: 0 30px 24px 0; color: #595959; font-size: 0.95rem; }
 .testimonials { background: #111; }
-.sample-notice { max-width: 600px; margin: 24px 0 36px; padding-left: 14px; border-left: 2px solid var(--red); color: #a4a4a4; font-size: 0.8rem; }
-.testimonial-grid { display: grid; gap: 18px; }
+.testimonial-grid { display: grid; gap: 18px; margin-top: 36px; }
 .testimonial-card { display: flex; flex-direction: column; margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: #1a1a1a; }
 .testimonial-card > span { height: 52px; color: var(--red); font-size: 5rem; line-height: 1; }
 .testimonial-card blockquote { flex: 1; margin: 16px 0 30px; color: #dadada; font-size: 1rem; line-height: 1.75; }
