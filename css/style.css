@@ -271,7 +271,6 @@ img {
 .hero h1,
 .section-heading h2,
 .experience-statement h2,
-.manifesto p,
 .location-card h2 {
   margin: 0;
   font-family: var(--display);
@@ -455,22 +454,6 @@ img {
   padding: 120px 0;
 }
 
-.intro {
-  background: #0d0d0d;
-  color: var(--white);
-}
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.65fr);
-  align-items: start;
-  gap: 100px;
-}
-
-.intro-grid > * {
-  min-width: 0;
-}
-
 .section-heading .kicker,
 .location-card .kicker {
   margin-bottom: 30px;
@@ -479,43 +462,6 @@ img {
 .section-heading h2,
 .location-card h2 {
   font-size: clamp(3.2rem, 6.5vw, 6.6rem);
-}
-
-.intro-copy {
-  padding-top: 42px;
-}
-
-.intro-copy p {
-  margin: 0 0 24px;
-  color: var(--muted);
-  font-size: 1.08rem;
-}
-
-.intro-copy p:first-child {
-  color: var(--white);
-  font-size: 1.42rem;
-  font-weight: 650;
-}
-
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 14px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid var(--red);
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.text-link span {
-  transition: transform 180ms ease;
-}
-
-.text-link:hover span {
-  transform: translateX(5px);
 }
 
 .disciplines {
@@ -824,13 +770,16 @@ img {
 }
 
 .experience {
+  padding: 52px 0;
   background: var(--ink);
+  border-block: 1px solid var(--line);
 }
 
 .experience-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1fr);
-  gap: 90px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 48px;
 }
 
 .experience-grid > *,
@@ -838,97 +787,47 @@ img {
   min-width: 0;
 }
 
-.experience-statement {
-  position: sticky;
-  top: 130px;
-  align-self: start;
+.experience-statement .kicker {
+  margin-bottom: 18px;
 }
 
 .experience-statement h2 {
-  max-width: 100%;
-  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-size: clamp(1.8rem, 2.6vw, 2.7rem);
 }
 
-.experience-statement > p:last-child {
-  max-width: 420px;
-  margin: 30px 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
+.experience-statement h2 em {
+  color: var(--red);
 }
 
 .feature-list {
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .feature-item {
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  gap: 20px;
-  padding: 35px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 8px 24px;
+  border-left: 1px solid var(--line);
 }
 
 .feature-item > span {
+  display: block;
+  margin-bottom: 20px;
   color: var(--red);
-  font-family: var(--display);
-  font-size: 1.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
 }
 
 .feature-item h3 {
   margin: 0;
-  font-size: 1.28rem;
-  line-height: var(--heading-line-height);
-  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 .feature-item p {
-  max-width: 470px;
   margin: 10px 0 0;
   color: var(--muted);
-}
-
-.manifesto {
-  position: relative;
-  isolation: isolate;
-  padding: 110px 0;
-  overflow: hidden;
-  background: linear-gradient(115deg, var(--red) 45%, var(--red-dark));
-}
-
-.manifesto::before {
-  content: "";
-  position: absolute;
-  inset: 14% -4% 14% auto;
-  width: 42%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 0 28px rgba(9, 9, 9, 0.08), 0 0 0 56px rgba(9, 9, 9, 0.05);
-  transform: skewX(-14deg);
-  pointer-events: none;
-}
-
-.manifesto::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(135deg, transparent 0 46px, rgba(9, 9, 9, 0.12) 46px 48px);
-  mask-image: linear-gradient(90deg, transparent, #000);
-  pointer-events: none;
-}
-
-.manifesto-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 0.12em;
-}
-
-.manifesto p {
-  font-size: clamp(4rem, 10vw, 10rem);
-}
-
-.outline-text {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--white);
+  font-size: 0.85rem;
+  line-height: 1.6;
 }
 
 .location {
@@ -1183,21 +1082,11 @@ img {
     display: none;
   }
 
-  .intro-grid,
   .women-heading,
   .women-grid,
-  .experience-grid,
   .location-grid {
     grid-template-columns: 1fr;
     gap: 55px;
-  }
-
-  .intro-copy {
-    padding-top: 0;
-  }
-
-  .experience-statement {
-    position: static;
   }
 
   .women-grid {
@@ -1206,10 +1095,6 @@ img {
 
   .women-signature {
     min-height: 250px;
-  }
-
-  .experience-statement h2 {
-    font-size: clamp(3.8rem, 9vw, 5.5rem);
   }
 
   .discipline-grid {
@@ -1359,35 +1244,8 @@ img {
     gap: 12px;
   }
 
-  .experience-grid {
-    gap: 46px;
-  }
-
-  .experience-statement h2 {
-    font-size: clamp(1.8rem, 9.8vw, 3.8rem);
-  }
-
   .location-card h2 {
     font-size: clamp(2rem, 10.3vw, 4rem);
-  }
-
-  .manifesto {
-    padding: 64px 0;
-  }
-
-  .manifesto::before {
-    inset: 18% -12% 18% auto;
-    width: 48%;
-    box-shadow: 0 0 0 18px rgba(9, 9, 9, 0.08), 0 0 0 36px rgba(9, 9, 9, 0.05);
-  }
-
-  .manifesto p {
-    font-size: clamp(1.75rem, 8.5vw, 3.2rem);
-  }
-
-  .manifesto .outline-text {
-    color: var(--white);
-    -webkit-text-stroke: 0;
   }
 
   .map-card {
@@ -1469,7 +1327,6 @@ h1, h2, h3, h4 { font-weight: var(--heading-weight); }
 .section-heading h2, .women-heading h2 { font-size: clamp(2.6rem, 5vw, 5rem); }
 .discipline-card h3 { font-size: clamp(2.3rem, 4vw, 3.6rem); letter-spacing: -0.035em; }
 .women-signature strong { font-size: clamp(2rem, 3.1vw, 3rem); letter-spacing: -0.035em; }
-.manifesto p { font-weight: var(--heading-weight); letter-spacing: -0.045em; }
 .nav-intro { display: none; }
 .site-nav { gap: 20px; }
 .site-nav > a, .nav-group > summary { font-size: 0.7rem; letter-spacing: 0.06em; }
@@ -1699,14 +1556,12 @@ summary::-webkit-details-marker { display: none; }
   .hero h1 { font-size: clamp(3rem, 9.5vw, 5.5rem); }
   .section-heading h2, .women-heading h2 { font-size: clamp(2.3rem, 7vw, 4rem); }
   .women-signature strong { font-size: clamp(2rem, 6vw, 3rem); }
-  .experience-statement h2 { font-size: clamp(2.3rem, 6vw, 3.7rem); }
   .footer-inner { gap: 24px; }
 }
 
 @media (max-width: 620px) {
   .hero { min-height: 780px; min-height: max(760px, 100svh); }
   .hero-inner { padding-top: 130px; }
-  .experience-statement h2 { font-size: clamp(1.8rem, 9vw, 3rem); }
   .hero h1 { font-size: clamp(2.65rem, 12vw, 4rem); }
   .section-heading h2, .women-heading h2 { font-size: clamp(2.2rem, 10vw, 3.8rem); overflow-wrap: normal; }
   .membership-carousel { margin-inline: -14px; }
@@ -1726,4 +1581,31 @@ summary::-webkit-details-marker { display: none; }
   .membership-surface, .membership-card.is-selected .membership-surface { transform: none; transition: none; }
   .site-nav, .site-nav > *, .nav-group, .nav-group > summary span { transition: none !important; }
   .site-nav.is-open, .site-nav.is-open > * { transform: none; }
+}
+
+/* Salon yaşamı: kısa, okunaklı özellik şeridi. */
+@media (max-width: 900px) {
+  .experience-grid { grid-template-columns: 1fr; gap: 28px; }
+  .experience-statement h2 { font-size: 2.2rem; }
+  .experience-statement h2 br { display: none; }
+  .feature-item:first-child { padding-left: 0; border-left: 0; }
+}
+
+@media (max-width: 620px) {
+  .experience { padding: 40px 0; }
+  .experience-grid { gap: 24px; }
+  .experience-statement .kicker { margin-bottom: 12px; }
+  .experience-statement h2 { font-size: clamp(1.6rem, 7.5vw, 2.2rem); }
+  .feature-list { grid-template-columns: 1fr; }
+  .feature-item, .feature-item:first-child {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 12px;
+    padding: 18px 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .feature-item:last-child { padding-bottom: 0; }
+  .feature-item > span { margin: 0; padding-top: 2px; }
+  .feature-item p { margin-top: 6px; }
 }

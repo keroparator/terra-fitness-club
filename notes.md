@@ -138,3 +138,14 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 
 - Kerem 06 / Hakkımızda bölümündeki kahverengiyi beğenmedi; Terra kırmızısı istedi. Vizyon kartı marka kırmızısı/koyu kırmızı geçişine, deneyim başlığının vurgusu marka kırmızısına alındı. Kartın kahverengi alt tonlu metinleri beyaz/nötr beyaza çevrildi. CSS/HTML cache sürümü 18.
 - 1440 px bölüm görsel incelendi, tarayıcı hesaplanan renkleri mevcut `--red`/`--red-dark` ile eşleşiyor. 375/768 px yatay taşma yok. JS sözdizimi/diff kontrolleri geçti; geçici test sunucusu kapatıldı.
+
+
+## Sayfa uzunluğunu azaltma — 8 Ekim 2026
+
+- Kerem yalnız önerilen 1, 2 ve 3. maddeleri uygulamamı istedi; tasarımdan gereğinden fazla ödün vermeden kısaltma hedeflendi.
+- Giriş ile Terra’yı tanı birleştirildi: kısa tanıtım hero metnine taşındı, 800 m² / 5 metre / 5 branş bilgileri korundu; ayrı tanıtım bölümü kaldırıldı. Salon menüsü girişe, Salonu keşfet butonu Salon yaşamı’na, masaüstü aşağı oku Branşlar’a gider. Eski #salon bağlantısı hero içindeki hedefle korunur.
+- Salon yaşamı modern ekipman, kafe ve otoparktan oluşan kompakt şerit oldu. Masaüstünde yatay, telefonda okunaklı üç satır; tekrar eden alan ölçüleri kaldırıldı.
+- Ayrı büyük slogan bölümü ve kullanılmayan stilleri kaldırıldı. Bölüm numaraları güncellendi. Diğer öneriler (yorum carousel’i/Hakkımızda kısaltma) uygulanmadı.
+- index.html ve css/style.css değişti, CSS v19. 375×850 tarayıcı görünümünde toplam yükseklik 12.297→10.708 px (1.589 px / yaklaşık %13 azalma); Salon yaşamı 1.070→450 px.
+- 320/375/430/768/1024/1440 px’de belge ve yeni özellik öğelerinde yatay taşma yok. Mobil giriş ve mobil/masaüstü şerit görsel incelendi; hero görseli yüklendi. Salonu keşfet hedefi ve mobil Salon menüsü hedefi/kapanışı doğrulandı, gözlenen konsol hatası yok. JS sözdizimi, benzersiz HTML kimlikleri/iç bağlantılar ve diff kontrolü geçti. Yeni hareket eklenmedi; mevcut reveal/reduced-motion kuralları korunuyor, canlı azaltılmış hareket/gerçek cihaz testi yapılmadı.
+- Kontrol için geçici localhost sunucusu açıldı, test bitiminde kapatıldı. Yayın/push yok.

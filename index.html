@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/terra-logo.svg" type="image/svg+xml">
   <link rel="preload" href="assets/terra-gym-hero.webp" as="image" type="image/webp">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="css/style.css?v=18">
+  <link rel="stylesheet" href="css/style.css?v=19">
 </head>
 <body>
   <a class="skip-link" href="#main">İçeriğe geç</a>
@@ -27,7 +27,7 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Ana menü" data-nav>
         <div class="nav-intro" aria-hidden="true"><span>TERRA FITNESS CLUB</span><strong>Kendi ritmini bul.</strong></div>
-        <a href="#salon">Salon</a>
+        <a href="#anasayfa">Salon</a>
         <details class="nav-group">
           <summary>Branşlar <span aria-hidden="true">⌄</span></summary>
           <div class="nav-submenu">
@@ -60,20 +60,20 @@
       <div class="hero-shade"></div>
       <div class="hero-grid" aria-hidden="true"></div>
 
-      <div class="shell hero-inner">
+      <div class="shell hero-inner" id="salon">
         <div class="hero-content">
           <p class="eyebrow reveal">Güneştepe, Bursa</p>
           <h1 id="hero-title" class="reveal">
             Hareket et.<br>
             <span>Enerjini yükselt.</span>
           </h1>
-          <p class="hero-lead reveal">Geniş alan, yüksek tavan ve farklı antrenman disiplinleri. Terra Fitness Club’da sana ait yeni bir rutin başlıyor.</p>
+          <p class="hero-lead reveal">Güneştepe’de ferah, modern ve sana ait bir antrenman alanı. Terra Fitness Club’da beş farklı disiplinle kendi ritmini bul.</p>
           <div class="hero-actions reveal">
             <a class="button button-primary" href="https://wa.me/905075510589?text=Merhaba%2C%20%C3%BCyelik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
               Üyelik için bilgi al
               <span aria-hidden="true">↗</span>
             </a>
-            <a class="button button-ghost" href="#salon">Salonu keşfet</a>
+            <a class="button button-ghost" href="#deneyim">Salonu keşfet</a>
           </div>
         </div>
 
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <a class="scroll-cue" href="#salon" aria-label="Aşağı kaydır">
+      <a class="scroll-cue" href="#branslar" aria-label="Branşları keşfet">
         <span></span>
       </a>
     </section>
@@ -97,25 +97,11 @@
       </div>
     </div>
 
-    <section class="section intro" id="salon">
-      <div class="shell intro-grid">
-        <div class="section-heading reveal">
-          <p class="kicker">01 / Terra’yı tanı</p>
-          <h2>Alan açıldığında<br><em>performans yükselir.</em></h2>
-        </div>
-        <div class="intro-copy reveal">
-          <p>Terra Fitness Club, Güneştepe’de ferah, modern ve güçlü bir spor deneyimi için tasarlandı.</p>
-          <p>800 m² net çalışma alanı ve 5 metre tavan yüksekliği; serbest hareket, temiz bir görüş ve antrenmana odaklanabileceğin rahat bir atmosfer sunuyor.</p>
-          <a class="text-link" href="#deneyim">Terra deneyimini gör <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
     <section class="section disciplines" id="branslar" aria-labelledby="disciplines-title">
       <div class="shell">
         <div class="section-heading section-heading-row reveal">
           <div>
-            <p class="kicker">02 / Branşlar</p>
+            <p class="kicker">01 / Branşlar</p>
             <h2 id="disciplines-title">Ritmini<br><em>sen seç.</em></h2>
           </div>
           <p>Güç, kondisyon, esneklik veya hareket. Hedefin ne olursa olsun başlangıç noktan burada.</p>
@@ -178,7 +164,7 @@
       <div class="shell women-inner">
         <div class="women-heading reveal">
           <div>
-            <p class="kicker">03 / Kadınlara özel</p>
+            <p class="kicker">02 / Kadınlara özel</p>
             <h2 id="women-title">Gücüne ait<br><em>bir alan.</em></h2>
           </div>
           <p>Kalabalıktan uzak, kendi ritmine odaklanabileceğin izole bir bölüm. Güçlenmek, esnemek ve hareketin keyfini çıkarmak için tasarlandı.</p>
@@ -223,7 +209,7 @@
     <section class="section memberships" id="uyelikler" aria-labelledby="memberships-title">
       <div class="shell">
         <div class="section-heading section-heading-row reveal">
-          <div><p class="kicker">04 / Üyelik Paketleri</p><h2 id="memberships-title">Kendine<br><em>zaman ayır.</em></h2></div>
+          <div><p class="kicker">03 / Üyelik Paketleri</p><h2 id="memberships-title">Kendine<br><em>zaman ayır.</em></h2></div>
           <p>Hedefin sana ait. Sana uygun süreyi seç, üyelik detaylarını birlikte konuşalım.</p>
         </div>
         <div class="membership-carousel reveal" role="region" aria-roledescription="slayt gösterisi" aria-label="Üyelik paketleri">
@@ -268,30 +254,24 @@
       </div>
     </section>
 
-    <section class="section experience" id="deneyim" aria-labelledby="experience-title">
+    <section class="experience" id="deneyim" aria-labelledby="experience-title">
       <div class="shell experience-grid">
         <div class="experience-statement reveal">
-          <p class="kicker">05 / Salon yaşamı</p>
-          <h2 id="experience-title">Antrenmandan<br>fazlası.</h2>
-          <p>Günün temposunu dışarıda bırak. İhtiyacın olan her şeyi tek bir çatı altında bul.</p>
+          <p class="kicker">04 / Salon yaşamı</p>
+          <h2 id="experience-title">Antrenmandan<br> <em>fazlası.</em></h2>
         </div>
-
         <div class="feature-list">
           <article class="feature-item reveal">
-            <span>01</span>
-            <div><h3>Ferah antrenman alanı</h3><p>800 m² net çalışma alanı ve 5 metre tavanla rahat hareket.</p></div>
+            <span aria-hidden="true">01</span>
+            <div><h3>Modern ekipman</h3><p>Kendi programına ve hedefine alan aç.</p></div>
           </article>
           <article class="feature-item reveal">
-            <span>02</span>
-            <div><h3>Modern ekipman düzeni</h3><p>Farklı hedeflere ve antrenman biçimlerine uyumlu salon planı.</p></div>
+            <span aria-hidden="true">02</span>
+            <div><h3>Kafe alanı</h3><p>Antrenman sonrası nefeslen, sosyalleş.</p></div>
           </article>
           <article class="feature-item reveal">
-            <span>03</span>
-            <div><h3>Kafe alanı</h3><p>Antrenman öncesi hazırlan, sonrasında nefeslen ve sosyalleş.</p></div>
-          </article>
-          <article class="feature-item reveal">
-            <span>04</span>
-            <div><h3>Otopark kolaylığı</h3><p>Antrenmana ulaşmayı gününün en kolay parçasına dönüştür.</p></div>
+            <span aria-hidden="true">03</span>
+            <div><h3>Otopark kolaylığı</h3><p>Günün temposundan antrenmanına rahatça geç.</p></div>
           </article>
         </div>
       </div>
@@ -300,7 +280,7 @@
     <section class="section about" id="hakkimizda" aria-labelledby="about-title">
       <div class="shell about-grid">
         <div class="about-story reveal">
-          <p class="kicker">06 / Hakkımızda</p>
+          <p class="kicker">05 / Hakkımızda</p>
           <div class="experience-years"><strong>12</strong><span>YILLIK<br>SEKTÖREL DENEYİM</span></div>
           <h2 id="about-title">Deneyimimiz,<br><em>senin yolculuğun.</em></h2>
           <p>Terra Fitness Club’da 12 yıllık sektörel deneyimi, hareket etmek için ilham veren yeni bir yaşam alanıyla buluşturuyoruz.</p>
@@ -317,17 +297,9 @@
       </div>
     </section>
 
-    <section class="manifesto" aria-label="Terra Fitness Club yaklaşımı">
-      <div class="shell manifesto-inner reveal">
-        <p>DAHA FERAH.</p>
-        <p>DAHA GÜÇLÜ.</p>
-        <p class="outline-text">DAHA SEN.</p>
-      </div>
-    </section>
-
     <section class="section faq" id="sorular" aria-labelledby="faq-title">
       <div class="shell faq-grid">
-        <div class="section-heading reveal"><p class="kicker">07 / Sıkça sorulan sorular</p><h2 id="faq-title">Aklında<br><em>kalmasın.</em></h2><p class="section-description">Başlamadan önce merak ettiklerin. Daha fazlası için bir mesaj uzağındayız.</p></div>
+        <div class="section-heading reveal"><p class="kicker">06 / Sıkça sorulan sorular</p><h2 id="faq-title">Aklında<br><em>kalmasın.</em></h2><p class="section-description">Başlamadan önce merak ettiklerin. Daha fazlası için bir mesaj uzağındayız.</p></div>
         <div class="faq-list">
           <details class="faq-item reveal"><summary>Hangi branşlarda antrenman yapabilirim?<span aria-hidden="true">+</span></summary><p>Fitness, Pilates, Zumba, Boks ve Yoga seçeneklerini keşfedebilirsin. Güncel ders programı ve katılım detayları için bizimle iletişime geç.</p></details>
           <details class="faq-item reveal"><summary>Üyelik hakkında nasıl bilgi alabilirim?<span aria-hidden="true">+</span></summary><p>3, 6 veya 12 aylık üyelik kartından Bize ulaşın butonuna dokun. Seçtiğin süreyle ilgili hazır mesaj WhatsApp’ta açılır; mesajı göndererek ekibimizle görüşebilirsin.</p></details>
@@ -341,7 +313,7 @@
 
     <section class="section testimonials" id="yorumlar" aria-labelledby="testimonials-title">
       <div class="shell">
-        <div class="section-heading reveal"><p class="kicker">08 / Yorumlar</p><h2 id="testimonials-title">Hareketin<br><em>iyi hissettiren yanı.</em></h2></div>
+        <div class="section-heading reveal"><p class="kicker">07 / Yorumlar</p><h2 id="testimonials-title">Hareketin<br><em>iyi hissettiren yanı.</em></h2></div>
         <p class="sample-notice">Tasarım önizlemesi · Aşağıdaki metinler temsili yorumlardır. Gerçek üye yorumlarıyla güncellenecektir.</p>
         <div class="testimonial-grid">
           <figure class="testimonial-card reveal"><span aria-hidden="true">“</span><blockquote>Geniş bir alanda, kendi tempomda antrenman yapabilmek benim için çok değerli. Burada rutinime zaman ayırmak kolaylaşıyor.</blockquote><figcaption><span class="testimonial-avatar" aria-hidden="true">01</span><div>Örnek üye yorumu<small>Fitness deneyimi · Temsili metin</small></div></figcaption></figure>
@@ -354,7 +326,7 @@
     <section class="section location" id="konum" aria-labelledby="location-title">
       <div class="shell location-grid">
         <div class="location-card reveal">
-          <p class="kicker">09 / İletişim</p>
+          <p class="kicker">08 / İletişim</p>
           <h2 id="location-title">Güneştepe’nin<br><em>yeni enerjisi.</em></h2>
 
           <div class="contact-row">
