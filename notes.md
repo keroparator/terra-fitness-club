@@ -6,18 +6,18 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ## Güncel devir — 8 Ekim 2026, başka chatte devam
 
-**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi. Önce aşağıdaki dört işi yalnız not almamızı istedi; bu chatte “salon yaşamını 1 yapalım” diyerek sıralama değişikliğini yetkilendirdi. Salon yaşamı giriş ve branş şeridinin ardından 01. bölüme taşındı. Giriş arka planı, sonraki açık kullanıcı talimatıyla salonun kendi çekim fotoğrafıyla değiştirildi. Salon yaşamı fotoğrafları ve diğer işler bekliyor.
+**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi. Önce aşağıdaki dört işi yalnız not almamızı istedi; bu chatte “salon yaşamını 1 yapalım” diyerek sıralama değişikliğini yetkilendirdi. Salon yaşamı giriş ve branş şeridinin ardından 01. bölüme taşındı. Giriş arka planı, sonraki açık kullanıcı talimatıyla salonun kendi çekim fotoğrafıyla değiştirildi. Salon yaşamı için üç fotoğraflı kompakt kolaj da sonraki kullanıcı talimatıyla eklendi; diğer işler bekliyor.
 
 ### Sıradaki işler — güncel uygulama durumu
 
-1. **Salon yaşamı 01. bölüme taşındı.** Giriş ve kırmızı branş şeridinin ardından geliyor; Branşlar 02, Kadınlara özel 03, Üyelik Paketleri 04. Salon yaşamı fotoğrafları ve görsel zenginleştirme bekliyor. Çekimler /home/kerem/Belgeler/terra-fitness-club/Genel Salon Fotoğrafları içinde mevcut; giriş arka planı için mthevision-7628.jpg kullanıldı.
+1. **Salon yaşamı 01. bölüme taşındı.** Giriş ve kırmızı branş şeridinin ardından geliyor; Branşlar 02, Kadınlara özel 03, Üyelik Paketleri 04. Salon yaşamı maddelerinin altına fitness/Pilates/kafe kolajı eklendi; mobilde 300px yüksekliğinde bir büyük ve iki küçük fotoğraf birlikte görünür, carousel yok. Çekimler /home/kerem/Belgeler/terra-fitness-club/Genel Salon Fotoğrafları içinde mevcut; giriş arka planı için mthevision-7628.jpg kullanıldı.
 2. **Terra logosu daha fazla kullanılacak.** Kullanılacak konumlar ve yoğunluk henüz belirlenmedi; mevcut özgün logoyu esas al.
 3. **Navbar yeniden elden geçirilecek.** Yeni tasarımın ayrıntıları henüz verilmedi. Mevcut mobil alt menüler tek sütun ve animasyonlu; branş/paket hedefleri çalışıyor.
 4. **Hyperion’un sayfası incelenecek.** Hangi Hyperion olduğu ve URL belirtilmedi. Başka bir siteyi varsayma; devam ederken doğru bağlantıyı netleştir. Henüz araştırılmadı.
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **20**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **21**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -204,3 +204,12 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Kerem mobilde tavanın baskın kaldığını, makinelerin butonların altında kaldığını bildirdi; fotoğrafın alt bölümünü yukarı almayı istedi. 620px ve altında hero-image sabit140px yukarı taşındı; alt %25 alanı maske ile koyu zemine yumuşakça karışıyor. Yazı/buton yerleşimi ve masaüstü kadrajı değişmedi. Bu statik kadraj ayarıdır; animasyon eklenmedi. CSS v20.
 - 375×850 tarayıcı görünümü görsel incelendi: ekipmanlar artık başlık/açıklama arkasında, butonların üstünde beliriyor. 320/375/430 px yatay taşma yok; 1440 px transform ve mask none, yatay taşma yok. Konsol hata kaydı boş. node --check js/main.js ve git diff --check geçti. Gerçek telefon testi yapılmadı.
 - Değişen dosyalar: css/style.css, index.html cache sürümü ve bu not. Önizleme sunucusu açık; kullanıcı değerlendirmesi bekleniyor.
+
+
+## Salon yaşamı fotoğraf kolajı — 8 Ekim 2026
+
+- Kerem maddelerin altını birkaç fotoğrafla büyütmeyi istedi; carousel kullanılmayacak, fotoğraflar doğrudan görünür olacak, alt alta uzun bir galeri yapılmayacak. İstek üzerine bir büyük solda ve iki küçük sağda CSS grid kolajı eklendi. Kullanıcı görsel değerlendirmesi bekleniyor.
+- Genel Salon Fotoğrafları içinden 7624 fitness, 7552 Pilates, 7653 kafe kareleri büyük önizlemeyle incelenip seçildi. assets/terra-salon-fitness.webp (1200×1800,146148 bayt), terra-salon-pilates.webp (1200×900,97412 bayt), terra-salon-kafe.webp (1000×900,110456 bayt) üretildi. Toplam354016 bayt; kalite82 WebP, orijinallere dokunulmadı. Yeni dosyalar web için optimize yerel görsellerdir; bağımlılık yok.
+- Kolaj telefonlarda300px (+28px üst boşluk), tablette380px, masaüstünde460px (+36px boşluk). İki sütun telefonda da korunur; ana fotoğraf iki satır kaplar. Yuvarlatılmış çerçeveler ve alt kısımda kısa, gradient üzerinde beyaz açıklamalar var. img genişlik/yükseklik, açıklayıcı alt, lazy loading ve async decode kullanıyor. Yeni animasyon/etkileşim yok; fotoğraflar reveal ile geciktirilmiyor. CSS v21.
+- 375px mobil ve1440px masaüstü görsel incelendi. 320/375/768/1440px yatay taşma yok, 320px açıklamalarda içerik taşması yok.375px üç fotoğrafın yüklendiği ve300px galeri yüksekliği ölçüldü; tablet380/desktop460 doğrulandı. Konsol hata kaydı boş. JS sözdizimi, HTML kimlik/anchor/görsel dosya yolları ve diff kontrolleri geçti. Gerçek telefon testi yapılmadı.
+- index.html, css/style.css, üç WebP ve bu not değişti. Önizleme sunucusu açık bırakıldı; push/yayın yok. Sonraki adım Kerem kolajı gerçek telefonda değerlendirebilir; logo/navbar/Hyperion işleri ayrı bekliyor.
