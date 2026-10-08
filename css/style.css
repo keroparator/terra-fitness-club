@@ -1687,9 +1687,8 @@ summary::-webkit-details-marker { display: none; }
   .nav-group[open]:not(.is-closing) { background: #ffffff07; border-color: #e8525e4d; }
   .nav-group > summary span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #ffffff08; color: #df777e; }
   .nav-group.is-closing > summary span { transform: none; }
-  .nav-submenu { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; min-width: 0; margin: 0; padding: 2px 12px 12px; border: 0; border-radius: 0; background: none; box-shadow: none; }
+  .nav-submenu { position: static; grid-template-columns: minmax(0, 1fr); gap: 6px; min-width: 0; margin: 0; padding: 2px 12px 12px; border: 0; border-radius: 0; background: none; box-shadow: none; }
   .nav-submenu a { display: flex; align-items: center; min-height: 46px; padding: 12px; border: 1px solid #ffffff0c; border-radius: 10px; background: #0003; font-size: 0.88rem; font-weight: 450; text-transform: none; letter-spacing: 0; }
-  .nav-submenu a:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .site-nav .nav-cta { justify-content: center; margin-top: 10px; padding: 17px; border-radius: 16px; background: var(--red); font-size: 1rem; }
   .site-nav > * { opacity: 0; transform: translateY(12px); transition: opacity 180ms ease, transform 180ms ease; }
   .site-nav.is-open > * { opacity: 1; transform: none; transition-duration: 350ms; }

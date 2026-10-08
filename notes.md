@@ -126,3 +126,9 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Azaltılmış hareket JS animasyonunu ve menü CSS geçişlerini kapatır; tercih değişimi sürmekte olan alt menü animasyonlarını temizler. Kaynakta kontrol edildi; canlı tercih testi yapılmadı.
 - 375 px görsel kontrol; Branşlar→Paketler geçişi, 12 ay seçimi/menünün kapanışı, Yoga hedefi/menünün kapanışı, Enter ile alt menü, Escape ve Shift+Tab→Bilgi al sınırı doğrulandı. 320/375/430/768 px menü yatay taşması yok; 1440 px masaüstü branş dropdownu çalışıyor. Konsol hatası yok. JS sözdizimi/diff kontrolü geçti. Gerçek telefon testi yapılmadı.
 - HTML/CSS/JS ve bu not güncellendi; CSS sürümü 16, JS sürümü 5. Test sunucusu sonrasında kapatıldı.
+
+
+## Mobil alt menüler tek sütun — 8 Ekim 2026
+
+- Kerem iki sütunlu yerleşimi düzeltti: Branşlar ve Üyelik Paketleri seçenekleri mobilde alt alta, tek sütun olacak. Mobil `.nav-submenu` tek sütuna alındı; önceki son tek öğeyi genişleten kural kaldırıldı. Animasyon/JS değişmedi, CSS cache sürümü 17.
+- 375 px tarayıcıda beş branş ve üç paketin aynı x konumunda, artan y konumlarında dizildiği doğrulandı; branş listesi görsel kontrol edildi. 320/375/430/768 px menü yatay taşması yok. JS sözdizimi/diff kontrolleri geçti. Geçici test sunucusu kapatıldı.
