@@ -6,11 +6,11 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ## Güncel devir — 8 Ekim 2026, başka chatte devam
 
-**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi. Önce aşağıdaki dört işi yalnız not almamızı istedi; bu chatte “salon yaşamını 1 yapalım” diyerek sıralama değişikliğini yetkilendirdi. Salon yaşamı giriş ve branş şeridinin ardından 01. bölüme taşındı. Fotoğraf ekleme ve diğer işler bekliyor; bu sıralama talimatını diğer maddelere uygulama yetkisi sayma.
+**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi. Önce aşağıdaki dört işi yalnız not almamızı istedi; bu chatte “salon yaşamını 1 yapalım” diyerek sıralama değişikliğini yetkilendirdi. Salon yaşamı giriş ve branş şeridinin ardından 01. bölüme taşındı. Giriş arka planı, sonraki açık kullanıcı talimatıyla salonun kendi çekim fotoğrafıyla değiştirildi. Salon yaşamı fotoğrafları ve diğer işler bekliyor.
 
 ### Sıradaki işler — güncel uygulama durumu
 
-1. **Salon yaşamı 01. bölüme taşındı.** Giriş ve kırmızı branş şeridinin ardından geliyor; Branşlar 02, Kadınlara özel 03, Üyelik Paketleri 04. Salon fotoğrafları ve görsel zenginleştirme bekliyor; kullanılacak fotoğraflar henüz seçilmedi/teslim edilmedi.
+1. **Salon yaşamı 01. bölüme taşındı.** Giriş ve kırmızı branş şeridinin ardından geliyor; Branşlar 02, Kadınlara özel 03, Üyelik Paketleri 04. Salon yaşamı fotoğrafları ve görsel zenginleştirme bekliyor. Çekimler /home/kerem/Belgeler/terra-fitness-club/Genel Salon Fotoğrafları içinde mevcut; giriş arka planı için mthevision-7628.jpg kullanıldı.
 2. **Terra logosu daha fazla kullanılacak.** Kullanılacak konumlar ve yoğunluk henüz belirlenmedi; mevcut özgün logoyu esas al.
 3. **Navbar yeniden elden geçirilecek.** Yeni tasarımın ayrıntıları henüz verilmedi. Mevcut mobil alt menüler tek sütun ve animasyonlu; branş/paket hedefleri çalışıyor.
 4. **Hyperion’un sayfası incelenecek.** Hangi Hyperion olduğu ve URL belirtilmedi. Başka bir siteyi varsayma; devam ederken doğru bağlantıyı netleştir. Henüz araştırılmadı.
@@ -188,3 +188,12 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Kerem’in “salon yaşamını 1 yapalım” talimatıyla index.html içindeki bölüm giriş/branş şeridinin ardına taşındı. İlk dört bölüm numarası güncellendi. Masaüstü aşağı oku da #deneyim hedefine alındı; Salonu keşfet zaten aynı hedefi kullanıyordu. CSS/JS değişmedi, fotoğraf eklenmedi.
 - node --check js/main.js ve git diff --check geçti. Tarayıcıda 375/768/1440 px sıralama ve yatay taşma kontrolü geçti; hero görseli yüklendi, masaüstü aşağı oku Salon yaşamı’na gidiyor. Masaüstü bölüm görünümü incelendi; gözlenen konsol hata kaydı boş. Gerçek telefon testi yapılmadı.
 - Bu chatte PC ve aynı Wi-Fi’de telefon önizlemesi için terra-preview-phone-20261008.service çalışıyor: localhost:8000 ve 192.168.1.24:8000; iki adres HTTP 200 verdi. Kullanıcı incelemesi için açık bırakıldı. Yayın/push yok.
+
+
+## Girişte gerçek salon fotoğrafı — 8 Ekim 2026
+
+- Kerem Belgeler klasöründeki çekimleri inceleyip ana sayfa arka planı için uygun olanı seçerek değiştirmeyi istedi. /home/kerem/Belgeler/terra-fitness-club/Genel Salon Fotoğrafları içindeki 144 JPEG beş temas sayfasında incelendi; 7625/7627/7628 adayları büyük önizlemeyle karşılaştırıldı. Kırmızı kolonlar, ekipmanlar ve tavandaki Terra Fitness yazısını birlikte gösteren mthevision-7628.jpg seçildi. Bu seçim ajanın kompozisyon değerlendirmesidir; kullanıcı görsel onayı bekleniyor.
+- Kaynak 6131×4087 px / 15.515.265 bayt. Orijinal dosyaya dokunulmadı. EXIF yönü uygulanıp 2400×1600 px, kalite85 WebP olarak mevcut assets/terra-gym-hero.webp yerine kaydedildi (350.106 bayt, yaklaşık %97,7 küçülme); metadata taşınmadı. Yeni bağımlılık yok.
+- index.html preload ve img aynı ?v=2 adresine bağlandı; alt metin gerçek salonun kolon/ekipman/tavan yazısını açıklıyor. Mevcut masaüstü merkez ve mobil %62 odak, koyu metin katmanları korundu. CSS/JS değişmedi.
+- 375/768/1440 px tarayıcıda görüntü ve metinler incelendi, doğal görsel genişliği2400 ve yatay taşma yok. Gözlenen konsol hata kaydı boş; JS sözdizimi, HTML benzersiz kimlik/iç bağlantı ve diff kontrolleri geçti. Gerçek telefon testi yapılmadı. Önizleme sunucusu açık bırakıldı; push/yayın yok.
+- Sonraki adım: Kerem gerçek telefonda fotoğrafı değerlendirebilir; Salon yaşamı bölümünün fotoğraflarla zenginleştirilmesi ayrıca açık. Revizyon ayrıntıları kullanıcı talimatıyla yalnız bu dosyada tutuldu.
