@@ -1508,10 +1508,10 @@ summary::-webkit-details-marker { display: none; }
 .memberships .section-heading-row > p { color: #595959; }
 .membership-carousel { margin-top: 52px; }
 .membership-track {
-  --card-width: min(80vw, 340px);
+  --card-width: min(72vw, 340px);
   position: relative;
   display: flex;
-  gap: 18px;
+  gap: 10px;
   overflow-x: auto;
   padding: 24px max(0px, calc((100% - var(--card-width)) / 2)) 40px;
   scroll-snap-type: x mandatory;

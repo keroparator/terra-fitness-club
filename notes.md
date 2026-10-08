@@ -108,3 +108,11 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - `index.html`, `css/style.css`, `js/main.js` değişti; fiyat ve WhatsApp hedefleri korunuyor. CSS/JS cache sürümleri artırıldı.
 - Tarayıcıda 320/375/430/768/1440 px taşma yok; 375 px okla 6 ay seçimi merkezlendi (0°), 768 px 12 ay nokta seçimi merkezlendi (yuvarlama farkıyla ~0°). Mobil ve masaüstü görünümleri incelendi; konsol hatası yok. JS sözdizimi/diff kontrolleri geçti. Gerçek telefon testi yapılmadı.
 - Önceki 8000/8001 sunucuları kullanıcı isteğiyle kapatılmıştı. Bu kontrol için yalnız localhost:8000 geçici açıldı ve test sonunda kapatıldı.
+
+
+## Mobil yan kart görünürlüğü — 8 Ekim 2026
+
+- Kerem’in geri bildirimi: seçili kartın yanında komşu kartlar hafif görünmeli; mevcut genişlik ve 3D açı kenarları gizliyordu.
+- Mobil/tablet kart genişliği 80vw yerine 72vw, aralık 18 yerine 10 px yapıldı. Masaüstünün üçlü düzeni korundu. CSS cache sürümü 15.
+- 375 px tarayıcıda 6 ay seçiliyken iki komşu yüzeyin de yaklaşık 14.6 px’i görünür ölçüldü ve görsel kontrol edildi. İlk/son kartın yalnız var olan komşusu görünür; döngü veya kopya kart eklenmedi.
+- 320/375/430/768/1440 px yatay taşma yok; dar kartta metin/CTA içerik taşması yok. JS sözdizimi ve diff kontrolleri geçti. Gerçek telefon testi yapılmadı. Geçici localhost test sunucusu test bitiminde kapatıldı.
