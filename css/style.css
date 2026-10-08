@@ -1697,3 +1697,8 @@ summary::-webkit-details-marker { display: none; }
   .feature-item > span { margin: 0; padding-top: 2px; }
   .feature-item p { margin-top: 6px; }
 }
+
+/* Pilates ekipmanlarını geniş kadrajda koru. */
+.women-gallery .salon-photo:first-child {
+  aspect-ratio: 1.5;
+}

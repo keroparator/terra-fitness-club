@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **24**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **25**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -236,3 +236,10 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Fotoğraflar kadınlar bölümünün mevcut üç maddesinin ardından geliyor. Mobil16:10, masaüstü/tablet2.6:1 oran; aralık mobil12px, diğerlerinde14px. Kullanıcı isteği doğrultusunda fotoğraflar alt alta; carousel yok. Yeni animasyon/bağımlılık eklenmedi.
 - 375px son düzen görsel incelendi: iki fotoğraf aynı x ve genişlikte, y değerleri artıyor; her biri yaklaşık330×205.5px içerik ölçüsünde, doğal genişlik1400 ile yükleniyor.320/375/768/1440px yatay taşma yok.1440px her kart1180×453.8px ve alt alta; ikinci fotoğraf görünümü incelendi. Konsol hata kaydı boş. JS sözdizimi, HTML id/anchor/görsel dosya ve diff kontrolü geçti. Gerçek telefon testi yapılmadı.
 - index.html, css/style.css, iki yeni WebP ve bu not değişti. Sunucu açık bırakıldı, push/yayın yok. Sonraki adım kullanıcı yatay düzeni değerlendirebilir.
+
+
+## Pilates ekipmanlarının kadrajı — 8 Ekim 2026
+
+- Kerem Pilates fotoğrafının fazla kırpılmış göründüğünü, ekipmanların daha iyi göründüğü bir kare istediğini söyledi; ardından yatay olmasının zorunlu olmadığını, kareye yakın oranın da seçilebileceğini belirterek oranı ajana bıraktı.7553 ve7550 büyük önizlemeyle karşılaştırıldı; reformerların birlikte göründüğü7553 seçildi.
+- assets/terra-kadinlar-pilates.webp1400×934/120910 bayt, kalite82 olarak yenilendi; orijinal korunuyor. HTML adresi?v=3, boyut nitelikleri güncellendi. Pilates çerçevesi tüm genişliklerde3:2 oldu; önceki masaüstü2.6:1 kırpımı kaldırıldı. İkinci fotoğraf ve alt alta düzen korundu. CSS v25.
+- 375px tarayıcı görünümünde reformerlar ve üst çerçeveleri birlikte görünüyor; doğal genişlik1400, taşma yok.1440px oran1.5 ve belge taşmaması ölçüldü; Pilates fotoğrafının masaüstü tam görünümü ayrıca doğrulanmadı. JS sözdizimi ve diff kontrolü geçti. Gerçek telefon testi yapılmadı. index.html/css/style.css/görsel/bu not değişti. Sunucu açık, push/yayın yok.
