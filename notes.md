@@ -6,11 +6,11 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ## Güncel devir — 8 Ekim 2026, başka chatte devam
 
-**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi; birkaç küçük iş kaldığını söyledi. Aşağıdaki dört işi **şu an uygulamama, yalnız not alma ve geri döndüğünde hatırlatma** talimatı verdi. Yeni chatte bu listeyi hatırlat; kullanıcı devam etmeden geliştirmeye başlama.
+**Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi. Önce aşağıdaki dört işi yalnız not almamızı istedi; bu chatte “salon yaşamını 1 yapalım” diyerek sıralama değişikliğini yetkilendirdi. Salon yaşamı giriş ve branş şeridinin ardından 01. bölüme taşındı. Fotoğraf ekleme ve diğer işler bekliyor; bu sıralama talimatını diğer maddelere uygulama yetkisi sayma.
 
-### Sıradaki işler — henüz uygulanmadı
+### Sıradaki işler — güncel uygulama durumu
 
-1. **Salon yaşamı en üste alınacak.** Salon fotoğrafları eklenecek ve bölüm görsel açıdan zenginleştirilecek. “En üst”ün hero’nun yerine mi yoksa hemen altına mı geldiği henüz netleşmedi; yerleşimi devam ederken belirle. Kullanılacak salon fotoğrafları henüz seçilmedi/teslim edilmedi. Önceki ertelenen görseller maddesi bu işle yeniden gündemde.
+1. **Salon yaşamı 01. bölüme taşındı.** Giriş ve kırmızı branş şeridinin ardından geliyor; Branşlar 02, Kadınlara özel 03, Üyelik Paketleri 04. Salon fotoğrafları ve görsel zenginleştirme bekliyor; kullanılacak fotoğraflar henüz seçilmedi/teslim edilmedi.
 2. **Terra logosu daha fazla kullanılacak.** Kullanılacak konumlar ve yoğunluk henüz belirlenmedi; mevcut özgün logoyu esas al.
 3. **Navbar yeniden elden geçirilecek.** Yeni tasarımın ayrıntıları henüz verilmedi. Mevcut mobil alt menüler tek sütun ve animasyonlu; branş/paket hedefleri çalışıyor.
 4. **Hyperion’un sayfası incelenecek.** Hangi Hyperion olduğu ve URL belirtilmedi. Başka bir siteyi varsayma; devam ederken doğru bağlantıyı netleştir. Henüz araştırılmadı.
@@ -19,7 +19,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 - Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **19**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
-- Salon yaşamı (#deneyim) şu anda üyeliklerden sonra, Hakkımızda’dan önce. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
+- Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
 - Kart renkleri: 3 ay hafif parlak siyah, 6 ay kırmızı ışık alan daha parlak siyah, 12 ay beyaz yansımalı kırmızı. Hakkımızda deneyim/vizyon birlikte; vizyon kartı Terra kırmızısı, kahverengi kaldırıldı. Deneyim **12 yıl**, salonun açık olduğu süre diye yorumlama.
 - Mobil menü paneli ve details açılışları animasyonlu; Branşlar ve Üyelik Paketleri seçenekleri **tek sütun**. Paket seçimi ilgili kartı merkezler, branş seçimi ilgili ana sayfa kartına gider; menü kapanır. Klavye/inert/ARIA senkronu korunur.
@@ -181,3 +181,10 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - index.html ve css/style.css değişti, CSS v19. 375×850 tarayıcı görünümünde toplam yükseklik 12.297→10.708 px (1.589 px / yaklaşık %13 azalma); Salon yaşamı 1.070→450 px.
 - 320/375/430/768/1024/1440 px’de belge ve yeni özellik öğelerinde yatay taşma yok. Mobil giriş ve mobil/masaüstü şerit görsel incelendi; hero görseli yüklendi. Salonu keşfet hedefi ve mobil Salon menüsü hedefi/kapanışı doğrulandı, gözlenen konsol hatası yok. JS sözdizimi, benzersiz HTML kimlikleri/iç bağlantılar ve diff kontrolü geçti. Yeni hareket eklenmedi; mevcut reveal/reduced-motion kuralları korunuyor, canlı azaltılmış hareket/gerçek cihaz testi yapılmadı.
 - Kontrol için geçici localhost sunucusu açıldı, test bitiminde kapatıldı. Yayın/push yok.
+
+
+## Salon yaşamı ilk bölüm — 8 Ekim 2026
+
+- Kerem’in “salon yaşamını 1 yapalım” talimatıyla index.html içindeki bölüm giriş/branş şeridinin ardına taşındı. İlk dört bölüm numarası güncellendi. Masaüstü aşağı oku da #deneyim hedefine alındı; Salonu keşfet zaten aynı hedefi kullanıyordu. CSS/JS değişmedi, fotoğraf eklenmedi.
+- node --check js/main.js ve git diff --check geçti. Tarayıcıda 375/768/1440 px sıralama ve yatay taşma kontrolü geçti; hero görseli yüklendi, masaüstü aşağı oku Salon yaşamı’na gidiyor. Masaüstü bölüm görünümü incelendi; gözlenen konsol hata kaydı boş. Gerçek telefon testi yapılmadı.
+- Bu chatte PC ve aynı Wi-Fi’de telefon önizlemesi için terra-preview-phone-20261008.service çalışıyor: localhost:8000 ve 192.168.1.24:8000; iki adres HTTP 200 verdi. Kullanıcı incelemesi için açık bırakıldı. Yayın/push yok.
