@@ -221,3 +221,9 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Kaynaklar Genel Salon Fotoğrafları/mthevision-7632.jpg (serbest ağırlık ana kare), 7589 (kuvvet makineleri), 7564 (koşu bantları); üçü büyük önizlemede incelendi. Yeni WebP varlıklar: terra-salon-agirlik1400×1000/93174 bayt, terra-salon-makineler1000×900/80000 bayt, terra-salon-kardiyo1200×900/126130 bayt. Toplam299304 bayt; kalite82, kaynak orijinaller korunuyor. Lazy/async yükleme ve açıklayıcı alt metinler var. CSS v22.
 - İkinci sıra ilk sıra ile aynı yükseklik: mobil300px, tablet380px, masaüstü460px. Aralık mobil8, diğerlerinde14px; mobil ek uzunluk308px. 375px görsel ve ölçüm: sol küçükler135×146px, sağ büyük189×300px, üç fotoğraf yüklü.1440px görsel kontrol ve grid-column2 doğrulandı.320/375/768/1440px yatay taşma yok;320px açıklamalarda taşma yok. Konsol hata kaydı boş. JS sözdizimi, HTML id/anchor/görsel dosya kontrolü ve diff kontrolleri geçti. Gerçek telefon testi yapılmadı.
 - index.html, css/style.css, üç yeni WebP ve bu not değişti; önizleme sunucusu açık. Push/yayın yok. Sonraki adım kullanıcı gerçek telefonda ikinci kolajı değerlendirebilir.
+
+
+## Kuvvet antrenmanı fotoğraf değişimi — 8 Ekim 2026
+
+- Kerem ikinci kolajdaki Kuvvet antrenmanı fotoğrafının değiştirilmesini istedi. 7614 ve7590 kareleri büyük önizlemeyle karşılaştırıldı; daha geniş ekipman/ayna alanını gösteren mthevision-7614.jpg seçildi. Mevcut assets/terra-salon-makineler.webp 1000×900, kalite82 WebP olarak yenilendi (78776 bayt); orijinal korunuyor. index.html görsel adresine ?v=2 eklendi ve alt metin güncellendi. Kolaj yerleşimi ve başlık aynı.
+- 375/1440px tarayıcı görünümü görsel incelendi; yeni dosya doğal genişlik1000 ile yükleniyor, yatay taşma yok. node --check js/main.js ve git diff --check geçti. Gerçek telefon testi yapılmadı. Kullanıcı değerlendirmesi bekleniyor; sunucu açık.
