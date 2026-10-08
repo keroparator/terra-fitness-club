@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **25**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **26**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -243,3 +243,10 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Kerem Pilates fotoğrafının fazla kırpılmış göründüğünü, ekipmanların daha iyi göründüğü bir kare istediğini söyledi; ardından yatay olmasının zorunlu olmadığını, kareye yakın oranın da seçilebileceğini belirterek oranı ajana bıraktı.7553 ve7550 büyük önizlemeyle karşılaştırıldı; reformerların birlikte göründüğü7553 seçildi.
 - assets/terra-kadinlar-pilates.webp1400×934/120910 bayt, kalite82 olarak yenilendi; orijinal korunuyor. HTML adresi?v=3, boyut nitelikleri güncellendi. Pilates çerçevesi tüm genişliklerde3:2 oldu; önceki masaüstü2.6:1 kırpımı kaldırıldı. İkinci fotoğraf ve alt alta düzen korundu. CSS v25.
 - 375px tarayıcı görünümünde reformerlar ve üst çerçeveleri birlikte görünüyor; doğal genişlik1400, taşma yok.1440px oran1.5 ve belge taşmaması ölçüldü; Pilates fotoğrafının masaüstü tam görünümü ayrıca doğrulanmadı. JS sözdizimi ve diff kontrolü geçti. Gerçek telefon testi yapılmadı. index.html/css/style.css/görsel/bu not değişti. Sunucu açık, push/yayın yok.
+
+
+## Kadınlar bölümü sırası ve kart kaldırma — 8 Ekim 2026
+
+- Kerem Kendi alanın/Kendi ritmin kartını boş yer kapladığı için kaldırmayı ve başlık→görseller→maddeler sırasını önerdi. Bu talimat uygulandı: women-signature kartı ve women-grid sarmalayıcısı çıkarıldı; women-gallery doğrudan women-heading ardından, üç maddelik women-features en sonda. Kullanılmayan kart/grid CSS kuralları ve responsive referanslar temizlendi. Maddeler üstüne36px boşluk eklendi; CSS v26. Görsel dosyaları ve diğer bölüm içerikleri değişmedi.
+- 375px mobil başlık→fotoğraflar geçişi görsel incelendi, iki fotoğraf yüklü.320/375/768/1440px yatay taşma yok.375 ve1440px DOM sırası heading/gallery/features doğrulandı, kart DOM’da yok. Mobil menüden Kadınlara özel hedefi ve otomatik menü kapanışı çalıştı. Konsol hata kaydı boş. JS sözdizimi, HTML benzersiz id/anchor/görsel yolları ve diff kontrolü geçti. Gerçek telefon testi yapılmadı.
+- index.html, css/style.css ve bu not değişti. Kullanıcı değerlendirmesi bekleniyor; sunucu açık bırakıldı, push/yayın yok.
