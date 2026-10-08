@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **19**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **20**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -197,3 +197,10 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - index.html preload ve img aynı ?v=2 adresine bağlandı; alt metin gerçek salonun kolon/ekipman/tavan yazısını açıklıyor. Mevcut masaüstü merkez ve mobil %62 odak, koyu metin katmanları korundu. CSS/JS değişmedi.
 - 375/768/1440 px tarayıcıda görüntü ve metinler incelendi, doğal görsel genişliği2400 ve yatay taşma yok. Gözlenen konsol hata kaydı boş; JS sözdizimi, HTML benzersiz kimlik/iç bağlantı ve diff kontrolleri geçti. Gerçek telefon testi yapılmadı. Önizleme sunucusu açık bırakıldı; push/yayın yok.
 - Sonraki adım: Kerem gerçek telefonda fotoğrafı değerlendirebilir; Salon yaşamı bölümünün fotoğraflarla zenginleştirilmesi ayrıca açık. Revizyon ayrıntıları kullanıcı talimatıyla yalnız bu dosyada tutuldu.
+
+
+## Mobil giriş fotoğrafı kadrajı — 8 Ekim 2026
+
+- Kerem mobilde tavanın baskın kaldığını, makinelerin butonların altında kaldığını bildirdi; fotoğrafın alt bölümünü yukarı almayı istedi. 620px ve altında hero-image sabit140px yukarı taşındı; alt %25 alanı maske ile koyu zemine yumuşakça karışıyor. Yazı/buton yerleşimi ve masaüstü kadrajı değişmedi. Bu statik kadraj ayarıdır; animasyon eklenmedi. CSS v20.
+- 375×850 tarayıcı görünümü görsel incelendi: ekipmanlar artık başlık/açıklama arkasında, butonların üstünde beliriyor. 320/375/430 px yatay taşma yok; 1440 px transform ve mask none, yatay taşma yok. Konsol hata kaydı boş. node --check js/main.js ve git diff --check geçti. Gerçek telefon testi yapılmadı.
+- Değişen dosyalar: css/style.css, index.html cache sürümü ve bu not. Önizleme sunucusu açık; kullanıcı değerlendirmesi bekleniyor.

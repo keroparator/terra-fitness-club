@@ -1138,6 +1138,8 @@ img {
 
   .hero-image {
     object-position: 62% center;
+    transform: translateY(-140px);
+    mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
   }
 
   .hero-shade {
