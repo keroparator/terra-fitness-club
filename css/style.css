@@ -1629,3 +1629,15 @@ summary::-webkit-details-marker { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .js .photo-reveal { opacity: 1; transform: none; transition: none; }
 }
+
+@media (min-width: 901px) {
+  .women-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .women-gallery .salon-photo,
+  .women-gallery .salon-photo:first-child {
+    height: clamp(260px, 26vw, 360px);
+    aspect-ratio: auto;
+  }
+}

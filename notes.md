@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **30**, JS **6**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **31**, JS **6**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 1/3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde dört kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -290,3 +290,10 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Azaltılmış hareket: fotoğraflar hareket etmeden görünür, SSS anlık açılır/kapanır; tercih değişirse devam eden SSS animasyonu son hedefe tamamlanır. Kaynak kuralları kontrol edildi; canlı sistem tercihi testi yapılmadı. JS devre dışıyken fotoğraflar görünür ve native SSS çalışır.
 - index.html/css/style.css/js/main.js değişti; CSS v30, JS v6. node --check ve git diff --check geçti. 375px başlangıçta altı fotoğrafın alternatif yatay dönüşümleri/opacity0, kaydırmadan sonra görünür sınıfı/opacity1 doğrulandı ve görsel incelendi. SSS açma/kapama, tekrar tıklama, Enter ve animasyon sonrası temiz yükseklik/overflow kontrol edildi. 320/375/768/1440px yatay taşma yok, gözlenen konsol hatası yok. Gerçek telefon testi yapılmadı.
 - Sonraki adım Kerem’in hareket hızını ve etkisini telefonda değerlendirmesi; LAN sunucusu açık, yayın/push yok.
+
+
+## Kadınlar bölümü PC fotoğrafları — 9 Ekim 2026
+
+- Kerem mobil görünümü beğendi ve yalnız PC’de büyük fotoğrafları küçültmemizi istedi. 901px ve üstünde kadınlar galerisi eşit iki sütuna alındı; fotoğraflar yan yana, yükseklik clamp(260px,26vw,360px), aralık20px. Mobil/tablet 900px ve altındaki kurallar değişmedi. CSS v31.
+- 1440px galeri1254.5→360px; iki fotoğraf580×360px. 1024px fotoğraflar474.5×266.234px. PC görünümü görsel incelendi. 375px fotoğraf ölçüleri332×221.328 ve332×207.5px; 768px713×475.328 ve713×274.219px, değişiklik öncesiyle aynı. 375/768/1024/1440px yatay taşma yok. JS sözdizimi/diff kontrolü geçti, gerçek telefon testi yapılmadı.
+- index.html/css/style.css ve bu not değişti; görsel dosyaları aynı. Kullanıcı önizlemesi bekleniyor; sunucu açık, yayın/push yok.
