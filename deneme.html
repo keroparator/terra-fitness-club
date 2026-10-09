@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Terra Fitness Club’ı 1 günlük deneme üyeliğiyle keşfet. Başvuru formunu doldur, ilk adımını at.">
+  <title>1 Günlük Deneme Üyeliği | Terra Fitness Club</title>
+  <link rel="icon" href="/assets/terra-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css?v=34">
+  <script src="/js/deneme.js?v=1" defer></script>
+</head>
+<body class="trial-page">
+  <a class="skip-link" href="#deneme-formu">Forma geç</a>
+  <header class="trial-header shell">
+    <a class="trial-brand" href="/" aria-label="Terra Fitness Club ana sayfa">
+      <img src="/assets/terra-logo.svg" width="76" height="76" alt="">
+    </a>
+    <a class="trial-back" href="/"><span aria-hidden="true">↖</span> Ana sayfaya dön</a>
+  </header>
+
+  <main class="trial-layout shell" id="main">
+    <section class="trial-intro" aria-labelledby="trial-title">
+      <img class="trial-photo" src="/assets/terra-gym-hero.webp?v=2" alt="Terra Fitness Club’ın ferah antrenman alanı ve kırmızı kolonları">
+      <div class="trial-intro-content">
+        <p class="trial-label"><span aria-hidden="true"></span> TERRA’DA İLK GÜNÜN</p>
+        <h1 id="trial-title">İlk adımın.<br><em>Yeni enerjin.</em></h1>
+        <p class="trial-lead">Terra’yı bir gün deneyimle.<br>Alanı keşfet, kendi ritmini bul.</p>
+        <div class="trial-pass" aria-label="1 günlük deneme üyeliği">
+          <span class="trial-pass-number">01<span>GÜN</span></span>
+          <div><strong>Deneme üyeliği</strong><span>Terra Fitness Club</span></div>
+          <span class="trial-pass-arrow" aria-hidden="true">↗</span>
+        </div>
+        <p class="trial-location">GÜNEŞTEPE, BURSA <span aria-hidden="true">/</span> HAREKETE ALAN AÇ.</p>
+      </div>
+    </section>
+
+    <section class="trial-panel" aria-labelledby="form-title">
+      <div class="trial-panel-top"><span>DENEME ÜYELİĞİ</span><span aria-hidden="true">↗</span></div>
+      <h2 id="form-title">Seni tanıyalım.</h2>
+      <p class="trial-description">1 günlük deneme üyeliği için bilgilerini bırak.<br>İlk adımı birlikte atalım.</p>
+      <!-- Tasarım önizlemesi: backend bağlanana kadar hiçbir bilgi gönderilmez. -->
+      <form class="trial-form" id="deneme-formu" tabindex="-1" aria-labelledby="form-title" aria-describedby="trial-preview" method="post">
+        <div class="trial-name-row">
+          <div class="trial-field">
+            <label for="first-name">İsim <span aria-hidden="true">*</span></label>
+            <input id="first-name" name="firstName" type="text" autocomplete="given-name" placeholder="İsmin" required maxlength="60">
+          </div>
+          <div class="trial-field">
+            <label for="last-name">Soyisim <span aria-hidden="true">*</span></label>
+            <input id="last-name" name="lastName" type="text" autocomplete="family-name" placeholder="Soyismin" required maxlength="60">
+          </div>
+        </div>
+        <div class="trial-field">
+          <label for="phone">Telefon numarası <span aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05XX XXX XX XX" required maxlength="24" aria-describedby="phone-hint">
+          <span class="trial-field-hint" id="phone-hint">Sana ulaşabileceğimiz bir telefon numarası.</span>
+        </div>
+        <div class="trial-field">
+          <label for="email">E-posta adresi <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="ornek@mail.com" required maxlength="254">
+        </div>
+        <p class="trial-data-note">Bilgilerin, deneme üyeliği başvurun hakkında seninle iletişime geçmek için kullanılacak.</p>
+        <button class="trial-submit" type="submit" disabled><span>Deneme üyeliğine başvur</span><span aria-hidden="true">↗</span></button>
+        <p class="trial-preview" id="trial-preview">Tasarım önizlemesi · Başvuru gönderimi henüz açık değil.</p>
+        <p class="trial-status" id="trial-status" role="status" tabindex="-1" hidden></p>
+        <noscript><p class="trial-preview">Form önizlemesini denemek için JavaScript’i etkinleştir.</p></noscript>
+      </form>
+      <div class="trial-panel-bottom"><span>Bir günle başlar.</span><strong>Seninle devam eder.</strong></div>
+    </section>
+  </main>
+  <footer class="trial-footer shell"><span>© <span data-trial-year>2026</span> Terra Fitness Club</span><span>Hareket et. Enerjini yükselt.</span></footer>
+</body>
+</html>

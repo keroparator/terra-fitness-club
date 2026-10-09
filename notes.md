@@ -48,8 +48,19 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ## Deneme üyeliği formu — 9 Ekim 2026
 
-- Güncel kullanıcı isteği: `/denemeüyeliği` sayfasında 1 günlük deneme üyeliği formu; isim, soyisim, telefon numarası ve e-posta alınacak. Bildirim alıcısı `terrafitnessclub@gmail.com`. Önceki `/form` taslağının yerini bu istek alır. Ana tanıtım sayfası tek sayfa kalır.
-- Kullanıcı Cloudflare Pages üzerinde yayın ve Cloudflare dışında ek e-posta servisi kullanmadan çözüm istiyor. Henüz sayfa/backend uygulanmadı, yayın veya gerçek e-posta gönderimi yapılmadı.
+### Tasarım uygulaması — 9 Ekim 2026
+
+- Kullanıcı ayrı HTML sayfası ve son URL olarak `/deneme` istedi. `deneme.html` oluşturuldu; Cloudflare Pages’in uzantısız HTML eşlemesiyle `/deneme` sunulur. Python HTTP sunucusunda yerel önizleme `/deneme.html` adresidir. Canlı route henüz test edilmedi; resmî kaynak: https://developers.cloudflare.com/pages/configuration/serving-pages/
+- Terra’nın mevcut kırmızı/siyah/kağıt renkleri, özgün SVG logosu ve salonun mevcut hero fotoğrafı kullanıldı. Masaüstünde fotoğraflı tanıtım ve açık renkli form yan yana; 900px altında alt alta. Mobilde 16px input metni, görünür etiketler, autocomplete, geniş buton ve klavyeyle Forma geç bağlantısı var.
+- Form alanları isim, soyisim, telefon ve e-posta; hepsi zorunlu. Telefon 10–15 rakam ve temel telefon karakterleriyle kontrol edilir; bu telefon sahipliği doğrulaması değildir. Boşluklardan oluşan ad engellenir, e-posta native type=email kontrolündedir.
+- Form JS’i ayrı `js/deneme.js` içinde: mevcut `main.js` ana sayfanın menü DOM’unu zorunlu saydığı için yeni sayfaya yüklenmedi. CSS mevcut `css/style.css` içinde trial sınıflarıyla kapsamlandı; sayfanın CSS sürümü34. Yeni bağımlılık yok, ana sayfa içeriği değişmedi.
+- Yalnız tasarım önizlemesi: veri gönderimi/saklama veya fetch yok; buton sahte başarı yerine başvurunun gönderilmediğini açıklar. JS olmadan buton devre dışıdır. Mail backend’i ve yayın sonraki iştir; veri açıklaması nihai işletme metniyle yayın öncesi tamamlanacak.
+- Doğrulama: iki JS dosyasında node --check ve git diff --check geçti. Tarayıcıda320/375/430/768/1440px taşma ve alan sınırları kontrol edildi; fotoğraf yüklendi.375px mobil ve varsayılan1280px masaüstü görsel incelendi. Boş form ilk alana yöneldi, geçersiz telefonla ilerlemedi, geçerli örnekle gönderimsiz durum mesajı çıktı ve odak mesajdaydı. Skip link formu odaklıyor, sonraki Tab ilk alana geçiyor. Konsolda gözlenen hata/uyarı yok. Gerçek cihaz ve canlı reduced-motion tercihi testi yapılmadı; yeni stillerin reduced-motion override’ı kaynakta mevcut.
+- Önizleme görselleri geçici `/tmp/terra-deneme-mobil.png` ve `/tmp/terra-deneme-desktop.png`. Önceden çalışan8000 portundaki sunucu kullanıldı, bu çalışmada sunucu başlatılmadı/kapatılmadı.
+
+
+- Güncel kullanıcı isteği (son düzeltme): `/deneme` sayfasında 1 günlük deneme üyeliği formu; isim, soyisim, telefon numarası ve e-posta alınacak. Bildirim alıcısı `terrafitnessclub@gmail.com`. Önceki `/form` ve `/denemeüyeliği` yollarının yerini son `/deneme` isteği alır. Ana tanıtım sayfası tek sayfa kalır.
+- Kullanıcı Cloudflare Pages üzerinde yayın ve Cloudflare dışında ek e-posta servisi kullanmadan çözüm istiyor. Sayfa tasarımı yerelde uygulandı; backend, yayın ve gerçek e-posta gönderimi yapılmadı.
 - 9 Ekim resmî belge araştırması: Cloudflare Worker `send_email` binding ile bildirim gönderebilir. Email Routing içinde doğrulanan hedef adreslere gönderim ücretsiz; Gmail adresindeki doğrulama bağlantısı açılmalı. Gönderici için kontrol edilen alan adı ve ilgili Email Service DNS kurulumu gerekir. `pages.dev` üzerinde form önizlenebilir ancak kendi gönderici alan adı gereksinimini karşılamaz.
 - Ajan önerisi, henüz seçilmiş mimari değil: Pages formu → Cloudflare Worker → Cloudflare Email Service → sabit Gmail alıcısı. Pages Functions belgelerinde doğrudan e-posta binding'i listelenmediği için ayrı Worker kullanımı öneriliyor. Bot koruması için Cloudflare Turnstile; sunucu alan kontrolleri ve başarı/hata durumları eklenecek. Başlangıçta veritabanı gerekmiyor; form tek başına bir günlük kullanımın takibini sağlamaz.
 - Bildirim örneği: konu “Yeni 1 günlük deneme üyeliği — Ad Soyad”; gövdede ad soyad, telefon, e-posta ve başvuru zamanı. Gönderici alan adına ait adres olur; başvuranın e-postası Reply-To olabilir.
