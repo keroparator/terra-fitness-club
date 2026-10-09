@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **29**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **30**, JS **6**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 1/3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde dört kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -281,3 +281,12 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 
 - Kerem’in isteğiyle Yoga’nın kırmızı varyantı kaldırıldı; kart Boks/Pilates/Zumba ile aynı siyah zemin, metin/numara renkleri, dekor ve hover kurallarını kullanıyor. Kullanılmayan kırmızı varyant CSS kuralları temizlendi; CSS v29.
 - index.html/css/style.css değişti. JS sözdizimi ve diff kontrolü geçti. 375 px Yoga/Boks hesaplanan zemin, metin, numara, etiket renkleri ve padding eşleşiyor; mobil görsel kontrol yapıldı. 375/768/1440 px yatay taşma yok. Gerçek telefon testi yapılmadı.
+
+
+## Fotoğraf ve SSS animasyonları — 9 Ekim 2026
+
+- Kerem’in açık isteğiyle Salon yaşamı’ndaki altı fotoğraf 900px ve altında sırayla -64/+64px yatay konumdan, 750ms’de görünür hale geliyor. Mevcut IntersectionObserver kullanılıyor; fotoğraf bir kez görünür olduktan sonra tekrar gizlenmiyor. Bölüm overflow:clip ile animasyonun yatay taşması engellendi. Kadınlar bölümünün görselleri bu animasyona dahil değil; masaüstü fotoğraflar doğrudan görünür.
+- SSS’nin native details/summary yapısı korundu. Tıklama/Enter ile açma ve kapama yüksekliği Web Animations API üzerinden 360ms’de değişiyor; cevap yukarıdan aşağı açılıyor. Yeni tıklama mevcut animasyonu iptal edip güncel yükseklikten devam ediyor. Kapanan cevap inert; animasyon bitince inline overflow temizleniyor. Birden fazla sorunun açık kalabilmesi korundu.
+- Azaltılmış hareket: fotoğraflar hareket etmeden görünür, SSS anlık açılır/kapanır; tercih değişirse devam eden SSS animasyonu son hedefe tamamlanır. Kaynak kuralları kontrol edildi; canlı sistem tercihi testi yapılmadı. JS devre dışıyken fotoğraflar görünür ve native SSS çalışır.
+- index.html/css/style.css/js/main.js değişti; CSS v30, JS v6. node --check ve git diff --check geçti. 375px başlangıçta altı fotoğrafın alternatif yatay dönüşümleri/opacity0, kaydırmadan sonra görünür sınıfı/opacity1 doğrulandı ve görsel incelendi. SSS açma/kapama, tekrar tıklama, Enter ve animasyon sonrası temiz yükseklik/overflow kontrol edildi. 320/375/768/1440px yatay taşma yok, gözlenen konsol hatası yok. Gerçek telefon testi yapılmadı.
+- Sonraki adım Kerem’in hareket hızını ve etkisini telefonda değerlendirmesi; LAN sunucusu açık, yayın/push yok.

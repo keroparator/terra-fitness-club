@@ -132,6 +132,13 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -45px' });
 
+// Each salon photo enters once; desktop and reduced-motion remain visible.
+document.querySelectorAll('#deneyim .salon-photo').forEach((photo, index) => {
+  photo.classList.add('photo-reveal');
+  photo.style.setProperty('--photo-entry-x', index % 2 === 0 ? '-64px' : '64px');
+  revealObserver.observe(photo);
+});
+
 document.querySelectorAll('.hero .reveal').forEach((element) => {
   element.classList.add('is-visible');
 });
@@ -275,3 +282,45 @@ updatePackageSelection(0);
 
 reducedMotion.addEventListener('change', updateCardDepth);
 updateCardDepth();
+
+const faqAnimations = new Map();
+const setFaqOpen = (item, open) => {
+  const startHeight = item.getBoundingClientRect().height;
+  faqAnimations.get(item)?.animation.cancel();
+  faqAnimations.delete(item);
+  item.classList.remove('is-closing');
+  item.style.removeProperty('overflow');
+  const answer = item.querySelector('p');
+  answer.toggleAttribute('inert', !open);
+  if (reducedMotion.matches) {
+    item.open = open;
+    return;
+  }
+  item.open = true;
+  item.classList.toggle('is-closing', !open);
+  const endHeight = open ? item.getBoundingClientRect().height : item.querySelector('summary').getBoundingClientRect().height;
+  item.style.overflow = 'hidden';
+  const animation = item.animate([
+    { height: `${startHeight}px` },
+    { height: `${endHeight}px` }
+  ], { duration: 360, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+  faqAnimations.set(item, { animation, open });
+  animation.onfinish = () => {
+    item.open = open;
+    item.classList.remove('is-closing');
+    item.style.removeProperty('overflow');
+    faqAnimations.delete(item);
+  };
+};
+
+document.querySelectorAll('.faq-item').forEach((item) => {
+  item.querySelector('summary').addEventListener('click', (event) => {
+    event.preventDefault();
+    const currentOpen = faqAnimations.get(item)?.open ?? item.open;
+    setFaqOpen(item, !currentOpen);
+  });
+});
+
+reducedMotion.addEventListener('change', () => {
+  faqAnimations.forEach(({ open }, item) => setFaqOpen(item, open));
+});
