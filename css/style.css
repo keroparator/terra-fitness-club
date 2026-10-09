@@ -1504,7 +1504,7 @@ summary::-webkit-details-marker { display: none; }
   .vision-card { padding: 44px; }
   .faq-grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 80px; }
   .testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .membership-track { --card-width: calc((100% - 48px) / 3); gap: 24px; padding-inline: 0; }
+  .membership-track { --card-width: calc((100% - 72px) / 4); gap: 24px; padding-inline: 0; }
   .membership-surface { min-height: 440px; transition: transform 450ms ease, box-shadow 300ms ease; }
   .membership-card.is-selected .membership-surface { transform: translateY(-8px) rotateY(-3deg) rotateX(2deg); }
   .carousel-hint { display: none; }

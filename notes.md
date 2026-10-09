@@ -17,10 +17,10 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **27**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **28**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
-- Üyelikler 3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde üç kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
+- Üyelikler 1/3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde dört kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
 - Kart renkleri: 3 ay hafif parlak siyah, 6 ay kırmızı ışık alan daha parlak siyah, 12 ay beyaz yansımalı kırmızı. Hakkımızda deneyim/vizyon birlikte; vizyon kartı Terra kırmızısı, kahverengi kaldırıldı. Deneyim **12 yıl**, salonun açık olduğu süre diye yorumlama.
 - Mobil menü paneli ve details açılışları animasyonlu; Branşlar ve Üyelik Paketleri seçenekleri **tek sütun**. Paket seçimi ilgili kartı merkezler, branş seçimi ilgili ana sayfa kartına gider; menü kapanır. Klavye/inert/ARIA senkronu korunur.
 - İletişim adı, Google işletme saatleri ve gerçek Maps iframe’i uygulandı. Saatlerin 8 Ekim tarihli doğrulaması ayrıntılarda. SSS ve yerel önizleme için kurgu isimli yorumlar var. Kullanıcı isteğiyle görünür taslak etiketleri kaldırıldı; HTML comment ve data-content-status=mockup kaydı korunuyor. Yayından önce gerçek yorumlarla değiştirilecek.
@@ -35,6 +35,16 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 - %80 mobil hedefi korunur. Yeni değişikliklerde özellikle telefon genişlikleri ve menü/carousel etkileşimleri doğrulanır; desktop/tablet de kontrol edilir.
 - Revizyon ayrıntıları ve bu devir **bu dosyada**; kullanıcı tercihi gereği Jarvis’e kopyalama. Proje AGENTS.md bu dosyayı güncel kapsam kaynağı olarak işaretler. Kendi değişikliklerini kontrol sonrası yerel commit et; push yetkisi yok.
 
+
+## Dört küçük revizyon — 9 Ekim 2026
+
+- Kerem’in açık isteği uygulandı: 1 aylık paket, süreye özel WhatsApp mesajı, navbar seçeneği ve dördüncü carousel noktası eklendi. Kart metinleri ilk adım / rutin / istikrar / uzun vade olarak yeniden düzenlendi. Masaüstü dört kart yan yana, mobil mevcut kaydırmalı yapı. Fiyat veya yeni hizmet vaadi eklenmedi.
+- Üyelik SSS yanıtı 1/3/6/12 ay olarak güncellendi. Girişte Üyelik için bilgi al aynı sekmede #uyelikler hedefine gider.
+- Pazar **Kapalı** olarak değişti; kaynak Kerem’in 9 Ekim düzeltmesi, eski Google saatinin önündedir. Diğer günlerin saatleri korundu.
+- İletişimde kırmızı Yol tarifi al butonu kaldırıldı; harita ve Google Haritalar’da aç bağlantısı kaldı. Ulaşım SSS’sindeki eski buton referansı da düzeltildi.
+- index.html ve css/style.css değişti, CSS v28. JS mevcut DOM’dan paket sayısını aldığı için değişmedi.
+- Doğrulama: node --check, git diff --check, HTML kimlik/iç link/noopener ve dört WhatsApp mesajı kontrolü geçti. Tarayıcıda 320/375/430/768/1024/1440 px belge ve kart içeriği taşması yok. 375 px 12 ay seçimi merkez farkı 0, durum 4/4; navbar 1 ay seçimi ve menü kapanışı, giriş butonunun #uyelikler hedefi doğrulandı. Mobil son kart ve masaüstü dört kart görsel incelendi, gözlenen konsol hatası yok. Gerçek telefon/Firefox ve canlı azaltılmış hareket testi yapılmadı.
+- Kullanıcı önizlemeyi değerlendirecek. Sunucu LAN erişimi için açık tutuluyor; push/yayın yapılmadı.
 
 ## Deneme üyeliği formu — 9 Ekim 2026
 
