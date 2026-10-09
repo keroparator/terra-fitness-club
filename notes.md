@@ -36,6 +36,13 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 - Revizyon ayrıntıları ve bu devir **bu dosyada**; kullanıcı tercihi gereği Jarvis’e kopyalama. Proje AGENTS.md bu dosyayı güncel kapsam kaynağı olarak işaretler. Kendi değişikliklerini kontrol sonrası yerel commit et; push yetkisi yok.
 
 
+## Deneme üyeliği formu — 9 Ekim 2026
+
+- Kullanıcı yeni `/form` sayfası istiyor: 1 günlük deneme üyeliği başvurusu, en az isim/soyisim ve telefon; gönderimler şirketin e-posta adresine ulaşacak. Ana tanıtım sayfası tek sayfa olarak korunur; bu açık istek önceki ayrı sayfa açmama sınırını form için genişletir.
+- Şu an nasıl yapılacağı görüşülüyor; form veya gönderim altyapısı uygulanmadı. Alıcı e-posta adresi, ek alanlar ve deneme koşulları henüz verilmedi.
+- Ajan önerisi (kullanıcı kararı değil): Cloudflare Pages + sunucuda Pages Function + Resend. Gizli anahtar sunucuda tutulur; alan/telefon kontrolü, bot koruması ve gönderim başarısı/hatası arayüzde ele alınır. Resend gönderici alan adının doğrulanmasını gerektirir. Başlangıçta veritabanı zorunlu değil; tek başına e-posta kalıcı başvuru takibi ve teslim garantisi değildir.
+- Kurulumda alıcı adresi, alan adı ve form alanları netleştirilecek; gerçek gönderim ve alıcı gelen kutusu ayrıca test edilecek. Veri kullanım açıklaması formda yer alacak.
+
 ## Mobil öncelik
 
 Kerem’in açık yönlendirmesi: Site yaklaşık %80 mobil kullanım hedeflenerek tasarlanıyor. Bu bir tasarım hedefi; ölçülmüş ziyaretçi istatistiği değil.
