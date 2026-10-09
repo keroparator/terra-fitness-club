@@ -324,3 +324,64 @@ document.querySelectorAll('.faq-item').forEach((item) => {
 reducedMotion.addEventListener('change', () => {
   faqAnimations.forEach(({ open }, item) => setFaqOpen(item, open));
 });
+
+const galleryPhotos = [...document.querySelectorAll('#deneyim .salon-photo, .women-gallery .salon-photo')];
+const photoViewer = document.querySelector('[data-photo-viewer]');
+const viewerImage = photoViewer.querySelector('[data-photo-image]');
+const viewerTitle = photoViewer.querySelector('#photo-viewer-title');
+const viewerCounter = photoViewer.querySelector('[data-photo-counter]');
+let activePhoto = 0;
+let photoOpener = null;
+const photoCaption = (figure) => [...figure.querySelector('figcaption').children].map((element) => element.textContent.trim()).join(' · ');
+
+const displayPhoto = (index) => {
+  activePhoto = (index + galleryPhotos.length) % galleryPhotos.length;
+  const figure = galleryPhotos[activePhoto];
+  const image = figure.querySelector('img');
+  viewerImage.src = image.currentSrc || image.src;
+  viewerImage.alt = image.alt;
+  viewerTitle.textContent = photoCaption(figure);
+  viewerCounter.textContent = `${activePhoto + 1} / ${galleryPhotos.length}`;
+};
+
+galleryPhotos.forEach((figure, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'photo-expand';
+  button.setAttribute('aria-label', `${photoCaption(figure)} — fotoğrafı büyüt`);
+  button.setAttribute('aria-haspopup', 'dialog');
+  button.addEventListener('click', () => {
+    photoOpener = button;
+    displayPhoto(index);
+    photoViewer.showModal();
+    document.body.classList.add('photo-viewer-open');
+  });
+  figure.append(button);
+});
+
+photoViewer.querySelector('[data-photo-close]').addEventListener('click', () => photoViewer.close());
+photoViewer.querySelector('[data-photo-prev]').addEventListener('click', () => displayPhoto(activePhoto - 1));
+photoViewer.querySelector('[data-photo-next]').addEventListener('click', () => displayPhoto(activePhoto + 1));
+photoViewer.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab') {
+    const controls = [...photoViewer.querySelectorAll('button')];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+    return;
+  }
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+  event.preventDefault();
+  displayPhoto(activePhoto + (event.key === 'ArrowRight' ? 1 : -1));
+});
+photoViewer.addEventListener('close', () => {
+  document.body.classList.remove('photo-viewer-open');
+  photoOpener?.focus({ preventScroll: true });
+  viewerImage.removeAttribute('src');
+});

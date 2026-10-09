@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/terra-logo.svg" type="image/svg+xml">
   <link rel="preload" href="assets/terra-gym-hero.webp?v=2" as="image" type="image/webp">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="css/style.css?v=31">
+  <link rel="stylesheet" href="css/style.css?v=32">
 </head>
 <body>
   <a class="skip-link" href="#main">İçeriğe geç</a>
@@ -423,6 +423,28 @@
     <span>Bilgi al</span><i aria-hidden="true">↗</i>
   </a>
 
-  <script src="js/main.js?v=6"></script>
+  <dialog class="photo-viewer" aria-labelledby="photo-viewer-title" data-photo-viewer>
+    <div class="photo-viewer-layout">
+      <div class="photo-viewer-toolbar">
+        <span class="photo-viewer-brand">TERRA / GALERİ</span>
+        <button class="photo-viewer-control" type="button" data-photo-close aria-label="Fotoğrafı kapat" autofocus>✕</button>
+      </div>
+      <div class="photo-viewer-stage">
+        <img class="photo-viewer-image" data-photo-image alt="">
+      </div>
+      <div class="photo-viewer-footer">
+        <div class="photo-viewer-caption" aria-live="polite" aria-atomic="true">
+          <h2 id="photo-viewer-title"></h2>
+          <p data-photo-counter></p>
+        </div>
+        <div class="photo-viewer-navigation">
+          <button class="photo-viewer-control" type="button" data-photo-prev aria-label="Önceki fotoğraf">←</button>
+          <button class="photo-viewer-control" type="button" data-photo-next aria-label="Sonraki fotoğraf">→</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>

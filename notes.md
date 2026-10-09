@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **31**, JS **6**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **32**, JS **7**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 1/3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde dört kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -297,3 +297,12 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Kerem mobil görünümü beğendi ve yalnız PC’de büyük fotoğrafları küçültmemizi istedi. 901px ve üstünde kadınlar galerisi eşit iki sütuna alındı; fotoğraflar yan yana, yükseklik clamp(260px,26vw,360px), aralık20px. Mobil/tablet 900px ve altındaki kurallar değişmedi. CSS v31.
 - 1440px galeri1254.5→360px; iki fotoğraf580×360px. 1024px fotoğraflar474.5×266.234px. PC görünümü görsel incelendi. 375px fotoğraf ölçüleri332×221.328 ve332×207.5px; 768px713×475.328 ve713×274.219px, değişiklik öncesiyle aynı. 375/768/1024/1440px yatay taşma yok. JS sözdizimi/diff kontrolü geçti, gerçek telefon testi yapılmadı.
 - index.html/css/style.css ve bu not değişti; görsel dosyaları aynı. Kullanıcı önizlemesi bekleniyor; sunucu açık, yayın/push yok.
+
+
+## Fotoğrafları tam ekran açma — 9 Ekim 2026
+
+- Kerem’in isteğiyle Salon yaşamı’ndaki altı ve kadınlara özel bölümdeki iki fotoğraf tıklanabilir oldu. JS figure içine erişilebilir fotoğrafı büyüt butonu ekliyor; JS kapalıyken mevcut fotoğraflar kalır, işlevsiz buton oluşmaz.
+- Native dialog üzerinden tarayıcı görünümünü dolduran galeri açılıyor: koyu/kırmızı ışıklı arka plan, yuvarlak cam hissi veren kontroller ve çerçeve, 350ms ölçek/yukarıdan yerleşim geçişi. Fotoğraf object-fit:contain ile kırpılmadan gösteriliyor; kaynak yerel WebP. Bu işletim sistemi Fullscreen API talebi değil, tam viewport modalıdır.
+- Başlık ve 1/8 sayacı, önceki/sonraki (döngü), klavye sağ/sol, kapat butonu ve Escape var. Açılınca arka sayfa native modal ile etkisiz, kaydırma kilitli; Tab/Shift+Tab modal içinde dolaşır, kapanınca açan butona odak dönüyor. Azaltılmış harekette açılış/hover animasyonları kapalı; canlı tercih testi yapılmadı.
+- index.html/css/style.css/js/main.js ve bu not değişti; CSS v32/JS v7. JS sözdizimi, diff ve HTML kimlik/iç hedef kontrolleri geçti. 375px kadınlar fotoğrafı tam viewport375×850, kaynak1400px, contain ve scroll kilidi doğrulandı; 7→8→1 geçişi, klavye oku, Escape ve odak dönüşü geçti. Salon ilk fotoğrafını açma, kapat, Tab/Shift+Tab döngüsü doğrulandı. 320/375/430/768/1440px belge/modal yatay taşması yok; mobil ve PC modal görsel incelendi, konsol hatası yok. Gerçek telefon/Firefox testi yapılmadı.
+- Sonraki adım Kerem’in telefonda galeri tasarımını değerlendirmesi; LAN sunucusu açık. Yayın/push yapılmadı.
