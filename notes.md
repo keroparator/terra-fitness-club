@@ -48,10 +48,13 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ## Deneme üyeliği formu — 9 Ekim 2026
 
-- Kullanıcı yeni `/form` sayfası istiyor: 1 günlük deneme üyeliği başvurusu, en az isim/soyisim ve telefon; gönderimler şirketin e-posta adresine ulaşacak. Ana tanıtım sayfası tek sayfa olarak korunur; bu açık istek önceki ayrı sayfa açmama sınırını form için genişletir.
-- Şu an nasıl yapılacağı görüşülüyor; form veya gönderim altyapısı uygulanmadı. Alıcı e-posta adresi, ek alanlar ve deneme koşulları henüz verilmedi.
-- Ajan önerisi (kullanıcı kararı değil): Cloudflare Pages + sunucuda Pages Function + Resend. Gizli anahtar sunucuda tutulur; alan/telefon kontrolü, bot koruması ve gönderim başarısı/hatası arayüzde ele alınır. Resend gönderici alan adının doğrulanmasını gerektirir. Başlangıçta veritabanı zorunlu değil; tek başına e-posta kalıcı başvuru takibi ve teslim garantisi değildir.
-- Kurulumda alıcı adresi, alan adı ve form alanları netleştirilecek; gerçek gönderim ve alıcı gelen kutusu ayrıca test edilecek. Veri kullanım açıklaması formda yer alacak.
+- Güncel kullanıcı isteği: `/denemeüyeliği` sayfasında 1 günlük deneme üyeliği formu; isim, soyisim, telefon numarası ve e-posta alınacak. Bildirim alıcısı `terrafitnessclub@gmail.com`. Önceki `/form` taslağının yerini bu istek alır. Ana tanıtım sayfası tek sayfa kalır.
+- Kullanıcı Cloudflare Pages üzerinde yayın ve Cloudflare dışında ek e-posta servisi kullanmadan çözüm istiyor. Henüz sayfa/backend uygulanmadı, yayın veya gerçek e-posta gönderimi yapılmadı.
+- 9 Ekim resmî belge araştırması: Cloudflare Worker `send_email` binding ile bildirim gönderebilir. Email Routing içinde doğrulanan hedef adreslere gönderim ücretsiz; Gmail adresindeki doğrulama bağlantısı açılmalı. Gönderici için kontrol edilen alan adı ve ilgili Email Service DNS kurulumu gerekir. `pages.dev` üzerinde form önizlenebilir ancak kendi gönderici alan adı gereksinimini karşılamaz.
+- Ajan önerisi, henüz seçilmiş mimari değil: Pages formu → Cloudflare Worker → Cloudflare Email Service → sabit Gmail alıcısı. Pages Functions belgelerinde doğrudan e-posta binding'i listelenmediği için ayrı Worker kullanımı öneriliyor. Bot koruması için Cloudflare Turnstile; sunucu alan kontrolleri ve başarı/hata durumları eklenecek. Başlangıçta veritabanı gerekmiyor; form tek başına bir günlük kullanımın takibini sağlamaz.
+- Bildirim örneği: konu “Yeni 1 günlük deneme üyeliği — Ad Soyad”; gövdede ad soyad, telefon, e-posta ve başvuru zamanı. Gönderici alan adına ait adres olur; başvuranın e-postası Reply-To olabilir.
+- Açık nokta: Terra'nın alan adı ve Cloudflare DNS durumu. Sonraki adım bunu öğrenip sayfa ve gönderim altyapısını hazırlamak, canlıda alıcı gelen kutusunu ayrıca doğrulamak.
+- Kaynaklar: https://developers.cloudflare.com/email-service/api/send-emails/workers-api/ ; https://developers.cloudflare.com/email-service/configuration/email-routing-addresses/ ; https://developers.cloudflare.com/email-service/configuration/domains/ ; https://developers.cloudflare.com/pages/functions/bindings/
 
 ## Mobil öncelik
 
