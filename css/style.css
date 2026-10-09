@@ -1655,21 +1655,6 @@ body.photo-viewer-open { overflow: hidden; }
   color: var(--white);
   cursor: zoom-in;
 }
-.photo-expand::after {
-  content: "⤢";
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid #ffffff40;
-  border-radius: 12px;
-  background: #09090980;
-  backdrop-filter: blur(12px);
-  font-size: 1.3rem;
-}
 .photo-expand:focus-visible { outline: 3px solid var(--white); outline-offset: -5px; }
 .photo-viewer {
   position: fixed;
@@ -1689,28 +1674,27 @@ body.photo-viewer-open { overflow: hidden; }
 .photo-viewer::backdrop { background: #000b; backdrop-filter: blur(18px); }
 .photo-viewer-layout {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: 18px;
-  width: min(1120px, 100%);
+  place-items: center;
+  width: 100%;
   height: 100%;
-  margin-inline: auto;
+  padding-top: 46px;
 }
-.photo-viewer-toolbar, .photo-viewer-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-.photo-viewer-brand { font-size: 0.7rem; letter-spacing: 0.2em; color: #ffffffa6; }
-.photo-viewer-stage {
-  min-height: 0;
-  overflow: hidden;
+.photo-viewer-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(1120px, 100%);
+  max-height: calc(100vh - 110px);
+  max-height: calc(100dvh - 110px);
+  object-fit: contain;
   border: 1px solid #ffffff24;
-  border-radius: 28px;
-  background: linear-gradient(145deg, #ffffff0c, #ffffff02);
-  box-shadow: inset 0 1px 0 #ffffff20, 0 24px 60px #0008;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px #0008;
 }
-.photo-viewer-image { display: block; width: 100%; height: 100%; object-fit: contain; }
-.photo-viewer-caption { min-width: 0; }
-.photo-viewer-caption h2 { margin: 0; font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 500; }
-.photo-viewer-caption p { margin: 5px 0 0; color: var(--muted); font-size: 0.75rem; }
-.photo-viewer-navigation { display: flex; gap: 10px; flex-shrink: 0; }
 .photo-viewer-control {
+  position: absolute;
+  top: max(18px, env(safe-area-inset-top));
+  right: max(18px, env(safe-area-inset-right));
   display: grid;
   place-items: center;
   width: 46px;

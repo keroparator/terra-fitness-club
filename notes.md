@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **32**, JS **7**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **33**, JS **8**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 1/3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde dört kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -306,3 +306,10 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Başlık ve 1/8 sayacı, önceki/sonraki (döngü), klavye sağ/sol, kapat butonu ve Escape var. Açılınca arka sayfa native modal ile etkisiz, kaydırma kilitli; Tab/Shift+Tab modal içinde dolaşır, kapanınca açan butona odak dönüyor. Azaltılmış harekette açılış/hover animasyonları kapalı; canlı tercih testi yapılmadı.
 - index.html/css/style.css/js/main.js ve bu not değişti; CSS v32/JS v7. JS sözdizimi, diff ve HTML kimlik/iç hedef kontrolleri geçti. 375px kadınlar fotoğrafı tam viewport375×850, kaynak1400px, contain ve scroll kilidi doğrulandı; 7→8→1 geçişi, klavye oku, Escape ve odak dönüşü geçti. Salon ilk fotoğrafını açma, kapat, Tab/Shift+Tab döngüsü doğrulandı. 320/375/430/768/1440px belge/modal yatay taşması yok; mobil ve PC modal görsel incelendi, konsol hatası yok. Gerçek telefon/Firefox testi yapılmadı.
 - Sonraki adım Kerem’in telefonda galeri tasarımını değerlendirmesi; LAN sunucusu açık. Yayın/push yapılmadı.
+
+
+## Fotoğraf görüntüleyicisini sadeleştirme — 9 Ekim 2026
+
+- Kerem önceki galeriyi fazla kompleks buldu. Kullanıcı düzeltmesi: fotoğraf köşesindeki büyütme simgesi, modal altındaki başlık/sayaç ve önceki/sonraki butonları kaldırıldı. Sekiz fotoğraf doğrudan tıklanabilir; erişilebilir görünmez buton/klavye hedefi korunuyor. Görünürde yalnız fotoğraf ve kapatma çarpısı var.
+- Çerçeve artık sabit sahne değil, doğrudan görüntünün kendi kenarlığı. Doğal oran korunarak ekran sınırlarına sığar; yatay/dikey fotoğraflar farklı çerçeve boyutları alır. Kaynak img genişlik/yükseklik nitelikleri açılışta aktarılır. Galeri dolaşımı/ok tuşları kaldırıldı; kapat, Escape, boş zemine dokunma, Tab odağı ve açan fotoğrafa odak dönüşü var.
+- CSS v33/JS v8; index.html/css/style.css/js/main.js değişti. JS/diff kontrolü geçti. 375px yatay kadınlar fotoğrafı yaklaşık339×227px, dikey salon fotoğrafı339×507.5px; simge content:none ve modal tek düğme/çarpı doğrulandı, mobil görsel incelendi. 320/375/768/1440px taşma yok. Escape, kapat, Tab ve kapanış sonrası scroll kilidi temizliği/odak dönüşü geçti; konsol hatası yok. Gerçek telefon ve canlı reduced-motion testi yapılmadı. Son değerlendirme bekleniyor; yayın/push yok.
