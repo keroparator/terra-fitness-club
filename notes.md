@@ -17,7 +17,7 @@ Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İl
 
 ### Şu an uygulanan tasarım ve yöntem
 
-- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **28**, JS **5**.
+- Saf HTML/CSS/JS, tek sayfa. Dosyalar `index.html`, `css/style.css`, `js/main.js`; bağımlılık/derleme yok. Güncel cache sürümleri CSS **29**, JS **5**.
 - Giriş + eski “01 / Terra’yı tanı” birleştirildi: kısa tanıtım hero içinde, 800 m² / 5 metre / 5 branş sayıları korundu. Ayrı tanıtım bölümü kaldırıldı. Salon navbar bağlantısı #anasayfa, Salonu keşfet #deneyim; eski #salon hero-inner üzerinde hedef olarak korunuyor.
 - Salon yaşamı (#deneyim) şu anda giriş ve kırmızı branş şeridinin ardından, Branşlar’dan önce 01. bölüm. Modern ekipman/kafe/otopark için üç kısa öğe var; masaüstünde yatay şerit, mobilde alt alta. Büyük “Daha ferah / Daha güçlü / Daha sen” bölümü ve kullanılmayan CSS kaldırıldı, bölüm numaraları güncellendi.
 - Üyelikler 1/3/6/12 ay; fiyat yok. Mobilde native yatay scroll-snap carousel, yan kartlar hafif görünür (72vw, 10 px aralık). Kartların iç yüzeyi kaydırma mesafesine göre 3D açı/ölçek/ışık değiştirir; kendiliğinden döngü yok. Merkezleme dönüşmemiş dış kart ölçülerinden hesaplanır. Masaüstünde dört kart birlikte. WhatsApp mesajları seçilen ayı belirtir.
@@ -275,3 +275,9 @@ Kerem’in tasarımı mobilde değerlendirmesi. Diğer revizyonların ilk uygula
 - Üç kart Emre Kaya/Fitness, Selin Demir/Pilates ve Mert Aydın/Fitness & kardiyo kurgu kimlikleriyle düzenlendi; avatarlar baş harflere çevrildi. Görünür temsili/tasarım önizlemesi etiketleri kaldırıldı. HTML comment ve data-content-status=mockup işareti içeriğin taslak olduğunu koruyor; yıldız puanı, Google kaynağı veya gerçek yorum doğrulaması eklenmedi. Yayın öncesi gerçek kaynaklı yorumlarla değişim açık bitiş şartıdır.
 - Kullanılmayan sample-notice stili kaldırıldı; başlık/kart boşluğu testimonial-grid margin-top36px ile korundu. CSS v27.375 ve1440px tarayıcı görünümleri incelendi, taşma yok; üç kurgu isim DOM’da, görünür notice yok. Konsol hata kaydı boş. JS sözdizimi ve diff kontrolü geçti. Gerçek telefon testi yapılmadı.
 - index.html/css/style.css/bu not değişti. Yerel sunucu açık, push/yayın yok.
+
+
+## Yoga kartı — 9 Ekim 2026
+
+- Kerem’in isteğiyle Yoga’nın kırmızı varyantı kaldırıldı; kart Boks/Pilates/Zumba ile aynı siyah zemin, metin/numara renkleri, dekor ve hover kurallarını kullanıyor. Kullanılmayan kırmızı varyant CSS kuralları temizlendi; CSS v29.
+- index.html/css/style.css değişti. JS sözdizimi ve diff kontrolü geçti. 375 px Yoga/Boks hesaplanan zemin, metin, numara, etiket renkleri ve padding eşleşiyor; mobil görsel kontrol yapıldı. 375/768/1440 px yatay taşma yok. Gerçek telefon testi yapılmadı.
