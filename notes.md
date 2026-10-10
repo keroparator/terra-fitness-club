@@ -4,6 +4,15 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## SEO altyapısı — 10 Ekim 2026
+
+- Kerem sitemap/robots.txt ve gerekli temel SEO hazırlığını istedi. `robots.txt` tüm sayfa/varlık taramasına izin verir, /api/ yolunu dışlar ve sitemap adresini gösterir. Bu bir güvenlik kontrolü değildir; API güvenliği Worker içinde kalır.
+- `sitemap.xml` yalnız iki canonical URL içerir: https://www.terrafitnessclub.com/ ve https://www.terrafitnessclub.com/deneme . Son önemli değişiklik tarihi2026-10-10; yeni sayfa/önemli içerik değişiminde bu dosya elle güncellenmeli. Bölüm anchorları, API, .html ve alternatif hostlar eklenmedi.
+- index.html/deneme.html içine self canonical, Open Graph ve Twitter paylaşım etiketleri eklendi; mevcut başlık/açıklama/salon fotoğrafı kullanıldı. Ana sayfa footer’ına Deneme üyeliği iç bağlantısı eklendi.
+- 17 statik dosyalı Pages Success/Production main yayını; deployment97e221a9-b5cb-4dff-bf7c-6e2ccfcd1cf3. Worker ayarları değişmedi. Sitemap/robots/main/deneme canlı HTTP200 ve yerel byte eşitliği doğrulandı; robots text/plain UTF8, sitemap application/xml.
+- XML/HTML canonical-OG/benzersiz ID ve JS sözdizimi/diff kontrolü geçti. Canlı tarayıcı375/1440px document/footer taşması yok; footer bağlantısı /deneme açıyor, canonical DOM doğru. Gerçek cihaz testi yok; sosyal platform önizleme ve Google indekslenmesi doğrulanmadı. In-app browser raw robots sayfasını client block ile açamadı; curl üzerinden erişim/içerik doğrulandı.
+- Sonraki ayrı adım Google Search Console mülk doğrulaması ve sitemap gönderimi; bu işte hesap kurulumu/gönderim yapılmadı. Google belgeleri: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap ve https://developers.google.com/crawling/docs/robots-txt/create-robots-txt . Push yapılmadı.
+
 ## Deneme formu gönderimi — 10 Ekim 2026, tamamlandı
 
 - Kullanıcı yayın ve e-posta bağlantısını yetkilendirdi. Son alıcı şimdilik `keroparator@proton.me`, Cloudflare panelinde Verified; Gmail Pending. Canlı Test Başvuru gönderimi başarı verdi; Kerem Proton gelen kutusuna ulaştığını doğruladı.
