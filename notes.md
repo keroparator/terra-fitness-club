@@ -4,6 +4,14 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Yayın hazırlığı — 10 Ekim 2026
+
+- Kerem Cloudflare Pages yayınını yetkilendirdi; alan adını `terrafitnessclub.com` olarak bildirdi. Alan adının DNS/Cloudflare kurulumu henüz doğrulanmadı.
+- Yayından önce kurgu üye yorumları ve footer Yorumlar bağlantısı index.html içinden çıkarıldı; İletişim numarası07 oldu. Gerçek yorumlar sağlandığında yeniden eklenebilir.
+- Ana site için13 dosyalı `/tmp/terra-fitness-pages.zip` paketi hazırlandı. notes.md, AGENTS.md, .git, brandbook ve henüz başvuru göndermeyen deneme sayfası pakete dahil edilmedi.
+- node --check (iki JS), git diff --check, HTML kimlik/iç bağlantı ve yerel dosya kontrolleri geçti. Tarayıcı375/768/1440px yatay taşma yok, hero yüklendi, kurgu yorum DOM’da yok, gözlenen konsol hatası yok. Gerçek cihaz testi yapılmadı.
+- Cloudflare Workers & Pages ekranı hesabın e-posta doğrulamasını zorunlu tutuyor; kullanıcıdan gelen kutusundaki bağlantıyı açması istendi. Henüz Pages projesi oluşturulmadı, paket yüklenmedi ve yayın yapılmadı. Sonraki adım doğrulama ardından Direct Upload ve alan adı bağlantısı.
+
 ## Güncel devir — 8 Ekim 2026, başka chatte devam
 
 **Kerem’in son değerlendirmesi:** Siteyi ve son kısaltmayı beğendi. Önce aşağıdaki dört işi yalnız not almamızı istedi; bu chatte “salon yaşamını 1 yapalım” diyerek sıralama değişikliğini yetkilendirdi. Salon yaşamı giriş ve branş şeridinin ardından 01. bölüme taşındı. Giriş arka planı, sonraki açık kullanıcı talimatıyla salonun kendi çekim fotoğrafıyla değiştirildi. Salon yaşamı için iki sıra, toplam altı fotoğraflı kompakt kolaj eklendi; ikinci sıra ters düzende. Diğer işler bekliyor.
