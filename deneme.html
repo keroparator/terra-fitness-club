@@ -7,8 +7,9 @@
   <meta name="description" content="Terra Fitness Club’ı 1 günlük deneme üyeliğiyle keşfet. Başvuru formunu doldur, ilk adımını at.">
   <title>1 Günlük Deneme Üyeliği | Terra Fitness Club</title>
   <link rel="icon" href="/assets/terra-logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css?v=34">
-  <script src="/js/deneme.js?v=1" defer></script>
+  <link rel="stylesheet" href="/css/style.css?v=36">
+  <meta name="turnstile-sitekey" content="0x4AAAAAAFTCUwNLhEFiwk3p">
+  <script src="/js/deneme.js?v=3" defer></script>
 </head>
 <body class="trial-page">
   <a class="skip-link" href="#deneme-formu">Forma geç</a>
@@ -39,8 +40,7 @@
       <div class="trial-panel-top"><span>DENEME ÜYELİĞİ</span><span aria-hidden="true">↗</span></div>
       <h2 id="form-title">Seni tanıyalım.</h2>
       <p class="trial-description">1 günlük deneme üyeliği için bilgilerini bırak.<br>İlk adımı birlikte atalım.</p>
-      <!-- Tasarım önizlemesi: backend bağlanana kadar hiçbir bilgi gönderilmez. -->
-      <form class="trial-form" id="deneme-formu" tabindex="-1" aria-labelledby="form-title" aria-describedby="trial-preview" method="post">
+      <form class="trial-form" id="deneme-formu" tabindex="-1" aria-labelledby="form-title" aria-describedby="trial-data-note" method="post" action="/api/deneme">
         <div class="trial-name-row">
           <div class="trial-field">
             <label for="first-name">İsim <span aria-hidden="true">*</span></label>
@@ -60,11 +60,13 @@
           <label for="email">E-posta adresi <span aria-hidden="true">*</span></label>
           <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="ornek@mail.com" required maxlength="254">
         </div>
-        <p class="trial-data-note">Bilgilerin, deneme üyeliği başvurun hakkında seninle iletişime geçmek için kullanılacak.</p>
+        <div class="trial-honeypot" aria-hidden="true"><label for="website">Web sitesi</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div id="trial-security"></div>
+        <p class="trial-data-note" id="trial-data-note">Bilgilerin, deneme üyeliği başvurun hakkında seninle iletişime geçmek için kullanılacak.</p>
         <button class="trial-submit" type="submit" disabled><span>Deneme üyeliğine başvur</span><span aria-hidden="true">↗</span></button>
-        <p class="trial-preview" id="trial-preview">Tasarım önizlemesi · Başvuru gönderimi henüz açık değil.</p>
+        <p class="trial-preview" id="trial-preview">Başvuru gönderimi hazırlanıyor.</p>
         <p class="trial-status" id="trial-status" role="status" tabindex="-1" hidden></p>
-        <noscript><p class="trial-preview">Form önizlemesini denemek için JavaScript’i etkinleştir.</p></noscript>
+        <noscript><p class="trial-preview">Başvuru göndermek için JavaScript’i etkinleştir.</p></noscript>
       </form>
       <div class="trial-panel-bottom"><span>Bir günle başlar.</span><strong>Seninle devam eder.</strong></div>
     </section>

@@ -4,6 +4,17 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Deneme formu gönderimi — 10 Ekim 2026, tamamlandı
+
+- Kullanıcı yayın ve e-posta bağlantısını yetkilendirdi. Son alıcı şimdilik `keroparator@proton.me`, Cloudflare panelinde Verified; Gmail Pending. Canlı Test Başvuru gönderimi başarı verdi; Kerem Proton gelen kutusuna ulaştığını doğruladı.
+- Kullanıcı domain e-postası kullanılmadığını bildirdi ve eski posta kayıtlarının değiştirilmesini onayladı. Beş Namecheap MX ve SPF kaldırılıp Cloudflare Email Routing etkinleştirildi. Public DNS: MX69 route2.mx.cloudflare.net, MX74 route1.mx.cloudflare.net, MX92 route3.mx.cloudflare.net; SPF `v=spf1 include:_spf.mx.cloudflare.net ~all`; cf2024-1 DKIM kuruldu. Yönlendirme/catch-all eklenmedi.
+- Geri dönüş DNS: MX10 eforward1/2/3.registrar-servers.com, MX15 eforward4.registrar-servers.com, MX20 eforward5.registrar-servers.com; TXT `v=spf1 include:spf.efwd.registrar-servers.com ~all`.
+- Statik HTML e-posta gönderemediği için `worker/deneme.mjs` eklendi. Worker terra-deneme, route `*terrafitnessclub.com/api/deneme` fail closed; EMAIL binding ve basvuru@terrafitnessclub.com gönderici ayarı. Sabit alıcı, başvuran Reply-To, Türkiye zamanı; Origin/alan/boyut kontrolü, honeypot ve zorunlu Turnstile. Kişisel veri loglanmaz. Secret yalnız encrypted Worker ortam ayarında; kaynaklara yazılmadı.
+- Turnstile Non-interactive, root/www; ücretli plana geçilmedi. HTML/JS gerçek fetch, gönderim kilidi, başarı/hata ve token yenileme kullanıyor. 399px altında compact widget; 320px alan taşması giderildi. Başarıda alanlar temizlenir ve düğme tekrar gönderimi engeller.
+- Canlı URL https://www.terrafitnessclub.com/deneme . Pages15 dosya Success/Production main; son deployment02d7a286-8d8b-487a-a4b0-c881ca5420e6; CSS36/deneme JS3. Worker/notes/secrets yayın ZIP’inde yok. deneme.html, js/deneme.js, css/style.css ve kök ana sayfa canlı byte eşitliği doğrulandı.
+- JS/Worker sözdizimi ve diff geçti; 14 güvenlik/doğrulama/gönderim senaryosu mock binding ile geçti. Canlı boş veri API400; gerçek form başarı ve kullanıcı inbox teyidi. Tarayıcı320/375/768/1440px belge taşması ve alan sınırları geçti; boş form ilk alana odak, geçersiz telefon engeli ve skip link/Tab ilk alan kontrolü. Güvenlik hazırken düğme açılıyor; CAPTCHA çözülmedi. Üçüncü taraf challenge iframe’inde uyarılar görüldü; uygulama kaynaklı hata gözlenmedi. Gerçek telefon ve canlı reduced-motion testi yapılmadı.
+- Form işi tamamlandı. Sonraki adım Gmail istenirse doğrulama sonrası değiştirmek; kök DNS/www panel önceki açık kontrolleri ayrı kalır. Push yapılmadı.
+
 ## Canlı erişim testi — 10 Ekim 2026
 
 - https://www.terrafitnessclub.com/ normal DNS üzerinden HTTP200 ve geçerli TLS ile açıldı; tarayıcıda Terra sayfası/hero yüklendi. Ana sayfa HTML SHA256 yerel index.html ile eşit.12 CSS/JS/görsel dosyası canlıdan indirildi ve yayın ZIP’iyle byte eşitliği doğrulandı. /index.html HTTP308 ile / yoluna yönleniyor; bu hata değildir.

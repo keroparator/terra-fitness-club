@@ -1754,7 +1754,10 @@ body.photo-viewer-open { overflow: hidden; }
 .trial-panel-top > span:last-child { font-size: 25px; line-height: 1; }
 .trial-panel h2 { margin: 0; font-size: clamp(30px, 3vw, 42px); font-weight: var(--heading-weight); line-height: 1.12; letter-spacing: -.045em; }
 .trial-description { margin: 14px 0 27px; color: #61605c; font-size: 14px; line-height: 1.7; }
-.trial-form { display: grid; gap: 20px; scroll-margin-top: 24px; }
+#trial-security { min-width: 0; }
+.trial-panel { min-width: 0; }
+.trial-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.trial-form { min-width: 0; display: grid; gap: 20px; scroll-margin-top: 24px; }
 .trial-name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .trial-field { display: grid; gap: 8px; min-width: 0; }
 .trial-field label { font-size: 12px; font-weight: 600; }
