@@ -4,6 +4,23 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Google arama görünürlüğü testi — 10 Ekim 2026
+
+Kullanıcı sitenin Google arama sonuçlarındaki performansını test etmemizi istedi. Salt okunur canlı inceleme yapıldı; site kodu, DNS, işletme profili ve Search Console ayarları değiştirilmedi.
+
+- Oturum açılmamış Google, Türkçe/Bursa bağlamında `site:terrafitnessclub.com` sorgusu hiçbir sonuç göstermedi. Bu, kesin indeks dışı kanıtı değildir; Google site: sonuçlarının eksiksiz olmadığını belirtir. Kesin kontrol Search Console URL Denetleme ile yapılmalı.
+- `Terra Fitness Club Bursa`: işletme paneli, Instagram/Facebook ve firma rehberi sonuçları var; incelenen ilk sonuç sayfasında kendi domaini yok. İşletme paneli 4,9/5 ve 7 yorum gösteriyor, ayrıca **Web sitesi ekle** bağlantısı var. Bu gözlem yeni web adresinin profilde görünmediğine işaret eder; yönetim panelindeki alan bağımsız okunmadı.
+- `Güneştepe spor salonu`: Yerler bloğunda Güneştepe Spor Tesisler ardından **Terra ikinci**; Instagram hesabı web sonuçlarında da görünüyor, kendi domaini ilk sayfada yok. Bu tek anlık, Bursa bağlamlı ölçümdür; tüm cihaz/konumlar için sabit sıra veya Search Console ortalaması değildir.
+- Ana sayfa, /deneme, robots.txt ve sitemap.xml HTTP200. Robots ana sayfa/varlıkları engellemiyor; yalnız /api/ dışlanıyor. Sitemap iki doğru HTTPS/www URL içeriyor. İki HTML'de self canonical, farklı başlık/açıklama var; meta veya HTTP başlığında noindex gözlenmedi. İçerik sunucu HTML'sinde mevcut.
+- HTTP adresleri HTTPS'e, /index.html köke, /deneme.html /deneme yoluna yönleniyor. HTTPS kök domain aynı HTML ile 200, www'ye yönlenmiyor; www canonical mevcut. Birleştirici kalıcı kök→www yönlendirmesi önerilebilir; eksikliği tek başına indekslenme engeli değildir.
+- İki sayfada JSON-LD yok. Doğru işletme bilgileriyle LocalBusiness/SportsActivityLocation yapılandırılmış veri eklemek sonraki iyileştirme önerisi; sıralama garantisi değil.
+- Bir Python varsayılan User-Agent isteği /deneme için403 aldı; Mozilla/5.0 ve Googlebot User-Agent ile iki sayfa200 döndü. UA taklidi gerçek Googlebot IP erişimini doğrulamaz; gerçek Google taraması URL Denetleme ile kontrol edilmeli.
+- Search Console adresi tanıtım/oturum açma ekranında kaldı; yetkili rapora erişim yok. Gösterim, tıklama, CTR, ortalama konum, Google'ın seçtiği canonical ve gerçek tarama durumu ölçülmedi. PageSpeed/Core Web Vitals ve gerçek cihaz testi bu arama görünürlüğü incelemesine dahil değil.
+
+Öncelik önerisi: (1) Search Console mülk doğrulaması, sitemap gönderimi, ana sayfa ve /deneme URL denetimi/indeks isteği; (2) işletme profilinin web adresine https://www.terrafitnessclub.com/ eklenmesi; (3) yerel işletme şeması ve kök/www yönlendirmesinin değerlendirilmesi. Yeni site taramasının günler/haftalar sürebileceğini Google belirtir; görünme süresi garanti edilmez. Bunlar bu işte uygulanmadı.
+
+Kaynaklar: https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site , https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl , https://support.google.com/business/answer/3039617 , https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls , https://developers.google.com/search/docs/appearance/structured-data/local-business .
+
 ## SEO altyapısı — 10 Ekim 2026
 
 - Kerem sitemap/robots.txt ve gerekli temel SEO hazırlığını istedi. `robots.txt` tüm sayfa/varlık taramasına izin verir, /api/ yolunu dışlar ve sitemap adresini gösterir. Bu bir güvenlik kontrolü değildir; API güvenliği Worker içinde kalır.
