@@ -4,6 +4,15 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Canlı erişim testi — 10 Ekim 2026
+
+- https://www.terrafitnessclub.com/ normal DNS üzerinden HTTP200 ve geçerli TLS ile açıldı; tarayıcıda Terra sayfası/hero yüklendi. Ana sayfa HTML SHA256 yerel index.html ile eşit.12 CSS/JS/görsel dosyası canlıdan indirildi ve yayın ZIP’iyle byte eşitliği doğrulandı. /index.html HTTP308 ile / yoluna yönleniyor; bu hata değildir.
+- https://terrafitnessclub.com/ normal çözümlemede timeout; yerel recursive DNS hâlâ eski Namecheap192.64.119.164 A kaydını döndürüyor. Cloudflare yetkili NS güncel IP döndürüyor. curl --resolve ile104.21.43.108’e bağlanınca TLS doğrulaması geçerek HTTP200; gelen HTML yerelle birebir. Dolayısıyla sunucu/sertifika çalışıyor, normal DNS önbellek yayılımı henüz tutarsız.
+- HTTP kök adresi takip edilen yönlendirmeyle https://www.terrafitnessclub.com/ HTTP200 verdi. pages.dev HTTPS bu ortamda hâlâ connection reset; bu adrese erişim doğrulanmadı.
+- Cloudflare panelinde kök domain Active / SSL enabled, www Verifying (HTTP erişimi çalışıyor olsa da panel doğrulaması henüz bitmemiş).
+- Canlı www tarayıcı375/768/1440px yatay taşma yok; hero yüklendi, mobil menü açılış/Escape kapanış ve12 aylık paket seçiminde aria-pressed=true doğrulandı. Gözlenen konsol hatası yok. Gerçek cihaz, canlı reduced-motion ve bütün klavye/harita akışı bu testte yapılmadı. Mobil screenshot geçici /tmp/terra-live-mobile.jpg.
+- Sonraki adım kök domain normal DNS üzerinden tutarlı erişim ve www panel aktivasyonunu tekrar kontrol etmek. Form /deneme hâlâ yayın dışında.
+
 ## Özel alan adı bağlantısı — 10 Ekim 2026
 
 - Kerem Namecheap Custom DNS ayarını kaydettiğini bildirdi. `.com` üst yetkili sunucusuna doğrudan NS sorgusu `lamar.ns.cloudflare.com` ve `marge.ns.cloudflare.com` sonucunu verdi; nameserver değişimi doğrulandı. Yerel recursive cache hâlâ eski NS gösterebiliyor.
