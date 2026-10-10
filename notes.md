@@ -4,6 +4,15 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Pages yayını ve alan adı hazırlığı — 10 Ekim 2026
+
+- Ana site Cloudflare Pages Direct Upload ile `https://terra-fitness-club.pages.dev/` adresine yayınlandı. Kullanıcının giriş yaptığı Proton hesabında `terra-fitness-club` projesi; üretim deployment ID `23c46526-785d-4bc1-b07a-a2afba1b5a23`, sürüm adresi `https://23c46526.terra-fitness-club.pages.dev/`.
+- Cloudflare13/13 dosyayı başarıyla yükledi ve Success ekranı gösterdi; Deployments ekranında Production/main doğrulandı. ZIP13 dosyanın güncel kaynaklarla birebir eşitliği kontrol edildi. Yayın ekranı kanıtı geçici `/tmp/terra-pages-deployed.jpg`.
+- Canlı Pages adresi tarayıcı ve curl üzerinden bağlantı reset hatası verdi; web aracından da açılamadı. DNS adres çözümlüyor; canlı içerik/asset/etkileşim doğrulaması tamamlanmadı. Cloudflare başarı bildirimi dışarıdan HTTP erişimiyle aynı doğrulama değildir.
+- Kerem alan adının Namecheap’te olduğunu söyledi; mevcut NS sorgusu dns1/dns2.registrar-servers.com doğruladı. `terrafitnessclub.com` bu Cloudflare hesabına Free planla eklendi,8 DNS kaydı tarandı:1 A,1 www CNAME,5 MX ve1 SPF TXT. Namecheap yönlendirme/park web kayıtları henüz Pages hedefine çevrilmedi; MX/SPF korundu.
+- Atanan nameserverlar `lamar.ns.cloudflare.com` ve `marge.ns.cloudflare.com`. Namecheap oturum açma sayfası kullanıcıya açıldı. Namecheap nameserverları değiştirilmedi; alan adı henüz aktive/Pages’e bağlı değil. Sonraki adım kullanıcı girişinden sonra DNS/e-posta ayarlarını kontrol etmek, nameserver geçişi ve Pages alan adı bağlamak, ardından canlı HTTP/HTTPS ve mobil görünümü doğrulamak.
+- `/deneme` formu gönderimsiz yerel tasarım olarak kaldı, yayın paketine dahil değil. Push yapılmadı.
+
 ## Yayın hazırlığı — 10 Ekim 2026
 
 - Kerem Cloudflare Pages yayınını yetkilendirdi; alan adını `terrafitnessclub.com` olarak bildirdi. Alan adının DNS/Cloudflare kurulumu henüz doğrulanmadı.
