@@ -4,6 +4,14 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Özel alan adı bağlantısı — 10 Ekim 2026
+
+- Kerem Namecheap Custom DNS ayarını kaydettiğini bildirdi. `.com` üst yetkili sunucusuna doğrudan NS sorgusu `lamar.ns.cloudflare.com` ve `marge.ns.cloudflare.com` sonucunu verdi; nameserver değişimi doğrulandı. Yerel recursive cache hâlâ eski NS gösterebiliyor.
+- Cloudflare nameserver kontrolü tetiklendi. Pages projesine `terrafitnessclub.com` ve `www.terrafitnessclub.com` eklendi. Kök eski A192.64.119.164 ve www parkingpage.namecheap.com CNAME kaydı, Pages arayüzünün önerisiyle `terra-fitness-club.pages.dev` CNAME hedefine güncellendi.
+- Pages ekranında kök alan adı Verifying, www önce Initializing sonra Verifying; DNS yeniden kontrolü başlatıldı. Aktivasyon/sertifika tamamlandı diye sunulmaz.
+- Cloudflare yetkili NS sorgularında kök ve www Cloudflare IP’leri döndürüyor.5 MX ve SPF TXT önceki değerleriyle korunuyor. DNSSEC DS sorgusu boş; herhangi bir güvenlik ayarı kapatılmadı.
+- Canlı HTTPS denemesi domain için timeout, pages.dev için connection reset; dış HTTP/HTTPS ve canlı görsel/işlev doğrulaması hâlâ açık. Sonraki adım DNS yayılımı ve Pages sertifika/doğrulama tamamlandıktan sonra iki adresin HTTPS ve içerik kontrolleri. Kullanıcının Namecheap’te ek değişiklik yapması şu an gerekmiyor.
+
 ## Pages yayını ve alan adı hazırlığı — 10 Ekim 2026
 
 - Ana site Cloudflare Pages Direct Upload ile `https://terra-fitness-club.pages.dev/` adresine yayınlandı. Kullanıcının giriş yaptığı Proton hesabında `terra-fitness-club` projesi; üretim deployment ID `23c46526-785d-4bc1-b07a-a2afba1b5a23`, sürüm adresi `https://23c46526.terra-fitness-club.pages.dev/`.
