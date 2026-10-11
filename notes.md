@@ -4,6 +4,14 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Başvuru alıcısı değişikliği — 11 Ekim 2026, doğrulama bekliyor
+
+- Kerem yeni hedefi `terrafitnessclub1@gmail.com` olarak belirtti ve değişikliği yetkilendirdi; eski `terrafitnessclub@gmail.com` hedefi artık geçerli değil.
+- Cloudflare hesabına kullanıcı girişinden sonra yeni adres Destination addresses listesine eklendi; panel Pending durumunu gösterdi. Kerem müşterisinin doğrulamasını beklediğini bildirdi. Eski iki adres silinmedi.
+- `worker/deneme.mjs` yerelde yeni alıcı için hazırlandı. Node sözdizimi/diff ve mock gönderimde alıcı, To, Reply-To kontrolleri geçti; gerçek test e-postası gönderilmedi.
+- Canlı Worker değiştirilmedi/yayımlanmadı; canlı başvuruların mevcut alıcısı Proton olarak kaldı. DNS, binding ve ana site değişmedi. Sonraki adım yeni adres Verified olduktan sonra canlı Worker kodunu güncellemek, EMAIL hedef kısıtlarını kontrol etmek ve canlı form/inbox teslimini doğrulamak.
+- Resmî destination-addresses belgesi doğrulama linkinin geçerlilik süresini belirtmiyor; yeniden doğrulama maili gönderimi mevcut: https://developers.cloudflare.com/email-service/configuration/email-routing-addresses/ .
+
 ## Google arama görünürlüğü testi — 10 Ekim 2026
 
 Kullanıcı sitenin Google arama sonuçlarındaki performansını test etmemizi istedi. Salt okunur canlı inceleme yapıldı; site kodu, DNS, işletme profili ve Search Console ayarları değiştirilmedi.

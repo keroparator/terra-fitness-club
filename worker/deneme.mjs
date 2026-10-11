@@ -1,7 +1,7 @@
 import { EmailMessage } from 'cloudflare:email';
 
 const origins = new Set(['https://www.terrafitnessclub.com', 'https://terrafitnessclub.com']);
-const recipient = 'keroparator@proton.me';
+const recipient = 'terrafitnessclub1@gmail.com';
 const reply = (status, message, origin) => new Response(JSON.stringify({ ok: status === 200, message }), {
   status,
   headers: {
