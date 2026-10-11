@@ -4,6 +4,13 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Salon alanı düzeltmesi — 11 Ekim 2026
+
+- Kerem’in düzeltmesiyle salon alanı 800 m² yerine **850 m²**: index.html içindeki giriş sayısı, Hakkımızda ve üç meta/sosyal paylaşım açıklaması, toplam beş yer güncellendi. Görsel ölçüleri ve CSS sayıları bu içerik kapsamına girmez.
+- Cloudflare Pages 17/17 statik dosya, Success ve Production/main doğrulandı. Deployment **5171b955-87e8-405a-b746-98ce484e007d**. Worker/e-posta ayarları değiştirilmedi; push yapılmadı.
+- 17 canlı kaynak HTTP200: CSS/JS/görseller/robots/sitemap byte eşit; iki HTML Cloudflare’ın otomatik eklediği analytics beacon çıkarıldığında yerelle eşit. Canlı DOM’da giriş/Hakkımızda 850, üç meta açıklaması kaynakta 850; eski alan ifadesi kalmadı. İki JS node --check ve git diff --check geçti.
+- Canlı tarayıcı 375/768/1440px yatay taşma yok, giriş görseli yüklendi, hata logu boş; 375px görüntüsü incelendi. Kanıt /tmp/terra-850-live-mobile.jpg. Gerçek cihaz ve tüm menü/klavye/reduced-motion akışları bu sayı düzeltmesinde yeniden test edilmedi. Bu istekte açık iş kalmadı.
+
 ## Başvuru alıcısı canlı geçişi — 11 Ekim 2026
 
 - Kerem doğrulamanın yapıldığını bildirdi; Cloudflare Destination addresses ekranı `terrafitnessclub1@gmail.com` için Verified gösterdi. Eski Proton Verified, yanlış/eski Gmail Pending olarak kaldı; adresler silinmedi.
