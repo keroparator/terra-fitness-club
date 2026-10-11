@@ -4,6 +4,13 @@ Bu dosya fikirler, revizyon ayrıntıları ve geçici çalışma notları içind
 Kerem’in 8 Ekim 2026 talimatı: bu ayrıntıları Jarvis’e yazmak yerine burada tut.
 Kerem 8 Ekim 2026’da “Başla” diyerek ilk revizyonları yetkilendirdi. İlk kapsam ve sonraki düzeltmeler yerelde uygulandı. Aşağıdaki güncel devir esas alınır; daha aşağıdaki taslak fikirler ve eski gelecek zamanlı listeler tarihçedir.
 
+## Başvuru alıcısı canlı geçişi — 11 Ekim 2026
+
+- Kerem doğrulamanın yapıldığını bildirdi; Cloudflare Destination addresses ekranı `terrafitnessclub1@gmail.com` için Verified gösterdi. Eski Proton Verified, yanlış/eski Gmail Pending olarak kaldı; adresler silinmedi.
+- `terra-deneme` Worker alıcı satırı yeni Gmail adresine güncellendi ve panelden Deploy yapıldı. Aktif/latest sürüm **68e0f7ae**, Version saved görüldü. Düzenleyiciden geri okunan yayın kodu yerel `worker/deneme.mjs` ile byte eşit; ikisinin Node sözdizimi ve diff kontrolü geçti.
+- Yeni alıcıyla canlı /deneme formundan sentetik Test Alıcı Değişikliği başvurusu gönderildi; form Başvurun iletildi başarısı verdi, alanlar temizlendi. Bu, e-posta binding gönderiminin başarılı döndüğünü gösterir; müşterinin Gmail gelen kutusu teslim teyidi henüz alınmadı. Test başvurusunun konu adı kullanıcıya verildi, gelen/spam kutusu kontrolü istendi.
+- Ana site/Pages/DNS/gönderici/secret/binding değiştirilmedi. Gerçek telefon veya yeni responsive testi yapılmadı; değişiklik yalnız arka uç alıcısı. Ekran kanıtı geçici /tmp/terra-recipient-success-20261011.png. Sonraki adım müşteri gelen kutusu teyidi; görünmezse teslim sorununun ayrı incelemesi.
+
 ## Başvuru alıcısı değişikliği — 11 Ekim 2026, doğrulama bekliyor
 
 - Kerem yeni hedefi `terrafitnessclub1@gmail.com` olarak belirtti ve değişikliği yetkilendirdi; eski `terrafitnessclub@gmail.com` hedefi artık geçerli değil.
